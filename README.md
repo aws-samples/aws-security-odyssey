@@ -1,2 +1,10 @@
-# aws-security-odyssey
-CloudFormation Templates and policy docs that build lab environments for a re:Invent Workshop, SID-402.
+# AWS Security Odyssey
+
+### Odyssey: A long and eventful or adventurous journey or experience.
+
+## Overview
+AWS Security Odyssey
+
+
+### License
+[https://aws.amazon.com/asl/](https://aws.amazon.com/asl/)

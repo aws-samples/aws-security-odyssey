@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+ {
+  "Effect":"Allow",
+  "Action":[
+       "ec2:*",
+       "cloudwatch:*",
+       "events:*",
+       "iam:AddRoleToInstanceProfile",
+       "iam:CreateInstanceProfile",
+       "iam:PassRole",
+       "iam:List*",
+       "iam:Get*",
+       "iam:CreatePolicy",
+       "s3:*",
+       "sns:*",
+       "logs:*",
+       "lambda:*",
+       "cloudtrail:*",
+       "cloudformation:*"
+        ],
+        "Resource":"*"
+      },
+      {
+      "Sid": "LimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:DetachRolePolicy",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/CloudWatchLogsFullAccess",
+            "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess"
+          ]
+        }
+      }
+    }
+  ]
+}
