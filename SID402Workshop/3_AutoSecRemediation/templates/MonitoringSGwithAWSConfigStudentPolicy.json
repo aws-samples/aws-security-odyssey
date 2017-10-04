@@ -1,0 +1,77 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+    {
+        "Effect":"Allow",
+        "Action":[
+            "ec2:Describe*",
+            "ec2:Authorize*",
+            "elasticloadbalancing:*",
+            "autoscaling:*",
+            "cloudwatch:*",
+            "elasticbeanstalk:*",
+            "config:*",
+            "events:*",
+            "iam:AddRoleToInstanceProfile",
+            "iam:CreateInstanceProfile",
+            "iam:Get*",
+            "iam:PassRole",
+            "iam:List*",
+            "iam:CreatePolicyVersion",
+            "iam:DeletePolicyVersion",
+            "iam:CreatePolicy",
+            "kms:List*",
+            "kms:Get*",
+            "s3:*",
+            "sns:*",
+            "sqs:*",
+            "tag:Get*",
+            "logs:*",
+            "lambda:*",
+            "cloudformation:*",
+            "vpc:*"
+        ],
+        "Resource":"*"
+    },
+      {
+      "Sid": "LimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachUserPolicy",
+        "iam:DetachUserPolicy",
+        "iam:DetachRolePolicy",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
+            ]
+        }
+      }
+    },
+      {
+      "Sid": "MoreLimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::*:policy/service-role/*AWSConfigDeliveryPermissions*"
+            ]
+        }
+      }
+    },
+    {
+        "Effect": "Deny",
+        "Action": [
+            "ec2:RunInstances"
+        ],
+        "Resource": "arn:aws:ec2:*:*:instance/*"
+    }
+    ]
+}
