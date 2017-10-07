@@ -78,6 +78,10 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 8. If not already selected, select your stack by clicking on the check box to the left of your stack.
 9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
 
+## COMPLETE INITIAL ENVIRONMENT CONFIGURATION
+
+In this section, you will perform configuration in the console for CloudTrail logging, CloudWatch Logs and a CloudWatch Alarm.
+
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
 </strong></summary><p>
@@ -173,7 +177,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 </details>
 
 <details>
-<summary><strong>CREATE AN ALARM (expand for details)
+<summary><strong>CREATE A ALARM (expand for details)
 </strong></summary><p>
 <p/>
 <b>These steps are a continuation of the previous steps for creating a metric filter.</b><p/>
@@ -280,7 +284,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test EC2 Instance Changes
 
-1. [69] In the AWS Management Console, on the **Services** menu, click **EC2**.
+1. In the AWS Management Console, on the **Services** menu, click **EC2**.
 
 2. Select SecurityTest EC2 instance by clicking on **Instances** In the navigation pane and click on **Actions** button at the top
 
@@ -308,7 +312,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test Network Gateway Changes
 
-1. [86] In the AWS Management Console, on the **Services** menu, click **VPC**.
+1. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
 
