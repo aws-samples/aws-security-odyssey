@@ -415,6 +415,7 @@ Your authentication information is incorrect. Please try again
 4. Try opening the URL from an Incognito browser (Private browser). You should receive an authorization ofailure. You will receive an Alarm **CloudTrailAuthorizationFailures** via email.
 
 4. You can also view the status of Alarm via AWS CloudWatch console.
+</detail>
 
 ## Conclusion
 
