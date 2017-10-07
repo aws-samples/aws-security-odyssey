@@ -294,6 +294,46 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 5. You can also view the status of Alarm via AWS CloudWatch console.
 
+### Test IAM Policy Changes
+
+1. In the AWS Management Console, on the **Services** menu, click **IAM**.
+
+2. Click on **Policies** on the left pane.
+
+3. Click **Create Policy**.
+
+4. Click **Select** next to Policy Generator.
+
+5. Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type **\*** in **Amazon Resource Name (ARN)**.
+
+6. Click **Add Statement** and than click **`Next` Step**
+
+7. Click **Create Policy**
+
+8. You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
+
+9. You can also view the status of Alarm via AWS CloudWatch console.
+
+### Test CloudTrail Changes
+
+1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+
+2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
+
+3. Click on the pencil next to **Trail settings** to edit the behavior
+
+4. Select radio button **No** and click **save**
+
+5. You will receive an Alarm **CloudTrailChanges** via email.
+
+6. You can also view the status of Alarm via AWS CloudWatch console.
+
+<details>
+<summary><strong>OPTIONAL TESTS (expand for details)
+</strong></summary><p>
+<p/>
+<b>The following test events are optional and should only be completed after you have completed all modules in this workshop.</b><p/>
+
 ### Test Network Access Control List (NACL) Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **VPC**.
@@ -338,26 +378,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-### Test IAM Policy Changes
-
-1. In the AWS Management Console, on the **Services** menu, click **IAM**.
-
-2. Click on **Policies** on the left pane.
-
-3. Click **Create Policy**.
-
-4. Click **Select** next to Policy Generator.
-
-5. Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type **\*** in **Amazon Resource Name (ARN)**.
-
-6. Click **Add Statement** and than click **`Next` Step**
-
-7. Click **Create Policy**
-
-8. You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
-
-9. You can also view the status of Alarm via AWS CloudWatch console.
-
 ### Test Console Sign-In Failures
 
 1. Note down the AWS account number from the AWS Console. The number is displayed on the top right.
@@ -397,20 +417,6 @@ Your authentication information is incorrect. Please try again
 
 4. You can also view the status of Alarm via AWS CloudWatch console.
 
-### Test CloudTrail Changes
-
-1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
-
-2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
-
-3. Click on the pencil next to **Trail settings** to edit the behavior
-
-4. Select radio button **No** and click **save**
-
-5. You will receive an Alarm **CloudTrailChanges** via email.
-
-6. You can also view the status of Alarm via AWS CloudWatch console.
-
 ## Conclusion
 
 Congratulations! You have successfully created a Trail in AWS CloudTrail console, create a log group in CloudWatch console that receives logs from CloudTrail, created a number of metric filters and corresponding alarms for automated notifications.
@@ -429,8 +435,8 @@ You have also learned how to automate the steps via AWS CloudFormation. You now 
 
 ## End Your Lab
 
-### CLEAN UP
-1. In the AWS Management Console, on the Services menu, click CloudFormation.
+### CLEAN UP (Complete clean up at the end of the Workshop)
+1. In the AWS Management Console, on the Services menu, click CloudFormation
 2. select SID402-AutomatingSecurityEvents
 3. click on Actions, select Delete Stack
 4. click on Yes, Delete to confirm deletion
