@@ -81,7 +81,8 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
 </strong></summary><p>
-<p/>
+<br/>
+
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
 
 2. Click on **Trails** from the pane in left and click **Create trail** button.<p/>
@@ -106,7 +107,8 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 <details>
 <summary><strong>ENABLE A ROLE (expand for details)
 </strong></summary><p>
-<p/>
+<br/>
+
 <b>Add a policy to a role using the IAM console:</b><p/>
 
 1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**<p/>
@@ -121,7 +123,8 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 <details>
 <summary><strong>CREATE A LOG GROUP (expand for details)
 </strong></summary><p>
-<p/>
+<br/>
+
 CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.<p/>
 
 <b>To specify a log group using the console</b><p/>
@@ -142,7 +145,8 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 <details>
 <summary><strong>CREATE A METRIC FILTER (expand for details)
 </strong></summary><p>
-<p/>
+<br/>
+
 1. In the AWS Management Console, Under Management Tools, Select **CloudWatch**<p/>
 
 2.	In the navigation pane on left, click **Logs**.<p/>
