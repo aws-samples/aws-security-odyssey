@@ -111,13 +111,13 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 
 <b>Add a policy to a role using the IAM console:</b><p/>
 
-1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**<p/>
+1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**.<p/>
 
 2.	Click on **Roles** from the pane in left.<p/>
 
 3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.<p/>
 
-4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**.  Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.<p/>
+4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**. Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.<p/>
 </details>
 
 <details>
@@ -127,7 +127,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 
 CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.<p/>
 
-<b>To specify a log group using the console</b><p/>
+<b>To specify a log group using the console:</b><p/>
 
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
 
@@ -244,23 +244,23 @@ Manual Steps for a limited number of events are also provided in this section. F
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
 ### Test Amazon S3 bucket Activity
-51. In the AWS Management Console, under **Storage**, select **S3**.
+1. In the AWS Management Console, under **Storage**, select **S3**.
 
-52. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
+2. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
 
-53. Under **Public access**, click the radio button **Everyone** and in the pop up box, select few permissions like **List Objects** or **Read bucket permission**
+3. Under **Public access**, click the radio button **Everyone** and in the pop up box, select few permissions like **List Objects** or **Read bucket permission**
 
-55. Click **Save**
+4. Click **Save**
 
-56. You will receive an Alarm **S3 bucket Activity** via email.
+5. You will receive an Alarm **S3 bucket Activity** via email.
 **Note:** - If you have not received email notification, navigate to AWS Console, Services, CloudWatch and click on **Alarms**. If this shows **Config Status** as **Pending confirmation**  then that means you have not yet confirmed SNS subscription yet. Refer to your email and subscribe to noficiations from this lab.
 
-57. You can also view the status of Alarm via AWS CloudWatch console.
+6. You can also view the status of Alarm via AWS CloudWatch console.
 
 
 ### Test Security Group Configuration changes
 
-58. [60] In the AWS Management Console, on the **Services** menu, click **EC2**.
+1. [60] In the AWS Management Console, on the **Services** menu, click **EC2**.
 
 2. Click on **Security Groups** under **NETWORK & SECURITY** section from the left pane.
 
@@ -280,19 +280,19 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test EC2 Instance Changes
 
-67. [69] In the AWS Management Console, on the **Services** menu, click **EC2**.
+1. [69] In the AWS Management Console, on the **Services** menu, click **EC2**.
 
 2. Select SecurityTest EC2 instance by clicking on **Instances** In the navigation pane and click on **Actions** button at the top
 
 3. Click on **Instance State** and then **Stop**. A Pop-up window for confirmation appears, click **Yes, Stop**.
 
-6. You will receive an Alarm **CloudTrailEC2InstanceChanges** via email.
+4. You will receive an Alarm **CloudTrailEC2InstanceChanges** via email.
 
-7. You can also view the status of Alarm via AWS CloudWatch console.
+5. You can also view the status of Alarm via AWS CloudWatch console.
 
 ### Test Network Access Control List (NACL) Changes
 
-78. In the AWS Management Console, on the **Services** menu, click **VPC**.
+1. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Network ACLs** from the list of Amazon VPC resources. A list of Network ACLs appears.
 
@@ -302,13 +302,13 @@ Manual Steps for a limited number of events are also provided in this section. F
 
     ![](./images/NACL_Addition.png)
 
-82. You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
+5. You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
 ### Test Network Gateway Changes
 
-84. [86] In the AWS Management Console, on the **Services** menu, click **VPC**.
+1. [86] In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
 
@@ -322,7 +322,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test Amazon Virtual Private Cloud (VPC) Changes
 
-90. [92] In the AWS Management Console, on the **Services** menu, click **VPC**.
+1. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Your VPCs** from the list of Amazon VPC resources. A list of VPC appears.
 
@@ -336,7 +336,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test IAM Policy Changes
 
-96. [98] In the AWS Management Console, on the **Services** menu, click **IAM**.
+1. In the AWS Management Console, on the **Services** menu, click **IAM**.
 
 2. Click on **Policies** on the left pane.
 
@@ -356,11 +356,11 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test Console Sign-In Failures
 
-105. Note down the AWS account number from the AWS Console. The number is displayed on the top right.
+1. Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
   ![](./images/Account_Number.png)
 
-106. Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
+2. Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
 
 3. Type the following in address bar with **AWS-account-ID-or-alias** replaced by the AWS account number noted above.
 
@@ -368,7 +368,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 ```
 
-108. A new sign in page appears, Type a random **User Name** and **Password**.
+4. A new sign in page appears, Type a random **User Name** and **Password**.
 
 5. Click **Sign in**. Repeat these steps for at least three times.
 
@@ -382,7 +382,7 @@ https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 
 ### Test Authorization Failures
 
-115. In the AWS Management Console, under **Storage** menu, select **S3**.
+1. In the AWS Management Console, under **Storage** menu, select **S3**.
 
 2. Select the bucket **securityautomationtestbucketxxxx** and upload a file into this bucket.
 
@@ -394,7 +394,7 @@ https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 
 ### Test CloudTrail Changes
 
-72. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
 
 2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
 
