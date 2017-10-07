@@ -1,7 +1,4 @@
-
-SID402   
-
-# Automating Security Events in AWS
+# SID402 - Automating Security Events in AWS
 
 ## Lab Overview
 
@@ -53,136 +50,169 @@ You can deploy and update a template and its associated collection of resources 
 
 Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
-For more information about regions, see <http://docs.aws.amazon.com/general/latest/gr/rande.html>.
+For more information about regions, see: <http://docs.aws.amazon.com/general/latest/gr/rande.html>.
+
+SETUP
+If needed, create a new key pair, see instructions at: <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair>
+
+##### Launch the CloudFormation Stack in the preferred region:
+
+Region| Launch
+------|-----
+N. Virginia (us-east-1) | [![Launch Module in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+N. Virginia (us-east-2) | [![Launch Module in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Singapore (ap-southeast-1) | [![Launch Module in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Sydney (ap-southeast-2) | [![Launch Module in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Frankfurt (eu-central-1) | [![Launch Module in eu-central-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-eu-central-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Ireland (eu-west-1) | [![Launch Module in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+
+5. On the Select Template screen, click **Next**.
+6. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
+7. Click Next.
+8. On the Options page, you can create tags or configure other advanced options. These are not required for this lab.
+9. Click Next.
+10. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
+11. Click Create. The stack will be created in a few minutes.
+12. If not already selected, select your stack by clicking on the check box to the left of your stack.
+13. Click on the Events tab and refresh periodically to monitor the creation of your stack.
 
 <details>
-<summary><strong>
-CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (Expand for details)
+<summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
 </strong></summary><p>
 
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**<p/>
-
 2.	Click on **Trails** from the pane in left and click **Create trail** button.<p/>
-
 3.	In the **Trail name** box, type a name for your trail such as "myCloudTrail"<p/>
-
 4.	For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.<p/>
-
 5.	For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.<p/>
-
 6.	In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.<p/>
-
 7.	Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.<p/>
 
 Next, enable a role that CloudTrail can assume and deliver events to the log streams.
 </details>
 
-## ENABLE A ROLE
+<details>
+<summary><strong>ENABLE A ROLE (expand for details)
+</strong></summary><p>
 
-### Add a policy to a role using the IAM console
+<b>Add a policy to a role using the IAM console:</b><p/>
 
-1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**
+1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**<p/>
 
-2.	Click on **Roles** from the pane in left.
+2.	Click on **Roles** from the pane in left.<p/>
 
-3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
+3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.<p/>
 
-4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**.  Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
+4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**.  Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.<p/>
+</details>
 
-## CREATE A LOG GROUP
+<details>
+<summary><strong>CREATE A LOG GROUP (expand for details)
+</strong></summary><p>
 
-CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.
+CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.<p/>
 
-### To specify a log group using the console
+<b>To specify a log group using the console<p/>
 
-20. [18]  In the AWS Management Console, Under Management Tools, Select **CloudTrail**
+1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**
 
-14.	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.
+2.	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.<p/>
 
-15.	Expand **CloudWatch Logs** section and click **Configure**.
+3.	Expand **CloudWatch Logs** section and click **Configure**.<p/>
 
-16.	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. 
+4.	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. <p/>
 
-Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document** The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.
+5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document** The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.<p/>
 
-18.	Choose **Allow**.
-When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified. <br>
+6.	Choose **Allow**.
+When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.<p/>
 
-## CREATE A METRIC FILTER
+</details>
 
-19. [23]  In the AWS Management Console, Under Management Tools, Select **CloudWatch**
+<details>
+<summary><strong>CREATE A METRIC FILTER (expand for details)
+</strong></summary><p>
 
-20.	In the navigation pane on left, click **Logs**.
+1. In the AWS Management Console, Under Management Tools, Select **CloudWatch**<p/>
 
-21.	In the list of log groups, select the radio button next to the log group that you created for CloudTrail log events.
+2.	In the navigation pane on left, click **Logs**.<p/>
 
-22.	Click **Create Metric Filter**.
+3.	In the list of log groups, select the radio button next to the log group that you created for CloudTrail log events.<p/>
 
-23.	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:
+4.	Click **Create Metric Filter**.<p/>
 
-```
+5.	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:<p/>
+
+<code>
 { ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }
-```
+</code><p/>
 
-**Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this lab. Steps are provided for testing one such events but you may want to test additional filters.  
+**Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this lab. Steps are provided for testing one such events but you may want to test additional filters. <p/>
 
-24. [28] Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**
+6. [28] Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**<p/>
 
-25.	Under Metric Details, in the **Metric Namespace** box, delete existing text and enter **CloudTrailMetrics**.
+7.	Under Metric Details, in the **Metric Namespace** box, delete existing text and enter **CloudTrailMetrics**.<p/>
 
-26.	In the **Metric Name** field, enter **S3BucketActivityEventCount**.
+8.	In the **Metric Name** field, enter **S3BucketActivityEventCount**.<p/>
 
-27.	Click **Metric Value**, and then type **1**. If Metric Value does not appear, click **Show advanced metric settings** first.
+9.	Click **Metric Value**, and then type **1**. If Metric Value does not appear, click **Show advanced metric settings** first.<p/>
 
-28. Click **Create Filter**.
+10. Click **Create Filter**.<p/>
 
+</details>
 
-## CREATE AN ALARM
+<details>
+<summary><strong>CREATE AN ALARM (expand for details)
+</strong></summary><p>
 
-  These steps are a continuation of the previous steps for creating a metric filter.
+<b>These steps are a continuation of the previous steps for creating a metric filter.</b><p/>
 
-29. [33] You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.
+1. [33] You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.<p/>
 
-30. [34] On the **Create Alarm** page, provide the following values
+2. [34] On the **Create Alarm** page, provide the following values
   Name: **S3 Bucket Activity**
-  Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).
+  Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).<p/>
 
-32. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.
+3. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.<p/>
 
-    ![](./images/CreateAlarm.png)
+    ![](./images/CreateAlarm.png)<p/>
 
-    ![](./images/SettingValues.png)
+    ![](./images/SettingValues.png)<p/>
 
-33. [37] When you are done, click **Create Alarm**.
+4. When you are done, click **Create Alarm**.<p/>
 
-34. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
+5. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.<p/>
 
-35. Click on **View Alarm**.
+6. Click on **View Alarm**.<p/>
 
-<summary><strong>CREATE SECURITY ALARMS USING AWS CLOUDFORMATION (expand for details)</strong></summary><p>
+</details>
+
+## CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
 
 In the previous steps you have learnt how to create a metric filter in CloudWatch and how to create an alarm for the metric via the AWS console. Creation of metric filters and corresponding alarms for the remaining security events described in the overview section has been automated for you using AWS CloudFormation template. Follow the steps below:
 
-36. Launch the CloudFormation Stack in the preferred region:
+##### Launch the CloudFormation Stack in the previously selected region:
 
 Region| Launch
 ------|-----
-N. Virginia (us-east-1) | [![Launch Module 1 in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-N. Virginia (us-east-2) | [![Launch Module 1 in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Oregon (us-west-2) | [![Launch Module 1 in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Singapore (ap-southeast-1) | [![Launch Module 1 in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Sydney (ap-southeast-2) | [![Launch Module 1 in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Tokyo (ap-northeast-1) | [![Launch Module 1 in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Seoul (ap-northeast-2) | [![Launch Module 1 in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Frankfurt (eu-central-1) | [![Launch Module 1 in eu-central-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-eu-central-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-Ireland (eu-west-1) | [![Launch Module 1 in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
-London (eu-west-2) | [![Launch Module 1 in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+N. Virginia (us-east-1) | [![Launch Module in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+N. Virginia (us-east-2) | [![Launch Module in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Singapore (ap-southeast-1) | [![Launch Module in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Sydney (ap-southeast-2) | [![Launch Module in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Frankfurt (eu-central-1) | [![Launch Module in eu-central-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-eu-central-1#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Ireland (eu-west-1) | [![Launch Module in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=SID402-CWLforCloudTrailAPIActivity&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
 
 **Note:** Review the contents of the template to understand the metric filter and alarm creation via CloudFormation.
 
-37. Select the target AWS region to launch the stack into.
-
-41.	Click **Next**.
+41.	On the Select Template screen, click **Next**.
 
 42.	On the **Specify Details** page, Type a name for the stack such as **AlarmStack**, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
 
@@ -226,7 +256,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 57. You can also view the status of Alarm via AWS CloudWatch console.
 
 
-
 ### Test Security Group Configuration changes
 
 58. [60] In the AWS Management Console, on the **Services** menu, click **EC2**.
@@ -246,8 +275,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 8. You will receive an Alarm **CloudTrailSecurityGroupChanges** via email.
 
 9. You can also view the status of Alarm via AWS CloudWatch console.
-
-
 
 ### Test EC2 Instance Changes
 
@@ -295,8 +322,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-
-
 ### Test Network Gateway Changes
 
 84. [86] In the AWS Management Console, on the **Services** menu, click **VPC**.
@@ -311,8 +336,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-
-
 ### Test Amazon Virtual Private Cloud (VPC) Changes
 
 90. [92] In the AWS Management Console, on the **Services** menu, click **VPC**.
@@ -326,8 +349,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 5. You will receive an Alarm **CloudTrailVpcChanges** via email.
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
-
-
 
 ### Test IAM Policy Changes
 
@@ -348,8 +369,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 8. You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
 
 9. You can also view the status of Alarm via AWS CloudWatch console.
-
-
 
 ### Test Console Sign-In Failures
 
@@ -376,8 +395,6 @@ https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 7. You will receive an Alarm **CloudTrailConsoleSignInFailures** via email.
 
 8. You can also view the status of Alarm via AWS CloudWatch console.
-
-
 
 ### Test Authorization Failures
 
@@ -416,7 +433,7 @@ Follow these steps to close the console, end your lab, and evaluate the experien
 119. Delete the Cloudformation stacks you have created.
 120. <<Alex provided cleanup steps>>
 
-## Additional Resources<br>
+## Additional Resources
 
 - For more information about AWS CloudTrail, see <https://aws.amazon.com/cloudtrail>
 - For more information about Amazon CloudWatch, see <https://aws.amazon.com/cloudwatch>
