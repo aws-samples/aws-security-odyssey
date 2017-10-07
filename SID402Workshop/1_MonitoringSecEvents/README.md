@@ -113,15 +113,15 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 </strong></summary><p>
 <br/>
 
-<b>Add a policy to a role using the IAM console:</b><p/>
+<b>Add a policy to a role using the IAM console:</b>
 
-1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**.<p/>
+1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**.
 
-2.	Click on **Roles** from the pane in left.<p/>
+2.	Click on **Roles** from the pane in left.
 
-3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.<p/>
+3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
 
-4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**. Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.<p/>
+4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**. Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
 </details>
 
 <details>
@@ -129,21 +129,21 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 </strong></summary><p>
 <br/>
 
-CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.<p/>
+CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.
 
-<b>To specify a log group using the console:</b><p/>
+<b>To specify a log group using the console:</b>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
+1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
-2.	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.<p/>
+2.	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.
 
-3.	Expand **CloudWatch Logs** section and click **Configure**.<p/>
+3.	Expand **CloudWatch Logs** section and click **Configure**.
 
-4.	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. <p/>
+4.	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. 
 
-5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document** The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.<p/>
+5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document** The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.
 
-6.	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.<p/>
+6.	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.
 </details>
 
 <details>
@@ -151,54 +151,54 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 </strong></summary><p>
 <br/>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudWatch**<p/>
+1. In the AWS Management Console, Under Management Tools, Select **CloudWatch**
 
-2.	In the navigation pane on left, click **Logs**.<p/>
+2.	In the navigation pane on left, click **Logs**.
 
-3.	In the list of log groups, select the radio button next to the log group that you created for CloudTrail log events.<p/>
+3.	In the list of log groups, select the radio button next to the log group that you created for CloudTrail log events.
 
-4.	Click **Create Metric Filter**.<p/>
+4.	Click **Create Metric Filter**.
 
-5.	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:<p/>
+5.	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:
 
 <code>{ ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }</code><p/>
 
-**Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this lab. Steps are provided for testing one such events but you may want to test additional filters. <p/>
+**Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this lab. Steps are provided for testing one such events but you may want to test additional filters.
 
-6. Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**<p/>
+6. Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**
 
-7.	Under Metric Details, in the **Metric Namespace** box, delete existing text and enter **CloudTrailMetrics**.<p/>
+7.	Under Metric Details, in the **Metric Namespace** box, delete existing text and enter **CloudTrailMetrics**.
 
-8.	In the **Metric Name** field, enter **S3BucketActivityEventCount**.<p/>
+8.	In the **Metric Name** field, enter **S3BucketActivityEventCount**.
 
-9.	Click **Metric Value**, and then type **1**. If Metric Value does not appear, click **Show advanced metric settings** first.<p/>
+9.	Click **Metric Value**, and then type **1**. If Metric Value does not appear, click **Show advanced metric settings** first.
 
-10. Click **Create Filter**.<p/>
+10. Click **Create Filter**.
 </details>
 
 <details>
 <summary><strong>CREATE A ALARM (expand for details)
 </strong></summary><p>
-<p/>
-<b>These steps are a continuation of the previous steps for creating a metric filter.</b><p/>
+<br/>
+<b>These steps are a continuation of the previous steps for creating a metric filter.</b>
 
-1. You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.<p/>
+1. You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.
 
 2. On the **Create Alarm** page, provide the following values
   Name: **S3 Bucket Activity**
-  Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).<p/>
+  Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).
 
-3. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.<p/>
+3. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.
 
-    ![](./images/CreateAlarm.png)<p/>
+    ![](./images/CreateAlarm.png)
 
-    ![](./images/SettingValues.png)<p/>
+    ![](./images/SettingValues.png)
 
-4. When you are done, click **Create Alarm**.<p/>
+4. When you are done, click **Create Alarm**.
 
-5. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.<p/>
+5. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
 
-6. Click on **View Alarm**.<p/>
+6. Click on **View Alarm**.
 </details>
 
 ## CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
@@ -330,8 +330,8 @@ Manual Steps for a limited number of events are also provided in this section. F
 <details>
 <summary><strong>OPTIONAL TEST SCENARIOS (expand for details)
 </strong></summary><p>
-<p/>
-The following test events are optional and should only be completed after you have completed all modules in this workshop.<p/>
+<br/>
+The following test events are optional and should only be completed after you have completed all modules in this workshop.
 
 ### Test Network Access Control List (NACL) Changes
 
