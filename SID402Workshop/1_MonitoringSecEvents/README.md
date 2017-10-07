@@ -217,26 +217,25 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 **Note:** Review the contents of the template to understand the metric filter and alarm creation via CloudFormation.
 
-41.	On the Select Template screen, click **Next**.
+1. On the Select Template screen, click **Next**.
 
-42.	On the **Specify Details** page, Type a name for the stack such as **AlarmStack**, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
+2. On the **Specify Details** page, Type a name for the stack such as **AlarmStack**, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
 
-43.	Click **Next**.
+3. Click **Next**.
 
-44.	On the **Options** page, you can create tags or configure other advanced options. These are not required for this lab.
+4. On the **Options** page, you can create tags or configure other advanced options. These are not required for this lab.
 
-45.	Click **Next**.
+5. Click **Next**.
 
-47.	Click **Create**. The stack will be created in a few minutes.
+6. Click **Create**. The stack will be created in a few minutes.
 
-48. If not already selected, select your stack by clicking on the check box to the left of your stack.
+7. If not already selected, select your stack by clicking on the check box to the left of your stack.
 
-49. Click on the **Events** tab and refresh periodically to monitor the creation of your stack.
+8. Click on the **Events** tab and refresh periodically to monitor the creation of your stack.
 
-50. CloudFormation template also creates a SNS topic for you to get update on other email address provided by you in previous steps. You will receive an email from **AWS Notification**, Click on **Confirm subscription** link provided in the email.
+9. CloudFormation template also creates a SNS topic for you to get update on other email address provided by you in previous steps. You will receive an email from **AWS Notification**, Click on **Confirm subscription** link provided in the email.
 
-When AWS CloudFormation is finished creating the stack, the status will show CREATE_COMPLETE. This CloudFormation stack has created a number of security metric filters and related alarms for you. We'll test these events in the subsequent steps.
-</p></details>
+When AWS CloudFormation is finished creating the stack, the status will show CREATE_COMPLETE. This CloudFormation stack has created a number of security metric filters and related alarms for you. We'll test these events in the subsequent steps.</p>
 
 ### And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
