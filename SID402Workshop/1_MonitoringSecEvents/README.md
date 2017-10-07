@@ -114,7 +114,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 
 CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.<p/>
 
-<b>To specify a log group using the console<p/>
+<b>To specify a log group using the console</b><p/>
 
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**
 
