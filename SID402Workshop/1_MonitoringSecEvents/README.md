@@ -1,8 +1,7 @@
 
-# Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communication Platforms
 SID402   
 
-Automating Security Events in AWS
+# Automating Security Events in AWS
 
 ## Lab Overview
 
@@ -52,28 +51,43 @@ You can deploy and update a template and its associated collection of resources 
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
-4. [4]Make a note of the AWS *region name*, for example, *US West (Oregon),*
+Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
 For more information about regions, see <http://docs.aws.amazon.com/general/latest/gr/rande.html>.
 
-## CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE
+<details>
+<summary><strong>
+CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (Expand for details)
+</summary><p>
 
-6. [6] In the AWS Management Console, Under Management Tools, Select **CloudTrail**7.	Click on **Trails** from the pane in left and click **Create trail** button.8.	In the **Trail name** box, type a name for your trail such as "myCloudTrail"9.	For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.10.	For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.11.	In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.12.	Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
+1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**<p/>
+
+2.	Click on **Trails** from the pane in left and click **Create trail** button.<p/>
+
+3.	In the **Trail name** box, type a name for your trail such as "myCloudTrail"<p/>
+
+4.	For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.<p/>
+
+5.	For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.<p/>
+
+6.	In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.<p/>
+
+7.	Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.<p/>
 
 Next, enable a role that CloudTrail can assume and deliver events to the log streams.
+</details>
 
 ## ENABLE A ROLE
 
 ### Add a policy to a role using the IAM console
 
-13. [13] In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**
+1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**
 
-18.	Click on **Roles** from the pane in left.
+2.	Click on **Roles** from the pane in left.
 
-20. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
+3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
 
-21. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**.  Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
-
+4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**.  Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
 
 ## CREATE A LOG GROUP
 
@@ -145,28 +159,28 @@ When you are finished with these steps in the console, the CloudTrail trail will
 
 35. Click on **View Alarm**.
 
-
-
-## CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
+<summary><strong>CREATE SECURITY ALARMS USING AWS CLOUDFORMATION (expand for details)</strong></summary><p>
 
 In the previous steps you have learnt how to create a metric filter in CloudWatch and how to create an alarm for the metric via the AWS console. Creation of metric filters and corresponding alarms for the remaining security events described in the overview section has been automated for you using AWS CloudFormation template. Follow the steps below:
 
-<<Provide a link to launch a CF here and modify the steps below>>
-36. [38]  Download the CloudFormation template CloudWatch_Alarms_for_CloudTrail_API_Activity.json file from the location below and save it to your computer.
+36. Launch the CloudFormation Stack in the preferred region:
 
-```
-https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json
-```
+Region| Launch
+------|-----
+N. Virginia (us-east-1) | [![Launch Module 1 in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+N. Virginia (us-east-2) | [![Launch Module 1 in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Oregon (us-west-2) | [![Launch Module 1 in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Singapore (ap-southeast-1) | [![Launch Module 1 in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Sydney (ap-southeast-2) | [![Launch Module 1 in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Tokyo (ap-northeast-1) | [![Launch Module 1 in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Seoul (ap-northeast-2) | [![Launch Module 1 in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Frankfurt (eu-central-1) | [![Launch Module 1 in eu-central-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-eu-central-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+Ireland (eu-west-1) | [![Launch Module 1 in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
+London (eu-west-2) | [![Launch Module 1 in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=CloudWatch-Alarms-for-CloudTrail-API-Activity&templateURL=https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrail-api-activity/CloudWatch_Alarms_for_CloudTrail_API_Activity.json)
 
 **Note:** Review the contents of the template to understand the metric filter and alarm creation via CloudFormation.
 
-37. [39]	In the AWS Management Console, under **Management Tools**, select **CloudFormation**.
-
-38.  Click either of the blue **Create Stack** or **Create New Stack** buttons.
-
-39.	On the **Select Template** page, under **Choose a template**, select **Upload a template to Amazon S3**.
-
-40.	Click **Choose File**, and then browse to and select the CloudFormation template that you downloaded previously.
+37. Select the target AWS region to launch the stack into.
 
 41.	Click **Next**.
 
@@ -187,7 +201,7 @@ https://s3-us-west-2.amazonaws.com/awscloudtrail/cloudwatch-alarms-for-cloudtrai
 50. CloudFormation template also creates a SNS topic for you to get update on other email address provided by you in previous steps. You will receive an email from **AWS Notification**, Click on **Confirm subscription** link provided in the email.
 
 When AWS CloudFormation is finished creating the stack, the status will show CREATE_COMPLETE. This CloudFormation stack has created a number of security metric filters and related alarms for you. We'll test these events in the subsequent steps.
-
+</p></details>
 
 ### And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
@@ -195,7 +209,7 @@ We'll create a number of security events in this section of the lab. The resourc
 Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the lab.
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
-<<Provide a link to launch a CF here and provide applicable steps; Alex provided steps for this section>>
+<Provide a link to launch a CF here and provide applicable steps; Alex provided steps for this section>
 
 ### Test Amazon S3 bucket Activity
 51. [53] In the AWS Management Console, under **Storage**, select **S3**.
