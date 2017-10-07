@@ -357,7 +357,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 5. Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type **\*** in **Amazon Resource Name (ARN)**.
 
-6. Click **Add Statement** and than click **Next Step**
+6. Click **Add Statement** and than click **`Next` Step**
 
 7. Click **Create Policy**
 
