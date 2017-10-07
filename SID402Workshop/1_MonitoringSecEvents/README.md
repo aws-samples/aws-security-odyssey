@@ -80,7 +80,6 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
-
 </strong></summary><p>
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**<p/>
 2.	Click on **Trails** from the pane in left and click **Create trail** button.<p/>
