@@ -76,29 +76,37 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
 7. Click Create. The stack will be created in a few minutes.
 8. If not already selected, select your stack by clicking on the check box to the left of your stack.
-9. Click on the Events tab and refresh periodically to monitor the creation of your stack.
+9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
 
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
 </strong></summary><p>
-
+<p/>
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
+
 2. Click on **Trails** from the pane in left and click **Create trail** button.<p/>
+
 3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".<p/>
+
 4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.<p/>
+
 5. For **Read/Write events**, choose **All**.<p/>
+
 6. For **Data Events**, do not select any buckets.<p/>
+
 7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.<p/>
+
 8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.<p/>
+
 9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.<p/>
 
-Next, enable a role that CloudTrail can assume and deliver events to the log streams.
+Next, enable a role that CloudTrail can assume and deliver events to the log streams.<p/>
 </details>
 
 <details>
 <summary><strong>ENABLE A ROLE (expand for details)
 </strong></summary><p>
-
+<p/>
 <b>Add a policy to a role using the IAM console:</b><p/>
 
 1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**<p/>
@@ -113,12 +121,12 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 <details>
 <summary><strong>CREATE A LOG GROUP (expand for details)
 </strong></summary><p>
-
+<p/>
 CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log events. We will create a new log group.<p/>
 
 <b>To specify a log group using the console</b><p/>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**
+1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
 
 2.	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.<p/>
 
@@ -128,14 +136,13 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document** The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.<p/>
 
-6.	Choose **Allow**.
-When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.<p/>
+6.	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.<p/>
 </details>
 
 <details>
 <summary><strong>CREATE A METRIC FILTER (expand for details)
 </strong></summary><p>
-
+<p/>
 1. In the AWS Management Console, Under Management Tools, Select **CloudWatch**<p/>
 
 2.	In the navigation pane on left, click **Logs**.<p/>
@@ -164,12 +171,12 @@ When you are finished with these steps in the console, the CloudTrail trail will
 <details>
 <summary><strong>CREATE AN ALARM (expand for details)
 </strong></summary><p>
-
+<p/>
 <b>These steps are a continuation of the previous steps for creating a metric filter.</b><p/>
 
 1. You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.<p/>
 
-2. [34] On the **Create Alarm** page, provide the following values
+2. On the **Create Alarm** page, provide the following values
   Name: **S3 Bucket Activity**
   Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).<p/>
 
