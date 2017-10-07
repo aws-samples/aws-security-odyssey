@@ -81,6 +81,7 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
 </strong></summary><p>
+
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**<p/>
 2.	Click on **Trails** from the pane in left and click **Create trail** button.<p/>
 3.	In the **Trail name** box, type a name for your trail such as "myCloudTrail"<p/>
@@ -230,11 +231,9 @@ When AWS CloudFormation is finished creating the stack, the status will show CRE
 
 ### And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
-We'll create a number of security events in this section of the lab. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The lab covers a number of different events. We are providing a CloudFormation script that creates some resoruces like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
+We'll create a number of security events in this section of the lab. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The lab covers a number of different events. We are providing a CloudFormation script that creates some resources like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
 Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the lab.
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
-
-<Provide a link to launch a CF here and provide applicable steps; Alex provided steps for this section>
 
 ### Test Amazon S3 bucket Activity
 51. [53] In the AWS Management Console, under **Storage**, select **S3**.
@@ -298,8 +297,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 5. You will receive an Alarm **CloudTrailChanges** via email.
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
-
-
 
 ### Test Network Access Control List (NACL) Changes
 
@@ -367,11 +364,11 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test Console Sign-In Failures
 
-105. [107] Note down the AWS account number from the AWS Console. The number is displayed on the top right.
+105. Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
-    ![](./images/Account_Number.png)
+  ![](./images/Account_Number.png)
 
-106. [108] Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
+106. Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
 
 3. Type the following in address bar with **AWS-account-ID-or-alias** replaced by the AWS account number noted above.
 
@@ -379,7 +376,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 ```
 
-108. [110] A new sign in page appears, Type a random **User Name** and **Password**.
+108. A new sign in page appears, Type a random **User Name** and **Password**.
 
 5. Click **Sign in**. Repeat these steps for at least three times.
 
@@ -423,12 +420,24 @@ You have also learned how to automate the steps via AWS CloudFormation. You now 
 
 ## End Your Lab
 
-Follow these steps to close the console, end your lab, and evaluate the experience.
+### CLEAN UP
+1. In the AWS Management Console, on the Services menu, click CloudFormation.
+2. select SID402-AutomatingSecurityEvents
+3. click on Actions, select Delete Stack
+4. click on Yes, Delete to confirm deletion
+5. repeat steps 2-4 to delete the SID402-CWLforCloudTrailAPIActivity Stack
+6. In the AWS Management Console, on the Services menu, click CloudWatch
+7. Under Alarms, select S3 Bucket Activity
+8. click on Actions, select Delete
+9. click on Yes, Delete
+10. In the AWS Management Console, on the Services menu, click CloudTrail
+11. Open the trail that you created in this lab
+12. In top right, next to Logging, click on "On/Off" switch
+13. Click Continue in the popup window
+14. Click on the "trashcan" icon to delete the trail
+15. Click Delete in the popup window
 
-119. Delete the Cloudformation stacks you have created.
-120. <<Alex provided cleanup steps>>
-
-## Additional Resources
+### Additional Resources
 
 - For more information about AWS CloudTrail, see <https://aws.amazon.com/cloudtrail>
 - For more information about Amazon CloudWatch, see <https://aws.amazon.com/cloudwatch>
