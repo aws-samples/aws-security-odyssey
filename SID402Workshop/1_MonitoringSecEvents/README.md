@@ -68,15 +68,15 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 Ireland (eu-west-1) | [![Launch Module in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
 London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
 
-5. On the Select Template screen, click **Next**.
-6. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
-7. Click Next.
-8. On the Options page, you can create tags or configure other advanced options. These are not required for this lab.
-9. Click Next.
-10. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
-11. Click Create. The stack will be created in a few minutes.
-12. If not already selected, select your stack by clicking on the check box to the left of your stack.
-13. Click on the Events tab and refresh periodically to monitor the creation of your stack.
+1. On the Select Template screen, click **Next**.
+2. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
+3. Click Next.
+4. On the Options page, you can create tags or configure other advanced options. These are not required for this lab.
+5. Click **Next**.
+6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
+7. Click Create. The stack will be created in a few minutes.
+8. If not already selected, select your stack by clicking on the check box to the left of your stack.
+9. Click on the Events tab and refresh periodically to monitor the creation of your stack.
 
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
@@ -145,9 +145,7 @@ When you are finished with these steps in the console, the CloudTrail trail will
 
 5.	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:<p/>
 
-<code>
-{ ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }
-</code><p/>
+<code>{ ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }</code><p/>
 
 **Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this lab. Steps are provided for testing one such events but you may want to test additional filters. <p/>
 
