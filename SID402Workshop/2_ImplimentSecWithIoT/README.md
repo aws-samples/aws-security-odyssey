@@ -196,27 +196,27 @@ in a security group for the instance.
 
                                                                                                                                     **Instance Only**
   ---------------------------- ---------------------------------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------
-  N. Virginia (us-east-1)      ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  N. Virginia (us-east-1)      ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Ohio (us-east-2)             ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Ohio (us-east-2)             ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Oregon (us-west-2)           ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Oregon (us-west-2)           ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Singapore (ap-southeast-1)   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Singapore (ap-southeast-1)   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Sydney (ap-southeast-2)      ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Sydney (ap-southeast-2)      ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Tokyo (ap-northeast-1)       ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Tokyo (ap-northeast-1)       ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Seoul (ap-northeast-2)       ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Seoul (ap-northeast-2)       ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Frankfurt (eu-central-1)     ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Frankfurt (eu-central-1)     ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Ireland (eu-west-1)          ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Ireland (eu-west-1)          ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  London (eu-west-2)           ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  London (eu-west-2)           ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
 
-  Beijing (cn-north-1)         ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/media/image1.png){width="1.55in" height="0.31in"}
+  Beijing (cn-north-1)         ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}   ![../../../Downloads/deploy-to-aws.png](./images/image1.png){width="1.55in" height="0.31in"}
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1.  A new browser tab or page will appear with the CloudFormation
@@ -260,7 +260,7 @@ in a security group for the instance.
 Create Device
 =============
 
-![](./images/media/image2.emf){width="1.0in" height="1.0in"}In this
+![](./images/image2.emf){width="1.0in" height="1.0in"}In this
 section you will create a Device (an IoT “thing”), the policy for it,
 and generate, download, and attach a client certificate to allow full
 access.
@@ -292,8 +292,8 @@ access.
     **Activate** and then **Attach a policy**. A copy of the screen
     appears below.
 
-![](./images/media/image3.png){width="5.99in"
-height="3.82in"}![](./images/media/image2.emf){width="1.0in"
+![](./images/image3.png){width="5.99in"
+height="3.82in"}![](./images/image2.emf){width="1.0in"
 height="1.0in"}
 
 > At this point a new device has been created and the authorization and
@@ -307,7 +307,7 @@ height="1.0in"}
 
 2.  On the **Create a policy** page create the statement as follows:
 
-![](./images/media/image4.png){width="5.494385389326334in"
+![](./images/image4.png){width="5.494385389326334in"
 height="4.608634076990376in"}
 
 -   **Name:** yourname\_device1\_full\_ access
@@ -351,7 +351,7 @@ Configure Node-RED
     select the stack and look at the output tab to see the URL Browse to
     the URL and you should see Node-RED appear.
 
-![](./images/media/image5.png){width="7.0in"
+![](./images/image5.png){width="7.0in"
 height="3.1902777777777778in"}
 
 For this lab you will see the following three sections on the interface,
@@ -386,7 +386,7 @@ First flow – locally execute time
     click on the inject node (Generate Timestamp) will publish a message
     in the debug window.
 
-![](./images/media/image6.png){width="7.0in"
+![](./images/image6.png){width="7.0in"
 height="3.4444444444444446in"}
 
 Second flow – send time to AWS IoT
@@ -404,10 +404,10 @@ Second flow – send time to AWS IoT
 3.  Click the pencil icon next to *Add new mqtt-broker* which will bring
     up the configuration window:
 
-![](./images/media/image7.png){width="4.803775153105862in"
+![](./images/image7.png){width="4.803775153105862in"
 height="2.4095122484689413in"}
 
-![](./images/media/image8.png){width="5.632142388451443in"
+![](./images/image8.png){width="5.632142388451443in"
 height="3.7156496062992126in"}
 
 1.  On the Connection tab, configure the following:
@@ -426,7 +426,7 @@ height="3.7156496062992126in"}
     pencil next to the Add new tls-config dropdown, which will bring up
     this window:
 
-> ![](./images/media/image9.png){width="3.9in" height="3.0in"}
+> ![](./images/image9.png){width="3.9in" height="3.0in"}
 
 1.  On the Add new-tls-config screen, make sure the **Use key and
     certificates from local files** is deselected (which would be files
@@ -455,7 +455,7 @@ height="3.7156496062992126in"}
 3.  For the Topic field, enter: **yourname\_device1** and select **0**
     for the QoS (Quality of service):
 
-![](./images/media/image10.png){width="4.803775153105862in"
+![](./images/image10.png){width="4.803775153105862in"
 height="3.3478685476815397in"}
 
 -   **Server:** completed value of the MQTT endpoint with its TLS
@@ -478,7 +478,7 @@ height="3.3478685476815397in"}
     “connected” under the AWS IoT node, meaning it has a connection and
     authorization to the service.
 
-> ![](./images/media/image2.emf){width="1.0in" height="1.0in"}There is a
+> ![](./images/image2.emf){width="1.0in" height="1.0in"}There is a
 > chance of a typo or other small misconfiguration will display an error
 > in the debug tab, or not show a connection to AWS IoT. To correct,
 > double-click the AWS IoT node, then verify and Update the parameters
@@ -491,10 +491,10 @@ height="3.3478685476815397in"}
     click the Subscribe to topic button. This will then bring up a real
     time client monitoring the topic for new messages.
 
-![/var/folders/lk/rpsx\_gq94y596fqw3ppw\_ftmfb2v7n/T/2017-08-03\_12-50-11.png](./images/media/image11.png){width="5.803775153105862in"
+![/var/folders/lk/rpsx\_gq94y596fqw3ppw\_ftmfb2v7n/T/2017-08-03\_12-50-11.png](./images/image11.png){width="5.803775153105862in"
 height="2.40834208223972in"}
 
-![/var/folders/lk/rpsx\_gq94y596fqw3ppw\_ftmfb2v7n/T/2017-08-03\_12-56-56.png](./images/media/image12.png){width="5.269790026246719in"
+![/var/folders/lk/rpsx\_gq94y596fqw3ppw\_ftmfb2v7n/T/2017-08-03\_12-56-56.png](./images/image12.png){width="5.269790026246719in"
 height="3.3542629046369203in"}
 
 1.  Now click on the Generate Timestamp button for the Single click
@@ -502,10 +502,10 @@ height="3.3542629046369203in"}
     in the debug window, but you will also see the message published in
     the MQTT client in the AWS Console.
 
-![](./images/media/image13.png){width="5.803775153105862in"
+![](./images/image13.png){width="5.803775153105862in"
 height="3.2732600612423446in"}
 
-![](./images/media/image14.png){width="5.259260717410323in"
+![](./images/image14.png){width="5.259260717410323in"
 height="3.6042629046369203in"}
 
 > You have now done the following:
@@ -552,7 +552,7 @@ AWS IoT Security Node-RED Configuration File
     **Done**. The screenshot below illustrates how the flow should look
     after you disable it.
 
-> ![](./images/media/image15.png){width="3.97in" height="1.98in"}
+> ![](./images/image15.png){width="3.97in" height="1.98in"}
 
 1.  After you disable the flow click the red **Deploy** button to
     disable the flows and stop them from interacting with the AWS IoT
@@ -564,26 +564,26 @@ AWS IoT Security Node-RED Configuration File
 3.  Now you will add the lab to the Node-RED UI by selecting the
     **menu** option, Import &gt; Clipboard.\
     \
-    ![../../Screen%20Shot%202017-08-19%20at%2012.52.12%20PM.png](./images/media/image16.png){width="6.428775153105862in"
+    ![../../Screen%20Shot%202017-08-19%20at%2012.52.12%20PM.png](./images/image16.png){width="6.428775153105862in"
     height="3.51455927384077in"}
 
 4.  On the Clipboard, window, click the **new flow** button to ensure
     your workflow is added to a new tab. Paste the clipboard contents of
     the JSON file into the window.
 
-> ![../../Screen%20Shot%202017-08-20%20at%207.39.23%20PM.png](./images/media/image17.png){width="6.324260717410324in"
+> ![../../Screen%20Shot%202017-08-20%20at%207.39.23%20PM.png](./images/image17.png){width="6.324260717410324in"
 > height="3.2292629046369203in"}
 
 1.  Select **Import**. Your lab should have a similar set up as the
     below. Select the **IoT Security** flow by clicking on its tab.
 
-![](./images/media/image18.png){width="5.821224846894138in"
+![](./images/image18.png){width="5.821224846894138in"
 height="2.982222222222222in"}
 
 1.  Before continuing, you will need to select all six of the MQTT nodes
     highlighted above and change the following:
 
-> ![](./images/media/image19.png){width="5.81875in"
+> ![](./images/image19.png){width="5.81875in"
 > height="2.721188757655293in"}
 
 -   **Server:** Select the previously configured endpoint
@@ -704,7 +704,7 @@ a specific device topic and the device’s AWS IoT Shadow.
     policy. You will now have two policies connected. On the three dots,
     click and select Detach for the **full\_access** policy.
 
-> ![](./images/media/image20.png){width="5.191275153105861in"
+> ![](./images/image20.png){width="5.191275153105861in"
 > height="2.1012303149606297in"}
 
 1.  Navigate to Node-RED in your browser and make sure you are
@@ -713,7 +713,7 @@ a specific device topic and the device’s AWS IoT Shadow.
     disconnect over MQTT. And you’ll begin to see “disconnected” show in
     your workflow. Very similar to the below screenshot:
 
-> ![](./images/media/image21.png){width="7.0in"
+> ![](./images/image21.png){width="7.0in"
 > height="3.4944444444444445in"}
 
 1.  This disconnect is expected behavior. What is occurring is that you
@@ -728,7 +728,7 @@ a specific device topic and the device’s AWS IoT Shadow.
     Then Select **Deploy** to deploy your changes. Make make sure you
     delete only the node referenced below by the arrow.
 
-![../../Screen%20Shot%202017-08-20%20at%208.36.44%20PM.png](./images/media/image22.png){width="6.428775153105862in"
+![../../Screen%20Shot%202017-08-20%20at%208.36.44%20PM.png](./images/image22.png){width="6.428775153105862in"
 height="4.583053368328959in"}
 
 [[]{#_Toc493451693 .anchor}]{#_Toc491424800 .anchor}
@@ -743,7 +743,7 @@ the current IoT policy, you’ll notice that it still allows a Publish on
 any topic except for “publish/any/topic/yourname\_device1” by using “\*”
 in the resource name.
 
-![../../Screen%20Shot%202017-08-20%20at%208.48.33%20PM.png](./images/media/image23.png){width="6.303775153105862in"
+![../../Screen%20Shot%202017-08-20%20at%208.48.33%20PM.png](./images/image23.png){width="6.303775153105862in"
 height="2.4520931758530184in"}
 
 In this next section, you will create a more specific policy to “Allow”
@@ -940,7 +940,7 @@ receive any messages.
     this sample message to AWS IoT. You can see what the window looks
     like in the image below. Select **Done** to close the panel.
 
-> ![../../Screen%20Shot%202017-08-20%20at%209.23.37%20PM.png](./images/media/image24.png){width="5.74627624671916in"
+> ![../../Screen%20Shot%202017-08-20%20at%209.23.37%20PM.png](./images/image24.png){width="5.74627624671916in"
 > height="2.913669072615923in"}
 
 1.  Select **Deploy** to update your new version. If all works
@@ -1096,7 +1096,7 @@ receive any messages.
     policy is updated in AWS IoT. Then select the “clear button” to
     clear your logs.
 
-> ![../../Screen%20Shot%202017-08-20%20at%2010.09.02%20PM.png](./images/media/image25.png){width="5.376388888888889in"
+> ![../../Screen%20Shot%202017-08-20%20at%2010.09.02%20PM.png](./images/image25.png){width="5.376388888888889in"
 > height="2.525in"}
 
 1.  You can continue to clear your logs until the changes take effect.

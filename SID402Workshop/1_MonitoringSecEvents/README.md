@@ -135,9 +135,9 @@ When you are finished with these steps in the console, the CloudTrail trail will
 
 32. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.
 
-    <center>![](https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl139-automating-sec-events-aws/data/CreateAlarm.png)</center>
+    <center>![](./images/CreateAlarm.png)</center>
 
-    <center>![](https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl139-automating-sec-events-aws/data/SettingValues.png)</center>
+    <center>![](./images/SettingValues.png)</center>
 
 33. [37] When you are done, click **Create Alarm**.
 
@@ -275,7 +275,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 4. Click on **Add another rule** button and enter the following values in the bottom row and click **Save**.
 
-    <center>![](https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl139-automating-sec-events-aws/data/NACL_Addition.png)</center>
+    <center>![](./images/NACL_Addition.png)</center>
 
 82. [84] You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
 
@@ -341,7 +341,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 105. [107] Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
-    <center>![](https://s3-us-west-2.amazonaws.com/us-west-2-aws-training/awsu-spl/spl139-automating-sec-events-aws/data/Account_Number.png)</center>
+    <center>![](./images/Account_Number.png)</center>
 
 106. [108] Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
 
