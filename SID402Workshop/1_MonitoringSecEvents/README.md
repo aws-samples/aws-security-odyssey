@@ -58,7 +58,7 @@ For more information about regions, see <http://docs.aws.amazon.com/general/late
 <details>
 <summary><strong>
 CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (Expand for details)
-</summary><p>
+</strong></summary><p>
 
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**<p/>
 
