@@ -260,7 +260,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 ### Test Security Group Configuration changes
 
-1. [60] In the AWS Management Console, on the **Services** menu, click **EC2**.
+1. In the AWS Management Console, on the **Services** menu, click **EC2**.
 
 2. Click on **Security Groups** under **NETWORK & SECURITY** section from the left pane.
 
@@ -373,8 +373,9 @@ https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 5. Click **Sign in**. Repeat these steps for at least three times.
 
 6. You will receive a sign in failure with the message:
-
-**Your authentication information is incorrect. Please try again**
+````
+Your authentication information is incorrect. Please try again
+````
 
 7. You will receive an Alarm **CloudTrailConsoleSignInFailures** via email.
 
