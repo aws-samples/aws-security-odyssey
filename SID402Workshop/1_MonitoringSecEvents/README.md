@@ -87,25 +87,25 @@ In this section, you will perform configuration in the console for CloudTrail lo
 </strong></summary><p>
 <br/>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
+1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
-2. Click on **Trails** from the pane in left and click **Create trail** button.<p/>
+2. Click on **Trails** from the pane in left and click **Create trail** button.
 
-3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".<p/>
+3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".
 
-4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.<p/>
+4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
 
-5. For **Read/Write events**, choose **All**.<p/>
+5. For **Read/Write events**, choose **All**.
 
-6. For **Data Events**, do not select any buckets.<p/>
+6. For **Data Events**, do not select any buckets.
 
-7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.<p/>
+7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
 
-8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.<p/>
+8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
 
-9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.<p/>
+9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
 
-Next, enable a role that CloudTrail can assume and deliver events to the log streams.<p/>
+Next, enable a role that CloudTrail can assume and deliver events to the log streams.
 </details>
 
 <details>
@@ -331,7 +331,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 <summary><strong>OPTIONAL TEST SCENARIOS (expand for details)
 </strong></summary><p>
 <p/>
-<b>The following test events are optional and should only be completed after you have completed all modules in this workshop.</b><p/>
+The following test events are optional and should only be completed after you have completed all modules in this workshop.<p/>
 
 ### Test Network Access Control List (NACL) Changes
 
