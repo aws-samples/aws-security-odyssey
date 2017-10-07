@@ -261,7 +261,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-
 ### Test Security Group Configuration changes
 
 1. In the AWS Management Console, on the **Services** menu, click **EC2**.
@@ -329,7 +328,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
-<summary><strong>OPTIONAL TESTS (expand for details)
+<summary><strong>OPTIONAL TEST SCENARIOS (expand for details)
 </strong></summary><p>
 <p/>
 <b>The following test events are optional and should only be completed after you have completed all modules in this workshop.</b><p/>
