@@ -84,13 +84,13 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.<p/>
 2. Click on **Trails** from the pane in left and click **Create trail** button.<p/>
-3.	In the **Trail name** box, type a name for your trail such as "myCloudTrail".<p/>
-4.	For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.<p/>
+3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".<p/>
+4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.<p/>
 5. For **Read/Write events**, choose **All**.<p/>
 6. For **Data Events**, do not select any buckets.<p/>
 7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.<p/>
-8.	In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.<p/>
-9.	Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.<p/>
+8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.<p/>
+9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.<p/>
 
 Next, enable a role that CloudTrail can assume and deliver events to the log streams.
 </details>
@@ -234,7 +234,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
 ### Test Amazon S3 bucket Activity
-51. [53] In the AWS Management Console, under **Storage**, select **S3**.
+51. In the AWS Management Console, under **Storage**, select **S3**.
 
 52. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
 
@@ -260,7 +260,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 5. Click **Add Rule**. A new row is created.
 
-6. Select **Type** of rule from the list, specify a port range (for example 8080 or 49152-50000) and a CIDR range for new inbound rule. Keep **Anywhere** if you are not sure.
+6. Select **Type** of rule from the list, specify a port range (for example 8080 or 49152-50000) and a CIDR range for new inbound rule. Set Source to 0.0.0.0/0 if you are not sure.
 
 7. Click **save**
 
@@ -272,7 +272,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 67. [69] In the AWS Management Console, on the **Services** menu, click **EC2**.
 
-2. Select the only running instance by clicking on **Instances** In the navigation pane and click on **Actions** button at the top
+2. Select SecurityTest EC2 instance by clicking on **Instances** In the navigation pane and click on **Actions** button at the top
 
 3. Click on **Instance State** and then **Stop**. A Pop-up window for confirmation appears, click **Yes, Stop**.
 
@@ -280,25 +280,9 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 7. You can also view the status of Alarm via AWS CloudWatch console.
 
-
-
-### Test CloudTrail Changes
-
-72. [74] In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
-
-2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
-
-3. Click on the pencil next to **Trail settings** to edit the behavior
-
-4. Select radio button **No** and click **save**
-
-5. You will receive an Alarm **CloudTrailChanges** via email.
-
-6. You can also view the status of Alarm via AWS CloudWatch console.
-
 ### Test Network Access Control List (NACL) Changes
 
-78. [80] In the AWS Management Console, on the **Services** menu, click **VPC**.
+78. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Network ACLs** from the list of Amazon VPC resources. A list of Network ACLs appears.
 
@@ -308,7 +292,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
     ![](./images/NACL_Addition.png)
 
-82. [84] You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
+82. You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
@@ -398,7 +382,19 @@ https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 
 4. You can also view the status of Alarm via AWS CloudWatch console.
 
+### Test CloudTrail Changes
 
+72. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+
+2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
+
+3. Click on the pencil next to **Trail settings** to edit the behavior
+
+4. Select radio button **No** and click **save**
+
+5. You will receive an Alarm **CloudTrailChanges** via email.
+
+6. You can also view the status of Alarm via AWS CloudWatch console.
 
 ## Conclusion
 
