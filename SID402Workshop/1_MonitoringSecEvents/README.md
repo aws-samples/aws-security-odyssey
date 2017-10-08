@@ -1,4 +1,4 @@
-# SID402 - Module 2 - Automating Security Events in AWS
+# SID402 - Module 1 - Monitoring Security Events in AWS
 
 ## Module Overview
 
