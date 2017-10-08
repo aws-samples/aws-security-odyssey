@@ -1,6 +1,6 @@
 # Example Security Odyssey [Replace with your title]
 
-This directory should be used as a basic template for building new workshops.
+This directory should be used as a basic template for building new content.
 
 The primary README.md file in the main workshop directory should contain a brief overview of the topics being covered and set expectations for the student about what they should expect to learn. It should also instruct students to complete the Pre Lab before starting the workshop to ensure they have the appropriate background knowledge and to verify that their environment and AWS account is configured correctly in order for them to successfully complete the modules.
 

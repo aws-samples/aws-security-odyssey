@@ -1,26 +1,34 @@
-# Example Security Odyssey [Replace with your title]
+# SID402 - Workshop - Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communications Platforms
 
-This directory should be used as a basic template for building new workshops.
+## Workshop Scenario
 
-The primary README.md file in the main workshop directory should contain a brief overview of the topics being covered and set expectations for the student about what they should expect to learn. It should also instruct students to complete the Pre Lab before starting the workshop to ensure they have the appropriate background knowledge and to verify that their environment and AWS account is configured correctly in order for them to successfully complete the modules.
+_Welcome to the IthaCorp (Name TBD) Cloud Team!_
 
-Keep the workshop summary relatively short. One or two paragraphs is fine. Detailed discussion of architectural topics should be done in each module or potentially in a standalone page linked to from the primary landing page.
+IthaCorp Enterprises is a multinational conglomerate with businesses in multiple industries including manufacturing, hospitality, IoT and consumer electronics. As with many large organization, IthaCorp provides an array of both back office and public facing applications and services. To support these services, a significant AWS footprint has been established consisting of multiple workloads leveraging services including Amazon VPC, Amazon EC2 and Amazon S3. As this footprint has grown organically, the IthaCorp Cloud Engineering Team has identified the need to enhance security controls across their AWS environments.
 
-The main README.md file of your workshop should serve as an appropriate landing page for complete newcomers to the Security Odyssey repo. Expect that there will be links directly to this page and that a self-serve student should be able to easily complete your workshop based on the information and links provided.
+You have have joined the Cloud Engineering Team to lead the AWS security enhancement project. You decide to use the [Cloud Adoption Framework (CAF) - Security Perspective](https://d0.awsstatic.com/whitepapers/AWS_CAF_Security_Perspective.pdf) as a framework for the project. This entails implementing security controls across the following areas:
+
+- **Directive controls** establish the governance, risk, and compliance models the environment will operate within.
+- **Preventive controls** protect your workloads and mitigate threats and vulnerabilities.
+- **Detective controls** provide full visibility and transparency over the operation of your deployments in AWS.
+- **Responsive controls** drive remediation of potential deviations from your security baselines.
+
+To help deliver the project, you will use [AWS VPC](https://aws.amazon.com/ec2/), [Amazon VPC](https://aws.amazon.com/vpc/), [Amazon S3](https://aws.amazon.com/s3/), [AWS CloudTrail](https://aws.amazon.com/cloudtrail/), [AWS CloudWatch](https://aws.amazon.com/cloudwatch/), [Amazon Lambda](https://aws.amazon.com/lambda/), [AWS IoT](https://aws.amazon.com/iot/).
 
 ## Prerequisites
 
-Provide a list of prerequisites that are required to successfully complete your workshop. This should include setting up an AWS account (note if you support multiple students sharing a single account), installing and configuring the CLI, and setting up any other tools students may need. Additionally, if there are specific skills or technologies students need to have existing knowledge of, you should list those here.
+### AWS Account
 
-Add a subsection for each prerequisite.
+In order to complete this workshop you'll need an AWS Account with access to create Amazon EC2, Amazon VPC, AWS Identity and Access Management (IAM), Amazon Simple Storage Service (S3), Amazon DynamoDB, AWS Lambda, and AWS IoT resources.
+
+The code and instructions in this workshop assume only one student is using a given AWS account at a time. If you try sharing an account with another student, you'll run into naming conflicts for certain resources. You can work around this by either using a suffix in your resource names or using distinct Regions, but the instructions do not provide details on the changes required to make this work.
+
+### Region
+
+Choose an AWS Region to execute the workshops which support the complete set of services covered in the material including AWS Lambda, Amazon Kinesis Streams, Amazon Kinesis Firehose, Amazon Kinesis Analytics, and Amazon Athena. Use the [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) to determine which services are available in a Region. Regions that support these services include **US East (N. Virginia)** and **US West (Oregon)**.
 
 ## Modules
 
-A workshop consists of multiple modules. Each module should cover a single, cohesive topic and take between 30 and 60 minutes for all students to complete. Consider the least experienced students who are likely to take this workshop when scoping your modules.
-
-You should strongly consider providing CloudFormation templates that students can use to launch any required resources from previous modules to enable students to jump ahead to later modules without having to complete the preceeding modules manually.
-
-Provide a numbered list with links to each module
-
-1. [Example Module 1](1_ExampleTemplate)
-2. [Example Module 2](2_Example2)
+1. [Monitoring Security Events in AWS](1_MonitoringSecEvents)
+2. [Implementing Security with AWS IoT](2_ImplementSecWithIoT)
+3. [Automating Security Remediation in AWS](3_AutoSecRemediation)

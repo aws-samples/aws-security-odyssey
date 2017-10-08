@@ -1,10 +1,10 @@
 # SID402 - Module 1 - Monitoring Security Events in AWS
 
-## Module Overview
-
 ### Overview
 
-In this module, you will learn how to set up automatic notifications for a number of security related events in AWS. The module walks you through how to use the AWS Management Console and AWS CloudFormation to create Amazon CloudWatch alarms that is triggered when an AWS API call is made that may be of interest for security professionals.
+As you work through the IthaCorp Security Enhancement Project, you implement a series of detective controls to improve visibility into various AWS activities.
+
+In this module, your task is to set up automatic notifications for a number of security related events in AWS. The module walks you through how to use the AWS Management Console and AWS CloudFormation to create Amazon CloudWatch alarms that is triggered when an AWS API call is made that may be of interest for security professionals.
 
 The module walks you through the process of creating alerts for one such event using AWS Console. Steps for the rest of the events have been automated in a CloudFormation template, which is provided to you.
 The module makes use of a number of AWS services namely AWS Identity and Access Management (IAM), AWS CloudTrail, AWS CloudWatch Alarms,  AWS CloudFormation and others.
