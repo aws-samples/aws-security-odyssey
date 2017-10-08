@@ -29,21 +29,6 @@ This lab is targeted for IT security focused individuals who are interested in l
 
 To successfully complete this lab, you should be familiar with AWS services including Amazon EC2, S3, VPC etc. and have a basic understanding of security groups, Network Access Control List (NACL), IAM Policies etc. You should be comfortable logging into and using the AWS Management Console and have familiarity with AWS Identity and Access Management (IAM).
 
-## What Is AWS CloudTrail?
-
-AWS CloudTrail is a web service that records API calls made on your account and delivers log files to your Amazon S3 bucket. CloudTrail provides visibility into user activity by recording API calls made on your account. CloudTrail records important information about each API call, including the name of the API, the identity of the caller, the time of the API call, the request parameters, and the response elements returned by the AWS service. This information helps you to track changes made to your AWS resources and to troubleshoot operational issues. CloudTrail makes it easier to ensure compliance with internal policies and regulatory standards.
-
-## What Is Amazon CloudWatch Logs?
-
-You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon Elastic Compute Cloud (Amazon EC2) instances, AWS CloudTrail, and other sources. You can then retrieve the associated log data from CloudWatch Logs. You can use Amazon CloudWatch to monitor and troubleshoot your systems and applications using your existing system, application, and custom log files.
-CloudWatch Logs can be used to monitor your logs for specific phrases, values, or patterns. For example, you could set an alarm on the number of errors that occur in your system logs or view graphs of web request latencies from your application logs. You can view the original log data to see the source of the problem if needed.
-
-## What Is Amazon CloudFormation?
-
-AWS CloudFormation gives developers and system administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
-You can use the AWS CloudFormation sample templates or create your own templates to describe the AWS resources, and any associated dependencies or runtime parameters, required to run your application. You don't need to figure out the order for provisioning AWS services or the subtleties of making those dependencies work. AWS CloudFormation takes care of this for you.
-You can deploy and update a template and its associated collection of resources (called a stack) by using the AWS Management Console, AWS Command Line Interface, or APIs. AWS CloudFormation is available at no additional charge, and you pay only for the AWS resources needed to run your applications.
-
 ### Select a Region
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
@@ -55,6 +40,8 @@ For more information about regions, see: [AWS Regions and Endpoints](http://docs
 **Note** If needed, create a new key pair: [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
 
 ##### Launch the CloudFormation Stack in the preferred region:
+
+___Hold the "Control" key while clicking and open the launch link in a new tab___
 
 Region| Launch
 ------|-----
@@ -74,7 +61,7 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 4. On the Options page, you can create tags or configure other advanced options. These are not required for this lab.
 5. Click **Next**.
 6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
-7. Click Create. The stack will be created in a few minutes.
+7. Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
 8. If not already selected, select your stack by clicking on the check box to the left of your stack.
 9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
 
@@ -119,7 +106,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 
 2.	Click on **Roles** from the pane in left.
 
-3. Click on the role name that begins with name of your CloudFormation stack and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
+3. Click on the role name that begins with name of your CloudFormation stack (SID402-AutomatingSecurityEvents) and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
 
 4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**. Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
 </details>
@@ -141,7 +128,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 4.	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. 
 
-5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document** The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.
+5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document**. The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.
 
 6.	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.
 </details>
@@ -188,17 +175,21 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
   Name: **S3 Bucket Activity**
   Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).
 
-3. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.
+3. For the **Period** value, select **1 Minute**.
+
+<We may want to add a note treat missing data as good>
+
+4. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.
 
     ![](./images/CreateAlarm.png)
 
     ![](./images/SettingValues.png)
 
-4. When you are done, click **Create Alarm**.
+5. When you are done, click **Create Alarm**.
 
-5. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
+6. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
 
-6. Click on **View Alarm**.
+7. Click on **View Alarm**.
 </details>
 
 ## CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
@@ -206,6 +197,8 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 In the previous steps you have learnt how to create a metric filter in CloudWatch and how to create an alarm for the metric via the AWS console. Creation of metric filters and corresponding alarms for the remaining security events described in the overview section has been automated for you using AWS CloudFormation template. Follow the steps below:
 
 ##### Launch the CloudFormation Stack in the previously selected region:
+
+___Hold the "Control" key while clicking and open the launch link in a new tab___
 
 Region| Launch
 ------|-----
@@ -223,7 +216,7 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 1. On the Select Template screen, click **Next**.
 
-2. On the **Specify Details** page, Type a name for the stack such as **AlarmStack**, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
+2. On the **Specify Details** page, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
 
 3. Click **Next**.
 
@@ -252,7 +245,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 2. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
 
-3. Under **Public access**, click the radio button **Everyone** and in the pop up box, select few permissions like **List Objects** or **Read bucket permission**
+3. Under **Public access**, click the radio button **Everyone** and in the pop up box, select few permissions like **List Objects** or **Read bucket permission**. Do **not** allow **Write** permissions for **Everyone**.
 
 4. Click **Save**
 
@@ -267,7 +260,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 2. Click on **Security Groups** under **NETWORK & SECURITY** section from the left pane.
 
-3. Select **xxxxInstanceSecurityGroupxxx** from the list and click on **Inbound** tab on the bottom pane.
+3. Select **SID402-AutomatingSecurityEvents-InstanceSecurityGroup** from the list and click on **Inbound** tab on the bottom pane.
 
 4. click **Edit**.
 
@@ -319,9 +312,9 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
 
-3. Click on the pencil next to **Trail settings** to edit the behavior
+3. Click on the pencil next to **Trail settings** to edit the behavior.
 
-4. Select radio button **No** and click **save**
+4. For **Apply trail to all regions**, select radio button **No** and click **save**.
 
 5. You will receive an Alarm **CloudTrailChanges** via email.
 
@@ -433,9 +426,10 @@ You have also learned how to automate the steps via AWS CloudFormation. You now 
 - Authorization Failures
 - IAM Policy Changes
 
-## End Your Lab
+## Continue on to [Module 2](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/2_ImplementSecWithIoT)
 
-### CLEAN UP (Complete clean up at the end of the Workshop)
+### CLEAN UP
+___Complete clean up at the end of the Workshop___
 1. In the AWS Management Console, on the Services menu, click CloudFormation
 2. select SID402-AutomatingSecurityEvents
 3. click on Actions, select Delete Stack
