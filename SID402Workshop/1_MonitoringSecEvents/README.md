@@ -1,17 +1,17 @@
 # SID402 - Automating Security Events in AWS
 
-## Lab Overview
+## Module Overview
 
 ### Overview
 
-In this lab, you will learn how to set up automatic notifications for a number of security related events in AWS. The lab walks you through how to use the AWS Management Console and AWS CloudFormation to create Amazon CloudWatch alarms that is triggered when an AWS API call is made that may be of interest for security professionals.
+In this module, you will learn how to set up automatic notifications for a number of security related events in AWS. The module walks you through how to use the AWS Management Console and AWS CloudFormation to create Amazon CloudWatch alarms that is triggered when an AWS API call is made that may be of interest for security professionals.
 
-The lab walks you through the process of creating alerts for one such event using AWS Console. Steps for the rest of the events have been automated in a CloudFormation template, which is provided to you.
-The lab makes use of a number of AWS services namely AWS Identity and Access Management (IAM), AWS CloudTrail, AWS CloudWatch Alarms,  AWS CloudFormation and others.
+The module walks you through the process of creating alerts for one such event using AWS Console. Steps for the rest of the events have been automated in a CloudFormation template, which is provided to you.
+The module makes use of a number of AWS services namely AWS Identity and Access Management (IAM), AWS CloudTrail, AWS CloudWatch Alarms,  AWS CloudFormation and others.
 
 ### Topics Covered
 
-After completing this lab, you should be able to automate notifications for any of the below use cases:
+After completing this module, you should be able to automate notifications for any of the below use cases:
 - Amazon S3 Bucket Activity
 - Security Group Configuration Changes
 - Network Access Control List (ACL) Changes
@@ -25,9 +25,9 @@ After completing this lab, you should be able to automate notifications for any 
 
 ### Prerequisites
 
-This lab is targeted for IT security focused individuals who are interested in learning about automating security related events on AWS. You will need an AWS account with administrators access.
+This module is targeted for IT security focused individuals who are interested in learning about automating security related events on AWS. You will need an AWS account with administrators access.
 
-To successfully complete this lab, you should be familiar with AWS services including Amazon EC2, S3, VPC etc. and have a basic understanding of security groups, Network Access Control List (NACL), IAM Policies etc. You should be comfortable logging into and using the AWS Management Console and have familiarity with AWS Identity and Access Management (IAM).
+To successfully complete this module, you should be familiar with AWS services including Amazon EC2, S3, VPC etc. and have a basic understanding of security groups, Network Access Control List (NACL), IAM Policies etc. You should be comfortable logging into and using the AWS Management Console and have familiarity with AWS Identity and Access Management (IAM).
 
 ### Select a Region
 
@@ -58,7 +58,7 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 1. On the Select Template screen, click **Next**.
 2. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
 3. Click Next.
-4. On the Options page, you can create tags or configure other advanced options. These are not required for this lab.
+4. On the Options page, you can create tags or configure other advanced options. These are not required for this module.
 5. Click **Next**.
 6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
 7. Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
@@ -150,7 +150,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 <code>{ ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }</code><p/>
 
-**Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this lab. Steps are provided for testing one such events but you may want to test additional filters.
+**Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this module. Steps are provided for testing one such events but you may want to test additional filters.
 
 6. Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**
 
@@ -220,7 +220,7 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 3. Click **Next**.
 
-4. On the **Options** page, you can create tags or configure other advanced options. These are not required for this lab.
+4. On the **Options** page, you can create tags or configure other advanced options. These are not required for this module.
 
 5. Click **Next**.
 
@@ -236,8 +236,8 @@ When AWS CloudFormation is finished creating the stack, the status will show CRE
 
 ### And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
-We'll create a number of security events in this section of the lab. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The lab covers a number of different events. We are providing a CloudFormation script that creates some resources like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
-Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the lab.
+We'll create a number of security events in this section of the module. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The module covers a number of different events. We are providing a CloudFormation script that creates some resources like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
+Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the module.
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
 ### Test Amazon S3 bucket Activity
@@ -250,7 +250,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 4. Click **Save**
 
 5. You will receive an Alarm **S3 bucket Activity** via email.
-**Note:** - If you have not received email notification, navigate to AWS Console, Services, CloudWatch and click on **Alarms**. If this shows **Config Status** as **Pending confirmation**  then that means you have not yet confirmed SNS subscription yet. Refer to your email and subscribe to noficiations from this lab.
+**Note:** - If you have not received email notification, navigate to AWS Console, Services, CloudWatch and click on **Alarms**. If this shows **Config Status** as **Pending confirmation**  then that means you have not yet confirmed SNS subscription yet. Refer to your email and subscribe to notifications from this module.
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
@@ -310,7 +310,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
 
-2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this lab.
+2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
 
 3. Click on the pencil next to **Trail settings** to edit the behavior.
 
@@ -440,7 +440,7 @@ ___Complete clean up at the end of the Workshop___
 8. click on Actions, select Delete
 9. click on Yes, Delete
 10. In the AWS Management Console, on the Services menu, click CloudTrail
-11. Open the trail that you created in this lab
+11. Open the trail that you created in this module
 12. In top right, next to Logging, click on "On/Off" switch
 13. Click Continue in the popup window
 14. Click on the "trashcan" icon to delete the trail
