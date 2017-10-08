@@ -2,9 +2,9 @@
 
 ## Workshop Scenario
 
-_Welcome to the IthaCorp (Name TBD) Cloud Team!_
+___Welcome to the IthaCorp (Name TBD) Cloud Team!___
 
-IthaCorp Enterprises is a multinational conglomerate with businesses in multiple industries including manufacturing, hospitality, IoT and consumer electronics. As with many large organization, IthaCorp provides an array of both back office and public facing applications and services. To support these services, a significant AWS footprint has been established consisting of multiple workloads leveraging services including Amazon VPC, Amazon EC2 and Amazon S3. As this footprint has grown organically, the IthaCorp Cloud Engineering Team has identified the need to enhance security controls across their AWS environments.
+IthaCorp Enterprises is a multinational conglomerate with businesses in multiple industries including manufacturing, hospitality, IoT and consumer electronics. IthaCorp provides an array of back office and public facing services to internal and external customers. To support these services, a significant AWS footprint has been established consisting of multiple workloads leveraging resources including Amazon VPC, Amazon EC2 and Amazon S3. As this footprint has grown organically, the IthaCorp Cloud Engineering Team has identified the need to enhance security controls across their AWS environments.
 
 You have have joined the Cloud Engineering Team to lead the AWS security enhancement project. You decide to use the [Cloud Adoption Framework (CAF) - Security Perspective](https://d0.awsstatic.com/whitepapers/AWS_CAF_Security_Perspective.pdf) as a framework for the project. This entails implementing security controls across the following areas:
 
