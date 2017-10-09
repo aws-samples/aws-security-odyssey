@@ -4,8 +4,9 @@
 
 ### Overview
 
-#### Monitoring Security Groups with AWS Config
 The Security Enhancement Project at IthaCorp is continuing to progress and you decide its time to implement responsive controls in order to automate remediation of security baseline deviations. This will help reduce overhead on the engineering team and allow them to focus on you several strategic initiatives.
+
+#### Monitoring Security Groups with AWS Config
 
 In this module you will learn how to use AWS Config Rules with an AWS Lambda function to monitor the ingress ports associated with an EC2 security group. The Lambda function will be triggered whenever the
 security group is modified. If the ingress rule configuration differs from that which is coded in the function, the Lambda function will revert the ingress rules back to the appropriate configuration. The
