@@ -1,6 +1,8 @@
-## ![AWS Security Odyssey](https://s3-us-west-2.amazonaws.com/sid402-artifacts/images/odysseysm.png)
+![AWS Security Odyssey](https://s3-us-west-2.amazonaws.com/sid402-artifacts/images/odysseysm.png)
 
 **Odyssey:** _A long and eventful or adventurous journey or experience._
+
+<br>
 
 This repository contains a collection of interactive content designed to demonstrate various security capabilities and controls on the AWS platform. Each Odyssey is composed of a series of modules that provide a security focused hands-on experience with AWS services including Amazon EC2, Amazon VPC, Amazon S3, AWS Lambda, Amazon VPC, AWS CloudWatch and AWS CloudTrail.
 
@@ -10,3 +12,7 @@ This repository contains a collection of interactive content designed to demonst
 
 # Bootcamps
 -
+
+<br>
+## License
+[https://aws.amazon.com/asl/](https://aws.amazon.com/asl/)
