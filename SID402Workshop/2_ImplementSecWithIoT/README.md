@@ -76,11 +76,11 @@ Our labs will use AWS CloudFormation to provision a web-based environment with N
 
 2. Click the link below corresponding to the region in which you wish to deploy the lab environment.
 
-    [N. Virginia (us-east-1)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_Connect_VPC.yaml)
+    [N. Virginia (us-east-1)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 
-    [Ohio (us-east-2)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_Connect_VPC.yaml)
+    [Ohio (us-east-2)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 
-    [Oregon (us-west-2)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_Connect_VPC.yaml)
+    [Oregon (us-west-2)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 
 3. A new browser tab or page will appear with the CloudFormation template selected. Click on **Next** to start populating the fields listed below.
 
