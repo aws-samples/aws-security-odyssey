@@ -38,10 +38,10 @@ For more information about regions, see <http://docs.aws.amazon.com/general/late
 
 ___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with (expand for details).___
 
-### 2. Configure an IAM User and Role
+### 2. Complete Initial Environment Configuration
 
 <details>
-<summary><strong>1. Create an IAM User and Role with the Console (expand for details)
+<summary><strong>1. Create an IAM User and Role (expand for details)
 </strong></summary><p>
 <br/>
 <probably need more instruction here>
@@ -135,10 +135,8 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 2.  Login to the AWS console using the new user and confirm the preferred region.
 </details>
 
-### 3. Complete Initial Environment Configuration
-
 <details>
-<summary><strong>1. Enable AWS Config (expand for details)
+<summary><strong>2. Enable AWS Config (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -169,7 +167,7 @@ Notice that many resources appear in addition to **EC2 Security Group** even tho
 </details>
 
 <details>
-<summary><strong>2. Modify the EC2 Security Group (expand for details)
+<summary><strong>3. Modify the EC2 Security Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -196,7 +194,7 @@ You have now set up the ingress configuration of the default security
 </details>
 
 <details>
-<summary><strong>3. Create and Run the AWS Config Rule (expand for details)
+<summary><strong>4. Create and Run the AWS Config Rule (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -312,8 +310,10 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 ![](./images/image8.png)
 </details>
 
+### 3. Verify Expected Behavior 
+
 <details>
-<summary><strong>5. Revisiting the VPC Security Group (expand for details)
+<summary><strong>1. Revisiting the VPC Security Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -330,7 +330,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 </details>
 
 <details>
-<summary><strong>6. Using Amazon CloudWatch Logs for Verification (expand for details)
+<summary><strong>2. Using Amazon CloudWatch Logs for Verification (expand for details)
 </strong></summary><p>
 <br/>
 
