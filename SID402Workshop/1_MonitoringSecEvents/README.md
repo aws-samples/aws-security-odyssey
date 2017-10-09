@@ -67,14 +67,14 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 8. If not already selected, select your stack by clicking on the check box to the left of your stack.
 9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
 
-### 2. COMPLETE INITIAL ENVIRONMENT CONFIGURATION
+### 2. Complete Initial Environment Configuration
 
 In this section, you will perform configuration in the console for CloudTrail logging, CloudWatch Logs and a CloudWatch Alarm.
 
 ___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
 <details>
-<summary><strong>Create a CloudTrail with the Console (expand for details)
+<summary><strong>1. Create a CloudTrail with the Console (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -100,7 +100,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 </details>
 
 <details>
-<summary><strong>3. Enable a Role (expand for details)
+<summary><strong>2. Enable a Role (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -116,7 +116,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 </details>
 
 <details>
-<summary><strong>4. Create a Log Group (expand for details)
+<summary><strong>3. Create a Log Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -138,7 +138,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 </details>
 
 <details>
-<summary><strong>5. Create a Metric Filter (expand for details)
+<summary><strong>4. Create a Metric Filter (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -168,7 +168,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 </details>
 
 <details>
-<summary><strong>6. Create an Alarm (expand for details)
+<summary><strong>5. Create an Alarm (expand for details)
 </strong></summary><p>
 <br/>
 <b>These steps are a continuation of the previous steps for creating a metric filter.</b>
@@ -196,7 +196,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 7. Click on **View Alarm**.
 </details>
 
-### 7. CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
+### 3. CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
 
 In the previous steps you have learnt how to create a metric filter in CloudWatch and how to create an alarm for the metric via the AWS console. Creation of metric filters and corresponding alarms for the remaining security events described in the overview section has been automated for you using AWS CloudFormation template. Follow the steps below:
 
@@ -238,13 +238,13 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 When AWS CloudFormation is finished creating the stack, the status will show CREATE_COMPLETE. This CloudFormation stack has created a number of security metric filters and related alarms for you. We'll test these events in the subsequent steps.</p>
 
-### 8. And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
+### 4. And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
 We'll create a number of security events in this section of the module. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The module covers a number of different events. We are providing a CloudFormation script that creates some resources like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
 Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the module.
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
-### 9. Test Amazon S3 bucket Activity
+#### 1. Test Amazon S3 bucket Activity
 1. In the AWS Management Console, under **Storage**, select **S3**.
 
 2. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
@@ -258,7 +258,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-### 10. Test Security Group Configuration changes
+#### 2. Test Security Group Configuration changes
 
 1. In the AWS Management Console, on the **Services** menu, click **EC2**.
 
@@ -278,7 +278,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 9. You can also view the status of Alarm via AWS CloudWatch console.
 
-### 11. Test EC2 Instance Changes
+#### 3. Test EC2 Instance Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **EC2**.
 
@@ -290,7 +290,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 5. You can also view the status of Alarm via AWS CloudWatch console.
 
-### 12. Test IAM Policy Changes
+#### 4. Test IAM Policy Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **IAM**.
 
@@ -310,7 +310,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 9. You can also view the status of Alarm via AWS CloudWatch console.
 
-### 13. Test CloudTrail Changes
+#### 5. Test CloudTrail Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
 
@@ -325,7 +325,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
-<summary><strong>14. Optional Test Scenarios (expand for details)
+<summary><strong>5. Optional Test Scenarios (expand for details)
 </strong></summary><p>
 <br/>
 The following test events are optional and should only be completed after you have completed all modules in this workshop.
