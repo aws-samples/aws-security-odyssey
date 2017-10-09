@@ -325,7 +325,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
-<summary><strong>5. Optional Test Scenarios (expand for details)
+<summary><strong>Optional Test Scenarios (expand for details)
 </strong></summary><p>
 <br/>
 The following test events are optional and should only be completed after you have completed all modules in this workshop.
