@@ -296,7 +296,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 26.  For **Scope of changes** select the radio box for **Resources**. Click in the **Resources** text box scroll box will appear.
 
-27.  Pick **EC2 | SecurityGroup**. Leave **Resource identifier** empty since we only have one security group in this module.
+27.  Pick **EC2: SecurityGroup**. Leave **Resource identifier** empty since we only have one security group in this module.
 
 28.  In **Rule parameters**, in the **Key** field enter **debug** and in the **Value** field enter **true** to generate additional data you can look at later if you choose.
 
@@ -365,6 +365,18 @@ Congratulations! You have now successfully:
     Logs.
 
 ### Clean Up
+
+___Complete clean up at the end of the Workshop___
+
+To clean up the environment, follow the remaining steps.
+
+1.  Delete the IAM user.
+
+2.  Delete the AWS Config Rule "EC2SecurityGroup".
+
+3. If AWS Config was not enabled, turn off AWS Config in Config Settings.
+
+3. Delete the Lambda function "awsconfig_lambda_security_group".
 
 ### Additional Resources
 
