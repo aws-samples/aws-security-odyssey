@@ -146,13 +146,13 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 # Configure Node-RED
 
-18. By this point, the CloudFormation stack with the Node-RED Amazon EC2 instance should be complete Go to the AWS CloudFormation console, select the stack and look at the output tab. You should see the following values:
+18. By this point, the CloudFormation stack with the Node-RED Amazon EC2 instance should be complete Go to the AWS CloudFormation console, select the stack and look at the output tab. If you do not see the output tab, refresh the CloudFormation console page.  You should see the following values:
 
     **HostIPAddress**: The IP address of the EC2 instance
 
     **NodeREDURL**: The URL of the EC2 instance
 
-19. Browse to the URL and you should see Node-RED appear.
+19. Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking places.   In that case, just wait a minute or two and try again.
 
     ![](images/image5.png "image")
 
