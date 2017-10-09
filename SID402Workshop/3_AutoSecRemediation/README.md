@@ -36,7 +36,7 @@ For more information about regions, see <http://docs.aws.amazon.com/general/late
 
 ## Monitoring Security Groups with AWS Config
 
-___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with "(expand for details)".___
+___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with (expand for details).___
 
 ### Configure an IAM User and Role
 
@@ -48,88 +48,88 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 1.  Login to the AWS Console. Create a new user (e.g. test4user) for this
     module and attach an IAM inline policy [MonitoringSGwithAWSConfigStudentPolicy.json](./templates/MonitoringSGwithAWSConfigStudentPolicy.json). You can copy the following text and paste it into the IAM console.
 
-    ````
+````
+{
+    "Version": "2012-10-17",
+    "Statement": [
     {
-        "Version": "2012-10-17",
-        "Statement": [
-        {
-            "Effect":"Allow",
-            "Action":[
-                "ec2:Describe*",
-                "ec2:Authorize*",
-                "elasticloadbalancing:*",
-                "autoscaling:*",
-                "cloudwatch:*",
-                "elasticbeanstalk:*",
-                "config:*",
-                "events:*",
-                "iam:*",
-                "iam:AddRoleToInstanceProfile",
-                "iam:CreateInstanceProfile",
-                "iam:Get*",
-                "iam:PassRole",
-                "iam:CreateRole",
-                "iam:PutRolePolicy",
-                "iam:List*",
-                "iam:CreatePolicyVersion",
-                "iam:DeletePolicyVersion",
-                "iam:CreatePolicy",
-                "kms:List*",
-                "kms:Get*",
-                "s3:*",
-                "sns:*",
-                "sqs:*",
-                "tag:Get*",
-                "logs:*",
-                "lambda:*",
-                "cloudformation:*",
-                "vpc:*"
-            ],
-            "Resource":"*"
-        },
-          {
-          "Sid": "LimitedAttachmentPermissions",
-          "Effect": "Allow",
-          "Action": [
-            "iam:AttachUserPolicy",
-            "iam:DetachUserPolicy",
-            "iam:DetachRolePolicy",
-            "iam:AttachRolePolicy"
-          ],
-          "Resource": "*",
-          "Condition": {
-            "ArnEquals": {
-              "iam:PolicyArn": [
-                "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
-                ]
-            }
-          }
-        },
-          {
-          "Sid": "MoreLimitedAttachmentPermissions",
-          "Effect": "Allow",
-          "Action": [
-            "iam:AttachRolePolicy"
-          ],
-          "Resource": "*",
-          "Condition": {
-            "ArnLike": {
-              "iam:PolicyArn": [
-                "arn:aws:iam::*:policy/service-role/*AWSConfigDeliveryPermissions*"
-                ]
-            }
-          }
-        },
-        {
-            "Effect": "Deny",
-            "Action": [
-                "ec2:RunInstances"
-            ],
-            "Resource": "arn:aws:ec2:*:*:instance/*"
+        "Effect":"Allow",
+        "Action":[
+            "ec2:Describe*",
+            "ec2:Authorize*",
+            "elasticloadbalancing:*",
+            "autoscaling:*",
+            "cloudwatch:*",
+            "elasticbeanstalk:*",
+            "config:*",
+            "events:*",
+            "iam:*",
+            "iam:AddRoleToInstanceProfile",
+            "iam:CreateInstanceProfile",
+            "iam:Get*",
+            "iam:PassRole",
+            "iam:CreateRole",
+            "iam:PutRolePolicy",
+            "iam:List*",
+            "iam:CreatePolicyVersion",
+            "iam:DeletePolicyVersion",
+            "iam:CreatePolicy",
+            "kms:List*",
+            "kms:Get*",
+            "s3:*",
+            "sns:*",
+            "sqs:*",
+            "tag:Get*",
+            "logs:*",
+            "lambda:*",
+            "cloudformation:*",
+            "vpc:*"
+        ],
+        "Resource":"*"
+    },
+      {
+      "Sid": "LimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachUserPolicy",
+        "iam:DetachUserPolicy",
+        "iam:DetachRolePolicy",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
+            ]
         }
-        ]
+      }
+    },
+      {
+      "Sid": "MoreLimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::*:policy/service-role/*AWSConfigDeliveryPermissions*"
+            ]
+        }
+      }
+    },
+    {
+        "Effect": "Deny",
+        "Action": [
+            "ec2:RunInstances"
+        ],
+        "Resource": "arn:aws:ec2:*:*:instance/*"
     }
-    ````
+    ]
+}
+````
 
 
 2.  Login to the AWS console using the new user and confirm the preferred region.
