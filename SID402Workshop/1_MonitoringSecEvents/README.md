@@ -1,4 +1,6 @@
-# SID402 - Module 1 - Monitoring Security Events in AWS
+# 2017 AWS re:Invent - SID402
+
+## Module 1 - Monitoring Security Events in AWS
 
 ### Overview
 
@@ -29,7 +31,7 @@ This module is targeted for IT security focused individuals who are interested i
 
 To successfully complete this module, you should be familiar with AWS services including Amazon EC2, S3, VPC etc. and have a basic understanding of security groups, Network Access Control List (NACL), IAM Policies etc. You should be comfortable logging into and using the AWS Management Console and have familiarity with AWS Identity and Access Management (IAM).
 
-### Select a Region
+### Select a Region and Launch CloudFormation Stack
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
@@ -68,6 +70,8 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 ## COMPLETE INITIAL ENVIRONMENT CONFIGURATION
 
 In this section, you will perform configuration in the console for CloudTrail logging, CloudWatch Logs and a CloudWatch Alarm.
+
+___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with "(expand for details)".___
 
 <details>
 <summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)

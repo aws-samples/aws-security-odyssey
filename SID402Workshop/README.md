@@ -1,6 +1,8 @@
-# SID402 - Workshop - Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communications Platforms
+# 2017 AWS re:Invent - SID402 - Workshop
 
-## Workshop Scenario
+## Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communications Platforms
+
+### Workshop Scenario
 
 ___Welcome to the IthaCorp Cloud Engineering Team. Let the Odyssey begin!___
 <company name is TBD>
@@ -16,7 +18,7 @@ You have have joined the Cloud Engineering Team to lead the AWS security enhance
 
 To help deliver the project, you will use [AWS VPC](https://aws.amazon.com/ec2/), [Amazon VPC](https://aws.amazon.com/vpc/), [Amazon S3](https://aws.amazon.com/s3/), [AWS CloudTrail](https://aws.amazon.com/cloudtrail/), [AWS CloudWatch](https://aws.amazon.com/cloudwatch/), [Amazon Lambda](https://aws.amazon.com/lambda/), [AWS IoT](https://aws.amazon.com/iot/).
 
-## Prerequisites
+### Prerequisites
 
 ### AWS Account
 
