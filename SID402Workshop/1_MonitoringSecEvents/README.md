@@ -416,8 +416,7 @@ Your authentication information is incorrect. Please try again
 
 ### Conclusion
 
-Congratulations! You have successfully created a Trail in AWS CloudTrail console, create a log group in CloudWatch console that receives logs from CloudTrail, created a number of metric filters and corresponding alarms for automated notifications.
-You have also learned how to automate the steps via AWS CloudFormation. You now know hot to automate a number of Security related events in AWS such as:
+Congratulations! You have successfully created a Trail in AWS CloudTrail console, create a log group in CloudWatch console that receives logs from CloudTrail, created a number of metric filters and corresponding alarms for automated notifications. You have also learned how to automate the steps via AWS CloudFormation. You now know how to automate a number of Security related events in AWS such as:
 
 - Amazon S3 Bucket Activity
 - Security Group Configuration Changes
