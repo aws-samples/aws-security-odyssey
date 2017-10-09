@@ -4,7 +4,7 @@
 
 ### Overview
 
-The Security Enhancement Project at IthaCorp is continuing to progress and you decide its time to implement responsive controls in order to automate remediation of security baseline deviations. This will help reduce overhead on the engineering team and allow them to focus on you several strategic initiatives.
+The Security Enhancement Project at IthaCorp is continuing to progress and you decide its time to implement responsive controls in order to automate remediation of security baseline deviations. This will help reduce overhead on the engineering team and allow them to focus on several strategic initiatives.
 
 #### Monitoring Security Groups with AWS Config
 
@@ -34,7 +34,7 @@ Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
-For more information about regions, see <http://docs.aws.amazon.com/general/latest/gr/rande.html>.
+For more information about regions, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html).
 
 ___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with (expand for details).___
 
@@ -46,7 +46,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 <br/>
 <probably need more instruction here>
 1.  Login to the AWS Console. Create a new user (e.g. test4user) for this
-    module and attach an IAM inline policy [MonitoringSGwithAWSConfigStudentPolicy.json](./templates/MonitoringSGwithAWSConfigStudentPolicy.json). You can copy the following text and paste it into the IAM console.
+    module and attach an IAM inline policy [MonitoringSGwithAWSConfigStudentPolicy.json](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/3_AutoSecRemediation/templates/MonitoringSGwithAWSConfigStudentPolicy.json). You can copy the following text and paste it into the IAM console.
 
 ````
 {
@@ -217,7 +217,7 @@ You have now set up the ingress configuration of the default security
 8.  In the **Role** field select **Create a custom role** and a new page
     window will appear.
 
-9.  In the **Role Name** field enter awsconfig_lambda_ec2_security_group_role
+9.  In the **IAM Role** field, select **Create new IAM Role** and in the **Role Name** field enter awsconfig_lambda_ec2_security_group_role
 
 10. Click on **View Policy Document** to open the policy window and then click on the **Edit** link. Click **Ok** if a warning message appears about reading the documentation.
 
@@ -252,13 +252,13 @@ You have now set up the ingress configuration of the default security
 
 12.  Click the **Allow** button. The page will close and you will return to the Lambda **Basic Information** page.
 
-13.  Click Create function
+13.  Click **Create function**
 
-14.  For Code entry type select Upload a .ZIP file
+14.  For Runtime select Python 2.7
 
-15.  Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
+15.  For Code entry type select **Upload a file from Amazon S3**
 
-16.  For Runtime select Python 2.7
+16.  Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
 
 17.  In the Handler field enter awsconfig_lambda_security_group.lambda_handler
 
@@ -288,17 +288,17 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
  Go back to the **AWS Config** page that should still be open to **Add custom rule**.
 
- __Note:__ If you closed the AWS Config page accidentally, then go back to the Lambda page you were just on and click **Services** and select **Config** and do steps 31-35 again and then continue below.
+ __Note:__ If you closed the AWS Config page accidentally, then go back to the Lambda page you were just on and click **Services** and select **Config** and do steps 2.1-2.5 again and then continue below.
 
 24.  In the **AWS Lambda function ARN** field, enter the **arn:aws:lambda** value that you copied in the previous step.
 
 25.  For Trigger type select **Configuration changes**.
 
-26.  For **Scope of changes** select the radio box for **Resources**. Click in the **Resources** text box**,** scroll box will appear.
+26.  For **Scope of changes** select the radio box for **Resources**. Click in the **Resources** text box scroll box will appear.
 
-27.  Pick **SecurityGroup**. You do leave **Resource identifier** empty since we only have one security group in this module.
+27.  Pick **EC2 | SecurityGroup**. Leave **Resource identifier** empty since we only have one security group in this module.
 
-28.  In the **Key** field enter **debug** and in the **Value** field enter **true** to generate additional data you can look at later if you choose.
+28.  In **Rule parameters**, in the **Key** field enter **debug** and in the **Value** field enter **true** to generate additional data you can look at later if you choose.
 
 29.  Click **Save**. You will return to the AWS Config Rules page. Under the **Compliance** column, you will see the function has been submitted for an initial evaluation. This initial evaluation may take several minutes to complete. This same evaluation will also take place whenever the security group is changed again in the future. Click the refresh button periodically as well to update the evaluation status.
 
