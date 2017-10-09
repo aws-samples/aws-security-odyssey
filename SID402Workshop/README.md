@@ -2,7 +2,7 @@
 
 ## Workshop Scenario
 
-___Welcome to the IthaCorp Cloud Team. Let the Odyssey begin!___
+___Welcome to the IthaCorp Cloud Engineering Team. Let the Odyssey begin!___
 <company name is TBD>
 
 IthaCorp Enterprises is a multinational conglomerate with businesses in multiple industries including manufacturing, hospitality, IoT and consumer electronics. IthaCorp provides an array of back office and public facing services to internal and external customers. To support these services, a significant AWS footprint has been established consisting of multiple workloads leveraging resources including Amazon VPC, Amazon EC2 and Amazon S3. As this footprint has grown organically, the IthaCorp Cloud Engineering Team has identified the need to enhance security controls across their AWS environments.
