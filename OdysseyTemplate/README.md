@@ -1,4 +1,4 @@
-# Example Security Odyssey [Replace with your title]
+# Sample Security Odyssey [Replace with your title]
 
 This directory should be used as a basic template for building new content.
 
