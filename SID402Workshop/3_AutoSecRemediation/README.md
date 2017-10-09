@@ -302,12 +302,12 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 29.  Click **Save**. You will return to the AWS Config Rules page. Under the **Compliance** column, you will see the function has been submitted for an initial evaluation. This initial evaluation may take several minutes to complete. This same evaluation will also take place whenever the security group is changed again in the future. Click the refresh button periodically as well to update the evaluation status.
 
-    ![](./images/image7.png)
+![](./images/image7.png)
 
 30.  Once the compliance evaluation has taken place, you should see the
     following:
 
-    ![](./images/image8.png)
+![](./images/image8.png)
 </details>
 
 <details>
@@ -340,7 +340,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 4.  Under **Log Streams**, beginning with the top link, click each link until you see an entry that contains the words **revoking for** and expand the entry. You should see something similar to this. The security group values have been blacked out. This shows that the two entries for ports 993 and 465 have been removed.
 
-![](./images/image10.tiff)
+![](./images/image10.png)
 
 5.  (Optional) If have another 15 minutes remaining, modify the ingress ports of the security group as described in steps 17-24. That will trigger another evaluation of the security group configuration. After 8-13 minutes, the ingress port configuration will revert to include only HTTP (TCP port 80) and HTTPS (TCP port 443). You will be able to verify this by revisiting the security group settings.
 </details>
