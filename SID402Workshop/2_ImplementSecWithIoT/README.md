@@ -4,7 +4,7 @@
 
 ### Overview
 
-In this module, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a ;thing) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
+In this module, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a thing) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
 
 *Note: Going forward, we will use the terms device and thing interchangeably.*
 
@@ -12,9 +12,9 @@ In this module, you will set up an environment using the AWS IoT (Internet of Th
 
 By the end of this module, you will be able to:
 
-* Create a test AWS IoT environment using AWS CloudFormation. The environment will contain an Amazon EC2 instance running a package named [Node-RED](https://en.wikipedia.org/wiki/Node-RED). Node-RED provides a web-based interface that allows you to create message ;flows (i.e. sequences of transmissions). Node-RED can send these message flows using the MQTT and TLS protocols, which are used by AWS IoT. In short, Node-RED lets you simulate an AWS IoT device (a ;thing).
+* Create a test AWS IoT environment using AWS CloudFormation. The environment will contain an Amazon EC2 instance running a package named [Node-RED](https://en.wikipedia.org/wiki/Node-RED). Node-RED provides a web-based interface that allows you to create message flows (i.e. sequences of transmissions). Node-RED can send these message flows using the MQTT and TLS protocols, which are used by AWS IoT. In short, Node-RED lets you simulate an AWS IoT device (a thing).
 
-* Configure Node-RED to simuilate AWS IoT device (a ;thing) and then test communication with the AWS IoT service.
+* Configure Node-RED to simuilate AWS IoT device (a thing) and then test communication with the AWS IoT service.
 
 * Adjust the security permissions within AWS IoT to more tightly restrict the communication to AWS IoT.
 
@@ -83,7 +83,7 @@ Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/A
 
 4. On the next page, you can create tags to be applied to resources, then click **Next**.
 
-5. Review the settings. When requested, click the check box to acknowledge that IAM resources may be created and then click **Create**. You will return to the CloudFormation console. The process will take five to seven minutes to complete. While the stack is building, proceed to the next page to create your first AWS IoT device (a ;thing).
+5. Review the settings. When requested, click the check box to acknowledge that IAM resources may be created and then click **Create**. You will return to the CloudFormation console. The process will take five to seven minutes to complete. While the stack is building, proceed to the next page to create your first AWS IoT device (a thing).
 
 ___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
@@ -92,19 +92,19 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 </strong></summary><p>
 <br/>
 
-You will now define an IoT device. A device is recognized by AWS IoT through a certificate. You will create a certificate and attach it to the device. You will also attach a policy to the device that gives the device (;thing) full access to AWS IoT. Later in this module, you will configure the Node-RED with this certificate which will cause AWS IoT to recognize Node-RED as an AWS IoT device.
+You will now define an IoT device. A device is recognized by AWS IoT through a certificate. You will create a certificate and attach it to the device. You will also attach a policy to the device that gives the device (thing) full access to AWS IoT. Later in this module, you will configure the Node-RED with this certificate which will cause AWS IoT to recognize Node-RED as an AWS IoT device.
 
-6. Make sure you are still working in the same AWS region in which you are building the AWS CloudFormation stack.
+1. Make sure you are still working in the same AWS region in which you are building the AWS CloudFormation stack.
 
-7. Select the service **AWS IoT** from the AWS Console. If you see a **Get started** button, click that.
+2. Select the service **AWS IoT** from the AWS Console. If you see a **Get started** button, click that.
 
-8. From the menu on the left, select **Registry** &gt; **Things** and the click the **Register a thing** button (if there are already things listed, click the **Create** button instead).
+3. From the menu on the left, select **Registry**, **Things** and the click the **Register a thing** button (if there are already things listed, click the **Create** button instead).
 
-9. Enter the name `device1` and click **Create thing**. You should see a new entry as shown below.
+4. Enter the name `device1` and click **Create thing**. You should see a new entry as shown below.
 
     ![](images/image2.png "image")
 
-10. On the left select **Security &gt; Certificates**, then click **Create a certificate** and then Click **Create certificate.** You will then be presented with a page telling you the certificate has been created and given the opportunity to download four items as shown below. Continue below this picture for download instructions.
+5. On the left select **Security Certificates**, then click **Create a certificate** and then Click **Create certificate.** You will then be presented with a page telling you the certificate has been created and given the opportunity to download four items as shown below. Continue below this picture for download instructions.
 
     ![](images/image3.png "image")
 
@@ -112,9 +112,9 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     You have thus far created a device and a certificate. You will now define what the holder of the certificate (which will eventually be Node-RED running on Amazon EC2) can do.
 
-11. Clock Create new policy.
+6. Clock Create new policy.
 
-12. On the **Create a policy** page create the statement as follows:
+7. On the **Create a policy** page create the statement as follows:
 
     ![](images/image4.png "image")
 
@@ -126,27 +126,31 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **Effect**: Allow
 
-    This represents a policy named device1_full_access that can perform all iot actions (iot:*) on all resources. In other words, the policy will grant full IoT access to any certificate to which the policy is attached.
+    This represents a policy named device1_full_access that can perform all iot actions ( iot:* ) on all resources. In other words, the policy will grant full IoT access to any certificate to which the policy is attached.
 
-13. Select **Create**.
+8. Select **Create**.
 
-14. From the main AWS IoT menu, select **Security Certificates.**
+9. From the main AWS IoT menu, select **Security Certificates.**
 
-15. Select the certificate that you created above by hovering over the certificate and checking the blue box that appears. With it checked, select the drop-down menu **Actions** and click on **Attach policy**. Then select the **device1_full_access** policy and click **Attach**. You have now attached the policy to the certificate.
+10. Select the certificate that you created above by hovering over the certificate and checking the blue box that appears. With it checked, select the drop-down menu **Actions** and click on **Attach policy**. Then select the **device1_full_access** policy and click **Attach**. You have now attached the policy to the certificate.
 
-16. Select the drop-down menu **Actions** and click on **Attach thing** and select the thing named **device1**. Click **Attach**. You have now attached the certificate with its policy to the device. Later in this module, you will configure Node-RED with the certificate that has this policy causing, Node-RED to be recognized by AWS IoT as **device1**.
+11. Select the drop-down menu **Actions** and click on **Attach thing** and select the thing named **device1**. Click **Attach**. You have now attached the certificate with its policy to the device. Later in this module, you will configure Node-RED with the certificate that has this policy causing, Node-RED to be recognized by AWS IoT as **device1**.
 
-17. On this AWS IoT console home page, near the bottom left click Settings. Copy the value in the **Endpoint** field and save it in a text file. You will need this value later in the module when you configure Node-RED.
+12. On this AWS IoT console home page, near the bottom left click Settings. Copy the value in the **Endpoint** field and save it in a text file. You will need this value later in the module when you configure Node-RED.
+</details>
 
-#### Configure Node-RED
+<details>
+<summary><strong>Configure Node-RED (expand for details)
+</strong></summary><p>
+<br/>
 
-18. By this point, the CloudFormation stack with the Node-RED Amazon EC2 instance should be complete Go to the AWS CloudFormation console, select the stack and look at the output tab. If you do not see the output tab, refresh the CloudFormation console page.  You should see the following values:
+1. By this point, the CloudFormation stack with the Node-RED Amazon EC2 instance should be complete Go to the AWS CloudFormation console, select the stack and look at the output tab. If you do not see the output tab, refresh the CloudFormation console page.  You should see the following values:
 
     **HostIPAddress**: The IP address of the EC2 instance
 
     **NodeREDURL**: The URL of the EC2 instance
 
-19. Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking places.   In that case, just wait a minute or two and try again.
+2. Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking places.   In that case, just wait a minute or two and try again.
 
     ![](images/image5.png "image")
 
@@ -162,15 +166,15 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **First flow - Publish time locally**
 
-20. On the right side of the make sure the debug tab is selected.
+3. On the right side of the make sure the debug tab is selected.
 
-21. On the Generate Timestamp node for Publish time locally, click the button on the left side. This will generate the timestamp, then convert and send. You will see the message in the debug frame. Every click on the inject node (Generate Timestamp) will publish a message in the debug window. See the vertical red arrows below for clarification.
+4. On the Generate Timestamp node for Publish time locally, click the button on the left side. This will generate the timestamp, then convert and send. You will see the message in the debug frame. Every click on the inject node (Generate Timestamp) will publish a message in the debug window. See the vertical red arrows below for clarification.
 
     ![](images/image6.png "image")
 
     **Second flow - Single click message to AWS IoT**
 
-22. The second flow under **Single click message to AWS IoT** does two things. Like the first flow, Node-RED will print a timestamp locally. Additionally, there is also a branch flow which translates the time to JSON format (the timestampToJSON node) and then sends the message to AWS IoT (the AWS IoT node). You will see a red alert icon on the upper right corner of the AWS IoT node because some configuration information is missing.
+5. The second flow under **Single click message to AWS IoT** does two things. Like the first flow, Node-RED will print a timestamp locally. Additionally, there is also a branch flow which translates the time to JSON format (the timestampToJSON node) and then sends the message to AWS IoT (the AWS IoT node). You will see a red alert icon on the upper right corner of the AWS IoT node because some configuration information is missing.
 
     To configure the AWS IoT node, double-click it. This will bring up a window that allows you to edit the MQTT properties of the node. [MQTT](https://en.wikipedia.org/wiki/MQTT) is one of the underlying network protocols used by AWS IoT. Click the pencil icon as shown below by the red arrow.
 
@@ -188,11 +192,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image8.png "image")
 
-23. Click the pencil next to the Add new tls-config dropdown as shown by the red arrow above. A new window will appear as shown below.
+6. Click the pencil next to the Add new tls-config dropdown as shown by the red arrow above. A new window will appear as shown below.
 
     ![](images/image9.png "image")
 
-24. On the Add new-tls-config screen, make sure the **Use key and certificates from local files** is deselected (which would cause Node-RED to use files on the Node-RED instance itself), and instead select the Upload button for each and navigate to the directory where the files are saved. The files will have names similar to the following:
+7. On the Add new-tls-config screen, make sure the **Use key and certificates from local files** is deselected (which would cause Node-RED to use files on the Node-RED instance itself), and instead select the Upload button for each and navigate to the directory where the files are saved. The files will have names similar to the following:
 
     **Certificate**: c1234567-certificate.pem
 
@@ -204,11 +208,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **Name**: IoT Security Lab
 
-25. Then click **Add**, which will bring you back to the **Add mqtt-broker config node** window.
+8. Then click **Add**, which will bring you back to the **Add mqtt-broker config node** window.
 
-26. From the mqtt-broker config node page, click **Add**. You will return to the **Edit mqtt out node** window.
+9. From the mqtt-broker config node page, click **Add**. You will return to the **Edit mqtt out node** window.
 
-27. Enter the following information into the fields in the window.
+10. Enter the following information into the fields in the window.
 
     **Topic:** topic1
 
@@ -220,11 +224,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image10.png "image")
 
-28. Click **Done** to go back to the main GUI.
+11. Click **Done** to go back to the main GUI.
 
-29. Finally, notice that the **Deploy** icon in the upper right of the GUI is red. This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with ;connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
+12. Finally, notice that the **Deploy** icon in the upper right of the GUI is red. This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
 
-30. Bring up the AWS Console in a new browser window or tab and navigate to the AWS IoT console and select **Test**. Then select Subscribe to a topic link, enter **topic1** as the topic, and finally click the Subscribe to topic button per the figure below.
+13. Bring up the AWS Console in a new browser window or tab and navigate to the AWS IoT console and select **Test**. Then select Subscribe to a topic link, enter **topic1** as the topic, and finally click the Subscribe to topic button per the figure below.
 
     ![](images/image11.png "image")
 
@@ -232,11 +236,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image12.png "image")
 
-31. Return to the Node-RED window. Clean out the debug window by clicking the trash can icon. Click the button to the left of the Generate Timestamp node for the Single click message to AWS IoT flow. You will see the friendly date and time posted in the debug window, but you will also see the message published in the MQTT client in the AWS Console. Notice also that the AWS IoT node continues to show that it is connected which means that the policy attached to the certificate does allow the desired communication.
+14. Return to the Node-RED window. Clean out the debug window by clicking the trash can icon. Click the button to the left of the Generate Timestamp node for the Single click message to AWS IoT flow. You will see the friendly date and time posted in the debug window, but you will also see the message published in the MQTT client in the AWS Console. Notice also that the AWS IoT node continues to show that it is connected which means that the policy attached to the certificate does allow the desired communication.
 
     ![](images/image13.png "image")
 
-32. Now return to the AWS IoT window with the MQTT client. You should see a message that was published to topic1 as shown in the figure below.
+15. Now return to the AWS IoT window with the MQTT client. You should see a message that was published to topic1 as shown in the figure below.
 
     ![](images/image14.png "image")
 
@@ -262,7 +266,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 Earlier in this module you created a policy for your AWS IoT certificate that was very open and allowed the holder of that certificate to publish to any IoT topic. We are now going to show you how to restrict that policy so it only allows publishing to the topic we have already created.
 
-1. Go to the main IoT console and choose **Security &gt; Policies**. You should see a policy named device1_full_acccess. Click directly on the policy name.
+1. Go to the main IoT console and choose **Security Policies**. You should see a policy named device1_full_acccess. Click directly on the policy name.
 
     On the top of the window you will see the policy ARN (Amazon Resource Name). It will look something like:
 
@@ -270,11 +274,11 @@ Earlier in this module you created a policy for your AWS IoT certificate that wa
 
     Copy the region name (`us-west-2` in the above example) and the account number (`123456789012` in the above example) to a scratch file for future use.
 
-2. Go back to the main IoT console and choose **Security &gt; Policies**. Click **Create**.
+2. Go back to the main IoT console and choose **Security &gt Policies**. Click **Create**.
 
     Enter `device1_allow_publish` and click **Advanced mode.**
 
-3. Replace the JSON with the content below, replacing `REGION` and `ACCOUNT` with the values you copied earlier. Make sure you retain all of the colon (;:) separators.
+3. Replace the JSON with the content below, replacing `REGION` and `ACCOUNT` with the values you copied earlier. Make sure you retain all of the colon (:) separators.
 
 ````
     {
@@ -307,7 +311,7 @@ Earlier in this module you created a policy for your AWS IoT certificate that wa
 
     Click **Create**.
 
-4. Navigate to **Security-&gt;Certificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
+4. Navigate to **Security-&gtCertificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
 
 5. Go to the IoT console and select **Test**. Subscribe to **topic1**.
 
