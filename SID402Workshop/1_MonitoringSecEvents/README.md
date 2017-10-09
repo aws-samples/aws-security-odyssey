@@ -330,7 +330,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 <br/>
 The following test events are optional and should only be completed after you have completed all modules in this workshop.
 
-### Test Network Access Control List (NACL) Changes
+###1. Test Network Access Control List (NACL) Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
@@ -346,7 +346,7 @@ The following test events are optional and should only be completed after you ha
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-### Test Network Gateway Changes
+###2. Test Network Gateway Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
@@ -360,7 +360,7 @@ The following test events are optional and should only be completed after you ha
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-### Test Amazon Virtual Private Cloud (VPC) Changes
+###3. Test Amazon Virtual Private Cloud (VPC) Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **VPC**.
 
@@ -374,7 +374,7 @@ The following test events are optional and should only be completed after you ha
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-### Test Console Sign-In Failures
+###4. Test Console Sign-In Failures
 
 1. Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
@@ -401,7 +401,7 @@ Your authentication information is incorrect. Please try again
 
 8. You can also view the status of Alarm via AWS CloudWatch console.
 
-### Test Authorization Failures
+###5. Test Authorization Failures
 
 1. In the AWS Management Console, under **Storage** menu, select **S3**.
 
