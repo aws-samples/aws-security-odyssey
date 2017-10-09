@@ -196,7 +196,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 7. Click on **View Alarm**.
 </details>
 
-### 3. CREATE SECURITY ALARMS USING AWS CLOUDFORMATION
+### 3. Create Security Alarms Using AWS CloudFormation
 
 In the previous steps you have learnt how to create a metric filter in CloudWatch and how to create an alarm for the metric via the AWS console. Creation of metric filters and corresponding alarms for the remaining security events described in the overview section has been automated for you using AWS CloudFormation template. Follow the steps below:
 

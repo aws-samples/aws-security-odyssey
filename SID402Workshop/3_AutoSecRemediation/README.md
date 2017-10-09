@@ -4,6 +4,7 @@
 
 ### Overview
 
+#### Monitoring Security Groups with AWS Config
 The Security Enhancement Project at IthaCorp is continuing to progress and you decide its time to implement responsive controls in order to automate remediation of security baseline deviations. This will help reduce overhead on the engineering team and allow them to focus on you several strategic initiatives.
 
 In this module you will learn how to use AWS Config Rules with an AWS Lambda function to monitor the ingress ports associated with an EC2 security group. The Lambda function will be triggered whenever the
@@ -26,7 +27,7 @@ By the end of this module, you will be able to:
 
 To successfully complete this module, you should be familiar with EC2 security groups. Python programming skills are helpful, although full solution code is provided.
 
-### Select a Region
+### 1. Select a Region
 
 Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
@@ -34,11 +35,9 @@ Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
 For more information about regions, see <http://docs.aws.amazon.com/general/latest/gr/rande.html>.
 
-## Monitoring Security Groups with AWS Config
-
 ___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with (expand for details).___
 
-### Configure an IAM User and Role
+### 2. Configure an IAM User and Role
 
 <details>
 <summary><strong>Create an IAM User and Role with the Console (expand for details)
@@ -135,8 +134,10 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 2.  Login to the AWS console using the new user and confirm the preferred region.
 </details>
 
+### 3. Complete Initial Environment Configuration
+
 <details>
-<summary><strong>Enable AWS Config (expand for details)
+<summary><strong>1. Enable AWS Config (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -167,7 +168,7 @@ Notice that many resources appear in addition to **EC2 Security Group** even tho
 </details>
 
 <details>
-<summary><strong>Modify the EC2 Security Group (expand for details)
+<summary><strong>2. Modify the EC2 Security Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -194,7 +195,7 @@ You have now set up the ingress configuration of the default security
 </details>
 
 <details>
-<summary><strong>Create and Run the AWS Config Rule (expand for details)
+<summary><strong>3. Create and Run the AWS Config Rule (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -311,7 +312,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 </details>
 
 <details>
-<summary><strong>Revisiting the VPC Security Group (expand for details)
+<summary><strong>5. Revisiting the VPC Security Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -328,7 +329,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 </details>
 
 <details>
-<summary><strong>Using Amazon CloudWatch Logs for Verification (expand for details)
+<summary><strong>6. Using Amazon CloudWatch Logs for Verification (expand for details)
 </strong></summary><p>
 <br/>
 

@@ -42,11 +42,9 @@ This module assumes the following:
 
 AWS IoT is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices. AWS IoT can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely.
 
-### Select a Region
+### 1. Select a Region and Launch CloudFormation Stack
 
 AWS IoT is located in many [regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#iot_region) across the world. We will provide shortcuts for the us-east-1, us-east-2, and us-west-2 regions in this document and ask that you choose one of these three regions for the module. As noted above, if more than one person is doing the module in the same AWS account, each person should use a different region.
-
-### Select a Region and Launch CloudFormation Stack
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
@@ -56,7 +54,7 @@ For more information about regions, see: [AWS Regions and Endpoints](http://docs
 
 **Note** If needed, create a new key pair: [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
 
-### Build the Node-RED Environment
+### 2. Build the Node-RED Environment
 
 Our modules will use AWS CloudFormation to provision a web-based environment with Node-RED. Node-RED allows you to simulate an IoT device including the sending and receiving of IoT messages using the MQTT protocol. The AWS CloudFormation template will create a complete environment consisting of an Amazon VPC and an Amazon EC2 instance on which Node-RED will be installed.
 
@@ -87,8 +85,10 @@ Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/A
 
 ___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
+### 3. Complete Initial Environment Configuration
+
 <details>
-<summary><strong>Define Device (expand for details)
+<summary><strong>1. Define Device (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -140,7 +140,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 </details>
 
 <details>
-<summary><strong>Configure Node-RED (expand for details)
+<summary><strong>2. Configure Node-RED (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -257,10 +257,10 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
     You will now learn how to restrict access to AWS IoT.
 </details>
 
-### Restricting Access to AWS IoT
+### 4. Restricting Access to AWS IoT
 
 <details>
-<summary><strong>Create Permissions for Device Specific Topics (expand for details)
+<summary><strong>1. Create Permissions for Device Specific Topics (expand for details)
 </strong></summary><p>
 <br/>
 
