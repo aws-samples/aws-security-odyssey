@@ -71,10 +71,10 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 In this section, you will perform configuration in the console for CloudTrail logging, CloudWatch Logs and a CloudWatch Alarm.
 
-___Complete all the steps below unless they are marked "optional". Use left arrow to expand sections marked with "(expand for details)".___
+___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
 <details>
-<summary><strong>CREATE A TRAIL WITH THE CLOUDTRAIL CONSOLE (expand for details)
+<summary><strong>Create a CloudTrail with the Console (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -100,7 +100,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 </details>
 
 <details>
-<summary><strong>ENABLE A ROLE (expand for details)
+<summary><strong>Enable a Role (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -116,7 +116,7 @@ Next, enable a role that CloudTrail can assume and deliver events to the log str
 </details>
 
 <details>
-<summary><strong>CREATE A LOG GROUP (expand for details)
+<summary><strong>Create a Log Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -138,7 +138,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 </details>
 
 <details>
-<summary><strong>CREATE A METRIC FILTER (expand for details)
+<summary><strong>Create a Metric Filter (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -168,7 +168,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 </details>
 
 <details>
-<summary><strong>CREATE A ALARM (expand for details)
+<summary><strong>Create an Alarm (expand for details)
 </strong></summary><p>
 <br/>
 <b>These steps are a continuation of the previous steps for creating a metric filter.</b>
@@ -300,7 +300,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 4. Click **Select** next to Policy Generator.
 
-5. Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type **\*** in **Amazon Resource Name (ARN)**.
+5. Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type ***** in **Amazon Resource Name (ARN)**.
 
 6. Click **Add Statement** and than click **`Next` Step**
 
@@ -325,7 +325,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
-<summary><strong>OPTIONAL TEST SCENARIOS (expand for details)
+<summary><strong>Optional Test Scenarios (expand for details)
 </strong></summary><p>
 <br/>
 The following test events are optional and should only be completed after you have completed all modules in this workshop.
@@ -414,7 +414,7 @@ Your authentication information is incorrect. Please try again
 4. You can also view the status of Alarm via AWS CloudWatch console.
 </details>
 
-## Conclusion
+### Conclusion
 
 Congratulations! You have successfully created a Trail in AWS CloudTrail console, create a log group in CloudWatch console that receives logs from CloudTrail, created a number of metric filters and corresponding alarms for automated notifications.
 You have also learned how to automate the steps via AWS CloudFormation. You now know hot to automate a number of Security related events in AWS such as:
@@ -430,9 +430,9 @@ You have also learned how to automate the steps via AWS CloudFormation. You now 
 - Authorization Failures
 - IAM Policy Changes
 
-## Continue on to [Module 2](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/2_ImplementSecWithIoT)
+### Continue on to [Module 2](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/2_ImplementSecWithIoT)
 
-### CLEAN UP
+### Clean Up
 ___Complete clean up at the end of the Workshop___
 1. In the AWS Management Console, on the Services menu, click CloudFormation
 2. select SID402-AutomatingSecurityEvents

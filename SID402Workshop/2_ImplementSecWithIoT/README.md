@@ -1,39 +1,26 @@
-# 2017 AWS re:INVENT - SID402 - Lab 2
+# 2017 AWS re:Invent - SID402
 
-**Implementing Security Controls in the World of Internet, Big Data,**  
-**IoT, E-Commerce, and Open Communications Platforms**
+## Module 2 - Implementing Security with AWS IoT
 
-**Implementing Security with AWS IoT**
+### Overview
 
-Self-Paced Lab
+In this module, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a ;thing) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
 
-&copy; 2017 Amazon Web Services, Inc. and its affiliates. All rights reserved. This work may not be reproduced or redistributed, in whole or in part, without prior written permission from Amazon Web Services, Inc. Commercial copying, lending, or selling is prohibited.
+*Note: Going forward, we will use the terms device and thing interchangeably.*
 
-Errors or corrections? Email us at <aws-course-feedback@amazon.com>.
+### Topics covered
 
-Other questions? Contact us at <https://aws.amazon.com/contact-us/aws-training/>
+By the end of this module, you will be able to:
 
-# Introduction
+* Create a test AWS IoT environment using AWS CloudFormation. The environment will contain an Amazon EC2 instance running a package named [Node-RED](https://en.wikipedia.org/wiki/Node-RED). Node-RED provides a web-based interface that allows you to create message ;flows (i.e. sequences of transmissions). Node-RED can send these message flows using the MQTT and TLS protocols, which are used by AWS IoT. In short, Node-RED lets you simulate an AWS IoT device (a ;thing).
 
-## Overview
-
-In this lab, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a &ldquo;thing&rdquo;) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
-
-*NOTE: Going forward, we will use the terms &ldquo;device&rdquo; and &ldquo;thing&rdquo; interchangeably.*
-
-## Topics covered
-
-By the end of this lab, you will be able to:
-
-* Create a test AWS IoT environment using AWS CloudFormation. The environment will contain an Amazon EC2 instance running a package named [Node-RED](https://en.wikipedia.org/wiki/Node-RED). Node-RED provides a web-based interface that allows you to create message &ldquo;flows&rdquo; (i.e. sequences of transmissions). Node-RED can send these message flows using the MQTT and TLS protocols, which are used by AWS IoT. In short, Node-RED lets you simulate an AWS IoT device (a &ldquo;thing&rdquo;).
-
-* Configure Node-RED to simuilate AWS IoT device (a &ldquo;thing&rdquo;) and then test communication with the AWS IoT service.
+* Configure Node-RED to simuilate AWS IoT device (a ;thing) and then test communication with the AWS IoT service.
 
 * Adjust the security permissions within AWS IoT to more tightly restrict the communication to AWS IoT.
 
-## Prerequisites
+### Prerequisites
 
-This lab assumes the following:
+This module assumes the following:
 
 * You have a general knowledge of AWS services including the use of the AWS Console, AWS CloudFormation, AWS IAM, Amazon EC2, and Amazon VPC.
 
@@ -49,56 +36,63 @@ This lab assumes the following:
 
   * Fully manage AWS IoT
 
-* Only one person will be doing this lab in a specific AWS account in a given region. If more than one person is using the same AWS account for this lab at the same time, each must use a different AWS IoT region or make adjustments to the templates.
+* Only one person will be doing this module in a specific AWS account in a given region. If more than one person is using the same AWS account for this module at the same time, each must use a different AWS IoT region or make adjustments to the templates.
 
-# Overview of Key Services Used in this Lab
-
-## AWS IoT
+### AWS IoT
 
 AWS IoT is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices. AWS IoT can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely.
 
-## AWS CloudFormation
+### Select a Region
 
-AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
+AWS IoT is located in many [regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#iot_region) across the world. We will provide shortcuts for the us-east-1, us-east-2, and us-west-2 regions in this document and ask that you choose one of these three regions for the module. As noted above, if more than one person is doing the module in the same AWS account, each person should use a different region.
 
-# Select a Region
+### Select a Region and Launch CloudFormation Stack
 
-AWS IoT is located in many [regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#iot_region) across the world. We will provide shortcuts for the us-east-1, us-east-2, and us-west-2 regions in this document and ask that you choose one of these three regions for the lab. As noted above, if more than one person is doing the lab in the same AWS account, each person should use a different region.
+**Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
+Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
-# Initial sign in
+For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
+
+**Note** If needed, create a new key pair: [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
+
+### Build the Node-RED Environment
+
+Our modules will use AWS CloudFormation to provision a web-based environment with Node-RED. Node-RED allows you to simulate an IoT device including the sending and receiving of IoT messages using the MQTT protocol. The AWS CloudFormation template will create a complete environment consisting of an Amazon VPC and an Amazon EC2 instance on which Node-RED will be installed.
 
 1. Sign in to the AWS management console at: <https://console.aws.amazon.com/console/home>
 
-# Build the Node-RED Environment
+2. Click the link below corresponding to the region in which you wish to deploy the environment.
+___Hold the "Control" key while clicking and open the launch link in a new tab___
 
-Our labs will use AWS CloudFormation to provision a web-based environment with Node-RED. Node-RED allows you to simulate an IoT device including the sending and receiving of IoT messages using the MQTT protocol. The AWS CloudFormation template will create a complete environment consisting of an Amazon VPC and an Amazon EC2 instance on which Node-RED will be installed.
-
-2. Click the link below corresponding to the region in which you wish to deploy the lab environment.
-
-    [N. Virginia (us-east-1)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
-
-    [Ohio (us-east-2)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
-
-    [Oregon (us-west-2)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
+Region| Launch
+------|-----
+N. Virginia (us-east-1) | [![Launch Module in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
+Ohio (us-east-2) | [![Launch Module in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
+Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml))
 
 3. A new browser tab or page will appear with the CloudFormation template selected. Click on **Next** to start populating the fields listed below.
 
     **Stack Name**: The name for the CloudFormation stack. The default name is IoTSecurityLab,
 
-    **Allowed IP Range**: The IP address range that can browse to the Amazon EC2 instance running Node-RED. The default is 0.0.0.0/0 which is any IPv4 address on the Internet. For this short duration lab, this is fine. For something running longer term, you would want to restrict this to a safe IP range.
+    **Allowed IP Range**: The IP address range that can browse to the Amazon EC2 instance running Node-RED. The default is 0.0.0.0/0 which is any IPv4 address on the Internet. For this short duration module, this is fine. For something running longer term, you would want to restrict this to a safe IP range.
 
-    **Instance Type**: The size of Amazon EC2 instance to deploy for Node-RED. The default is t2.micro and is fine for this lab.
+    **Instance Type**: The size of Amazon EC2 instance to deploy for Node-RED. The default is t2.micro and is fine for this module.
 
     Click on **Next**.
 
 4. On the next page, you can create tags to be applied to resources, then click **Next**.
 
-5. Review the settings. When requested, click the check box to acknowledge that IAM resources may be created and then click **Create**. You will return to the CloudFormation console. The process will take five to seven minutes to complete. While the stack is building, proceed to the next page to create your first AWS IoT device (a &ldquo;thing&rdquo;).
+5. Review the settings. When requested, click the check box to acknowledge that IAM resources may be created and then click **Create**. You will return to the CloudFormation console. The process will take five to seven minutes to complete. While the stack is building, proceed to the next page to create your first AWS IoT device (a ;thing).
 
-# Define Device
+___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
-You will now define an IoT device. A device is recognized by AWS IoT through a certificate. You will create a certificate and attach it to the device. You will also attach a policy to the device that gives the device (&ldquo;thing&rdquo;) full access to AWS IoT. Later in this lab, you will configure the Node-RED with this certificate which will cause AWS IoT to recognize Node-RED as an AWS IoT device.
+<details>
+<summary><strong>Define Device (expand for details)
+</strong></summary><p>
+<br/>
+
+You will now define an IoT device. A device is recognized by AWS IoT through a certificate. You will create a certificate and attach it to the device. You will also attach a policy to the device that gives the device (;thing) full access to AWS IoT. Later in this module, you will configure the Node-RED with this certificate which will cause AWS IoT to recognize Node-RED as an AWS IoT device.
 
 6. Make sure you are still working in the same AWS region in which you are building the AWS CloudFormation stack.
 
@@ -124,27 +118,27 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image4.png "image")
 
-    **Name**: device1\_full\_access
+    **Name**: device1_full_access
 
-    **Action**: iot:\*
+    **Action**: iot:*
 
-    **Resource**: ARN: \*
+    **Resource**: ARN: *
 
     **Effect**: Allow
 
-    This represents a policy named device1\_full\_access that can perform all iot actions (iot:\*) on all resources. In other words, the policy will grant full IoT access to any certificate to which the policy is attached.
+    This represents a policy named device1_full_access that can perform all iot actions (iot:*) on all resources. In other words, the policy will grant full IoT access to any certificate to which the policy is attached.
 
 13. Select **Create**.
 
 14. From the main AWS IoT menu, select **Security Certificates.**
 
-15. Select the certificate that you created above by hovering over the certificate and checking the blue box that appears. With it checked, select the drop-down menu **Actions** and click on **Attach policy**. Then select the **device1\_full\_access** policy and click **Attach**. You have now attached the policy to the certificate.
+15. Select the certificate that you created above by hovering over the certificate and checking the blue box that appears. With it checked, select the drop-down menu **Actions** and click on **Attach policy**. Then select the **device1_full_access** policy and click **Attach**. You have now attached the policy to the certificate.
 
-16. Select the drop-down menu **Actions** and click on **Attach thing** and select the thing named **device1**. Click **Attach**. You have now attached the certificate with its policy to the device. Later in this lab, you will configure Node-RED with the certificate that has this policy causing, Node-RED to be recognized by AWS IoT as **device1**.
+16. Select the drop-down menu **Actions** and click on **Attach thing** and select the thing named **device1**. Click **Attach**. You have now attached the certificate with its policy to the device. Later in this module, you will configure Node-RED with the certificate that has this policy causing, Node-RED to be recognized by AWS IoT as **device1**.
 
-17. On this AWS IoT console home page, near the bottom left click Settings. Copy the value in the **Endpoint** field and save it in a text file. You will need this value later in the lab when you configure Node-RED.
+17. On this AWS IoT console home page, near the bottom left click Settings. Copy the value in the **Endpoint** field and save it in a text file. You will need this value later in the module when you configure Node-RED.
 
-# Configure Node-RED
+#### Configure Node-RED
 
 18. By this point, the CloudFormation stack with the Node-RED Amazon EC2 instance should be complete Go to the AWS CloudFormation console, select the stack and look at the output tab. If you do not see the output tab, refresh the CloudFormation console page.  You should see the following values:
 
@@ -222,13 +216,13 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **Name:** AWS IoT
 
-    The server name will already be filled in based on the information you have provided as shown in the screen below. Later in the lab, we will show how to subscribe to messages sent to **topic1** to verify communication from AWS IoT and Node-RED.
+    The server name will already be filled in based on the information you have provided as shown in the screen below. Later in the module, we will show how to subscribe to messages sent to **topic1** to verify communication from AWS IoT and Node-RED.
 
     ![](images/image10.png "image")
 
 28. Click **Done** to go back to the main GUI.
 
-29. Finally, notice that the **Deploy** icon in the upper right of the GUI is red. This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with &ldquo;connected&rdquo; under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
+29. Finally, notice that the **Deploy** icon in the upper right of the GUI is red. This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with ;connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
 
 30. Bring up the AWS Console in a new browser window or tab and navigate to the AWS IoT console and select **Test**. Then select Subscribe to a topic link, enter **topic1** as the topic, and finally click the Subscribe to topic button per the figure below.
 
@@ -257,14 +251,18 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
     * Captured traffic from Node-RED within AWS IoT.
 
     You will now learn how to restrict access to AWS IoT.
+</details>
 
-# Restricting Access to AWS IoT
+### Restricting Access to AWS IoT
 
-## Create Permissions for Device Specific Topics
+<details>
+<summary><strong>Create Permissions for Device Specific Topics (expand for details)
+</strong></summary><p>
+<br/>
 
-Earlier in this lab you created a policy for your AWS IoT certificate that was very open and allowed the holder of that certificate to publish to any IoT topic. We are now going to show you how to restrict that policy so it only allows publishing to the topic we have already created.
+Earlier in this module you created a policy for your AWS IoT certificate that was very open and allowed the holder of that certificate to publish to any IoT topic. We are now going to show you how to restrict that policy so it only allows publishing to the topic we have already created.
 
-33. Go to the main IoT console and choose **Security &gt; Policies**. You should see a policy named device1\_full\_acccess. Click directly on the policy name.
+1. Go to the main IoT console and choose **Security &gt; Policies**. You should see a policy named device1_full_acccess. Click directly on the policy name.
 
     On the top of the window you will see the policy ARN (Amazon Resource Name). It will look something like:
 
@@ -272,13 +270,13 @@ Earlier in this lab you created a policy for your AWS IoT certificate that was v
 
     Copy the region name (`us-west-2` in the above example) and the account number (`123456789012` in the above example) to a scratch file for future use.
 
-34. Go back to the main IoT console and choose **Security &gt; Policies**. Click **Create**.
+2. Go back to the main IoT console and choose **Security &gt; Policies**. Click **Create**.
 
     Enter `device1_allow_publish` and click **Advanced mode.**
 
-34. Replace the JSON with the content below, replacing `REGION` and `ACCOUNT` with the values you copied earlier. Make sure you retain all of the colon (&ldquo;:&rdquo;) separators.
+3. Replace the JSON with the content below, replacing `REGION` and `ACCOUNT` with the values you copied earlier. Make sure you retain all of the colon (;:) separators.
 
-    ```
+````
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -305,24 +303,25 @@ Earlier in this lab you created a policy for your AWS IoT certificate that was v
       ]
     }
 
-    ```
+````
 
     Click **Create**.
 
-35. Navigate to **Security-&gt;Certificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1\_allow\_publish**. Then detach the **device1\_full\_access** policy from the certificate.
+4. Navigate to **Security-&gt;Certificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
 
-36. Go to the IoT console and select **Test**. Subscribe to **topic1**.
+5. Go to the IoT console and select **Test**. Subscribe to **topic1**.
 
-37. Go to the Node-RED window and generate another message under **Single click message to AWS IoT**. You should see messages continue to appear on the test window. The AWS IoT node should continue to remain connected.
+6. Go to the Node-RED window and generate another message under **Single click message to AWS IoT**. You should see messages continue to appear on the test window. The AWS IoT node should continue to remain connected.
     You have now restricted the AWS IoT device represented by Node-RED so that it can only publish to the topic named **topic1**.
 
-38. On the Node-RED window, double click on the **AWS IoT** node. Change the topic name to **topic2**. Click **Done**. Click **Deploy**.
+7. On the Node-RED window, double click on the **AWS IoT** node. Change the topic name to **topic2**. Click **Done**. Click **Deploy**.
 
-39. Generate another message under **Single click message to AWS IoT**. You should see the AWS IoT node disconnect for a few seconds as shown in the figure below. This is because you are only allowed to publish to topic **topic1**.
+8. Generate another message under **Single click message to AWS IoT**. You should see the AWS IoT node disconnect for a few seconds as shown in the figure below. This is because you are only allowed to publish to topic **topic1**.
 
-    ![](images/image15.png "image")
+![](images/image15.png "image")
+</details>
 
-# Conclusion
+### Conclusion
 
 Congratulations! You have now successfully:
 
@@ -336,9 +335,12 @@ Congratulations! You have now successfully:
 
 -   Configured AWS IoT security policies to restrict actions from IoT devices
 
-# Clean Up Lab
+### Continue on to [Module 3](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/3_AutoSecRemediation)
 
-To clean up the lab environment, follow the remaining steps.
+### Clean Up
+___Complete clean up at the end of the Workshop___
+
+To clean up the environment, follow the remaining steps.
 
 1.  Delete the AWS CloudFormation stack you previously launched.
 

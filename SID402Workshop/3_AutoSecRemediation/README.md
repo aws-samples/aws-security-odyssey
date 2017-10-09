@@ -362,6 +362,8 @@ Congratulations! You have now successfully:
 5.  Examined the activity of the Lambda function using Amazon Cloudwatch
     Logs.
 
+### Clean Up
+
 ### Additional Resources
 
 For more information about AWS Lambda and Amazon CloudWatch, see:
