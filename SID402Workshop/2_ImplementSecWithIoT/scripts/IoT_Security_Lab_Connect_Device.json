@@ -1,0 +1,153 @@
+[
+    {
+        "id": "561a26e3.c084b8",
+        "type": "tab",
+        "label": "device1",
+        "disabled": false,
+        "info": "IoT Security Lab - Connect device1 to AWS IoT and verify connectivity and the ability to publish a message"
+    },
+    {
+        "id": "3104dbb5.d48cc4",
+        "type": "inject",
+        "z": "561a26e3.c084b8",
+        "name": "Generate Timestamp",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "2589d951.7edef6"
+            ]
+        ]
+    },
+    {
+        "id": "2589d951.7edef6",
+        "type": "function",
+        "z": "561a26e3.c084b8",
+        "name": "timestampToString",
+        "func": "// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = 'Local Message: ' + date.toString();\n// Return the message so it can be sent on\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "5ee1e04a.47457"
+            ]
+        ]
+    },
+    {
+        "id": "5ee1e04a.47457",
+        "type": "debug",
+        "z": "561a26e3.c084b8",
+        "name": "Print time locally",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 560,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b9863901.7a6a68",
+        "type": "comment",
+        "z": "561a26e3.c084b8",
+        "name": "Publish time locally",
+        "info": "To start, select the debug tab on the right side of the browser. This will show a formatted time being published every 5 seconds.",
+        "x": 150,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "eed12f30.e0ee4",
+        "type": "comment",
+        "z": "561a26e3.c084b8",
+        "name": "Single click message to AWS IoT",
+        "info": "After disabling the debug above, follow these steps:\n\n1. Enable the debug output and *Deploy* (ignore warnings on nodes not configured)\n2. Click the *Generate Timestamp* icon and verify messages are being generated in the debug plane\n3. Follow the lab quide to configure the AWS IoT node\n4. Open the AWS Console and subscribe to the topic `device1/#` ",
+        "x": 190,
+        "y": 221,
+        "wires": []
+    },
+    {
+        "id": "ff97bf70.00296",
+        "type": "inject",
+        "z": "561a26e3.c084b8",
+        "name": "Generate Timestamp",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "c4a2eea6.67d86",
+                "b8a5a65f.589918"
+            ]
+        ]
+    },
+    {
+        "id": "c4a2eea6.67d86",
+        "type": "function",
+        "z": "561a26e3.c084b8",
+        "name": "timestampToString",
+        "func": "// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = 'Local Message: ' + date.toString();\n// Return the message so it can be sent on\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "6de5130d.1c685c"
+            ]
+        ]
+    },
+    {
+        "id": "aac91b32.b36038",
+        "type": "mqtt out",
+        "z": "561a26e3.c084b8",
+        "name": "AWS IoT",
+        "topic": "",
+        "qos": "0",
+        "retain": "",
+        "broker": "",
+        "x": 640,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "6de5130d.1c685c",
+        "type": "debug",
+        "z": "561a26e3.c084b8",
+        "name": "Print time locally",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b8a5a65f.589918",
+        "type": "function",
+        "z": "561a26e3.c084b8",
+        "name": "timestampToJSON",
+        "func": "// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = {\"date\": date.toString(),\n               \"timestamp\": msg.payload\n              };\n// Return the message so it can be sent on\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 422.22222222222223,
+        "y": 358.88888888888886,
+        "wires": [
+            [
+                "aac91b32.b36038"
+            ]
+        ]
+    }
+]
