@@ -41,7 +41,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 ### 2. Configure an IAM User and Role
 
 <details>
-<summary><strong>Create an IAM User and Role with the Console (expand for details)
+<summary><strong>1. Create an IAM User and Role with the Console (expand for details)
 </strong></summary><p>
 <br/>
 <probably need more instruction here>
