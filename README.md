@@ -1,5 +1,4 @@
-# AWS Security Odyssey
-
+## ![AWS Security Odyssey](https://s3-us-west-2.amazonaws.com/sid402-artifacts/images/odysseysm.png)
 
 **Odyssey:** _A long and eventful or adventurous journey or experience._
 
