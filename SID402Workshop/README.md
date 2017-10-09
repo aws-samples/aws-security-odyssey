@@ -3,7 +3,7 @@
 ## 2017 AWS re:Invent - SID402 - Workshop
 ### Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communications Platforms
 
-<br><br>
+<br>
 
 #### ___Welcome to the IthaCorp Cloud Engineering Team. Let the Odyssey begin!___
 <company name is TBD>
