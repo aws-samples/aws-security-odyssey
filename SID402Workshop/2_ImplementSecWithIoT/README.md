@@ -1,4 +1,4 @@
-## 2017 AWS re:Invent - SID402
+## re:Invent 2017 - SID402
 
 # Module 2 - Implementing Security with AWS IoT
 
