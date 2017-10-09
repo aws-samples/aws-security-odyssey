@@ -1,6 +1,6 @@
-# 2017 AWS re:Invent - SID402
+## 2017 AWS re:Invent - SID402
 
-## Module 1 - Monitoring Security Events in AWS
+# Module 1 - Monitoring Security Events in AWS
 
 ### Overview
 

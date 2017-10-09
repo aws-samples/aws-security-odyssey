@@ -1,6 +1,6 @@
-# 2017 AWS re:Invent - SID402 - Module 3
+## 2017 AWS re:Invent - SID402
 
-## Automating Security Remediation in AWS
+# Module 3 - Automating Security Remediation in AWS
 
 ### Overview
 
@@ -310,7 +310,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 ![](./images/image8.png)
 </details>
 
-### 3. Verify Expected Behavior 
+### 3. Verify Expected Behavior
 
 <details>
 <summary><strong>1. Revisiting the VPC Security Group (expand for details)
