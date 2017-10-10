@@ -341,7 +341,7 @@ Congratulations! You have now successfully:
 
 -   Configured AWS IoT security policies to restrict actions from IoT devices
 
-### Continue on to [Module 3](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/3_AutoSecRemediation)
+### [Continue on to Module 3](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/3_AutoSecRemediation)
 
 ### Clean Up
 ___Complete clean up at the end of the Workshop___

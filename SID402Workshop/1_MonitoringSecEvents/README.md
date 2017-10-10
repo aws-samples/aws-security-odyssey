@@ -429,7 +429,7 @@ Congratulations! You have successfully created a Trail in AWS CloudTrail console
 - Authorization Failures
 - IAM Policy Changes
 
-### Continue on to [Module 2](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/2_ImplementSecWithIoT)
+### [Continue on to Module 2](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/2_ImplementSecWithIoT)
 
 ### Clean Up
 ___Complete clean up at the end of the Workshop___
