@@ -23,7 +23,7 @@ To help deliver the project, you will use [Amazon EC2](https://aws.amazon.com/ec
 
 <br>
 
-### Prerequisites
+## Prerequisites
 
 ### AWS Account
 
