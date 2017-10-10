@@ -6,6 +6,7 @@
 <br>
 
 ## ___Welcome to the IthaCorp Cloud Engineering Team!___
+
 <company name is TBD>
 
 IthaCorp Enterprises is a multinational conglomerate with businesses in multiple industries including manufacturing, hospitality, IoT and consumer electronics. IthaCorp provides an array of back office and public facing services to internal and external customers. To support these services, a significant AWS footprint has been established consisting of multiple workloads leveraging resources including Amazon VPC, Amazon EC2 and Amazon S3. As this footprint has grown organically, the IthaCorp Cloud Engineering Team has identified the need to enhance security controls across their AWS environments.
@@ -19,7 +20,7 @@ You have have joined the Cloud Engineering Team to lead the AWS security enhance
 
 To help deliver the project, you will use [Amazon EC2](https://aws.amazon.com/ec2/), [Amazon VPC](https://aws.amazon.com/vpc/), [Amazon S3](https://aws.amazon.com/s3/), [AWS CloudTrail](https://aws.amazon.com/cloudtrail/), [AWS CloudWatch](https://aws.amazon.com/cloudwatch/), [Amazon Lambda](https://aws.amazon.com/lambda/), [AWS IoT](https://aws.amazon.com/iot/).
 
-## [___Let the Odyssey begin!___](1_MonitoringSecEvents)
+## [Let the Odyssey begin!](1_MonitoringSecEvents)
 
 <br>
 
