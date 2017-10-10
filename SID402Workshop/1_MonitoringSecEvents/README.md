@@ -4,7 +4,7 @@
 
 ### Overview
 
-As you work through the IthaCorp Security Enhancement Project, you implement a series of detective controls to improve visibility into various AWS activities.
+You have taken a lead security engineering role in helping IthaCorp improve the security posture in their AWS environment. As you work through the Security Enhancement Project, you implement a series of detective controls to improve visibility into various AWS activities.
 
 In this module, your task is to set up automatic notifications for a number of security related events in AWS. The module walks you through how to use the AWS Management Console and AWS CloudFormation to create Amazon CloudWatch alarms that is triggered when an AWS API call is made that may be of interest for security professionals.
 

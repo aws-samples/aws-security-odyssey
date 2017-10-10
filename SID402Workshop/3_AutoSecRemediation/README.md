@@ -347,6 +347,8 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 5.  (Optional) If have another 15 minutes remaining, modify the ingress ports of the security group as described in steps 17-24. That will trigger another evaluation of the security group configuration. After 8-13 minutes, the ingress port configuration will revert to include only HTTP (TCP port 80) and HTTPS (TCP port 443). You will be able to verify this by revisiting the security group settings.
 </details>
 
+## ___VICTORY!___
+<br>
 ### Conclusion
 
 Congratulations! You have now successfully:

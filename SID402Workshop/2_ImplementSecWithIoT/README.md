@@ -4,6 +4,8 @@
 
 ### Overview
 
+The security enhancement project at IthaCorp is in full gear and your are continuing the process of implementing controls across the four CAF Security Perspective areas; **Directive**, **Preventative**, **Detective** and **Responsive**. You are approached by the business to support the launch of IthaCorp Telemachus, a new IoT Service offering that transforms traditional cities into "smart" cities which leverage IoT technology to improve efficiency through device instrumentation, analytics and automation. This is a critical service launch for the business so you get started immediately.
+
 In this module, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a thing) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
 
 *Note: Going forward, we will use the terms device and thing interchangeably.*
@@ -309,18 +311,18 @@ Earlier in this module you created a policy for your AWS IoT certificate that wa
 
 ````
 
-    Click **Create**.
+4. Click **Create**.
 
-4. Navigate to **Security-&gtCertificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
+5. Navigate to **Security-&gtCertificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
 
-5. Go to the IoT console and select **Test**. Subscribe to **topic1**.
+6. Go to the IoT console and select **Test**. Subscribe to **topic1**.
 
-6. Go to the Node-RED window and generate another message under **Single click message to AWS IoT**. You should see messages continue to appear on the test window. The AWS IoT node should continue to remain connected.
+7. Go to the Node-RED window and generate another message under **Single click message to AWS IoT**. You should see messages continue to appear on the test window. The AWS IoT node should continue to remain connected.
     You have now restricted the AWS IoT device represented by Node-RED so that it can only publish to the topic named **topic1**.
 
-7. On the Node-RED window, double click on the **AWS IoT** node. Change the topic name to **topic2**. Click **Done**. Click **Deploy**.
+8. On the Node-RED window, double click on the **AWS IoT** node. Change the topic name to **topic2**. Click **Done**. Click **Deploy**.
 
-8. Generate another message under **Single click message to AWS IoT**. You should see the AWS IoT node disconnect for a few seconds as shown in the figure below. This is because you are only allowed to publish to topic **topic1**.
+9. Generate another message under **Single click message to AWS IoT**. You should see the AWS IoT node disconnect for a few seconds as shown in the figure below. This is because you are only allowed to publish to topic **topic1**.
 
 ![](images/image15.png "image")
 </details>
