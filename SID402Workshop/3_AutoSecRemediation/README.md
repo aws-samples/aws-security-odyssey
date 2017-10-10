@@ -372,7 +372,31 @@ Congratulations! You have now successfully:
 
 ___Complete clean up at the end of the Workshop___
 
-To clean up the environment, follow the remaining steps.
+#### 1. Module 1 Clean Up
+
+1. In the AWS Management Console, on the Services menu, click CloudFormation
+2. select SID402-AutomatingSecurityEvents
+3. click on Actions, select Delete Stack
+4. click on Yes, Delete to confirm deletion
+5. repeat steps 2-4 to delete the SID402-CWLforCloudTrailAPIActivity Stack
+6. In the AWS Management Console, on the Services menu, click CloudWatch
+7. Under Alarms, select S3 Bucket Activity
+8. click on Actions, select Delete
+9. click on Yes, Delete
+10. In the AWS Management Console, on the Services menu, click CloudTrail
+11. Open the trail that you created in this module
+12. In top right, next to Logging, click on "On/Off" switch
+13. Click Continue in the popup window
+14. Click on the "trashcan" icon to delete the trail
+15. Click Delete in the popup window
+
+#### 2. Module 2 Clean Up
+
+1.  Delete the AWS CloudFormation stack you previously launched.
+
+2.  Remove all IOT configuration items (things, certificates, policies).
+
+#### 3. Module 3 Clean Up
 
 1.  Delete the IAM user.
 
