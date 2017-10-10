@@ -20,7 +20,9 @@ You have have joined the Cloud Engineering Team to lead the AWS security enhance
 To help deliver the project, you will use [Amazon EC2](https://aws.amazon.com/ec2/), [Amazon VPC](https://aws.amazon.com/vpc/), [Amazon S3](https://aws.amazon.com/s3/), [AWS CloudTrail](https://aws.amazon.com/cloudtrail/), [AWS CloudWatch](https://aws.amazon.com/cloudwatch/), [Amazon Lambda](https://aws.amazon.com/lambda/), [AWS IoT](https://aws.amazon.com/iot/).
 
 ## ___Let the Odyssey begin!___
+
 <br>
+
 ### Prerequisites
 
 ### AWS Account
