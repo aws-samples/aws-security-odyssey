@@ -2,7 +2,7 @@
 
 This directory should be used as a basic template for building new content.
 
-The primary README.md file in the main directory should provide the narrative and context. This should include a high level scenario / storyline and
+The primary README.md file in the main directory should provide the narrative and context. This should include a high level scenario / storyline that builds interest and frames the content.
 
 Keep the workshop summary brief. Detailed discussion of architectural topics should be done in each module or potentially in a standalone page linked to from the primary landing page.
 
