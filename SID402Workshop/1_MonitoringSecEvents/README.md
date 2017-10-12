@@ -181,19 +181,25 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 3. For the **Period** value, select **1 Minute**.
 
-<We may want to add a note treat missing data as good>
+4. In the **Treat missing data as:** box, Click **good (not breaching threshold)**.
 
-4. In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **Notifyme** and provide your email address. Refer to diagrams below.
+5. In the **Actions** box, Click **Select list**, **New list** for **Send notification to:**, provide a topic name such as **NotifyMe** and provide your email address. Refer to diagrams below.
+
+<p/>
 
     ![](./images/CreateAlarm.png)
 
+    <p/>
+
     ![](./images/SettingValues.png)
 
-5. When you are done, click **Create Alarm**.
+<p/>
 
-6. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
+6. When you are done, click **Create Alarm**.
 
-7. Click on **View Alarm**.
+7. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
+
+8. Click on **View Alarm**.
 </details>
 
 ### 3. Create Security Alarms Using AWS CloudFormation
