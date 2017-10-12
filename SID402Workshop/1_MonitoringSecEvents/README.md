@@ -189,7 +189,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 ![](./images/CreateAlarm.png)
 
-    <p/>
+<p/>
 
 ![](./images/SettingValues.png)
 
