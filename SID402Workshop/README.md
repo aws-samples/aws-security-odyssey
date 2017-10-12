@@ -30,7 +30,7 @@ To help deliver the project, you will use [Amazon EC2](https://aws.amazon.com/ec
 
 ### AWS Account
 
-In order to complete this workshop you'll need an AWS Account with access to create Amazon EC2, Amazon VPC, AWS Identity and Access Management (IAM), Amazon Simple Storage Service (S3), AWS Lambda, and AWS IoT resources.
+In order to complete this workshop you'll need an AWS Account with admin access to services including Amazon EC2, Amazon VPC, AWS Identity and Access Management (IAM), Amazon Simple Storage Service (S3), AWS Lambda, and AWS IoT. 
 
 The code and instructions in this workshop assume only one student is using a given AWS account at a time. If you try sharing an account with another student, you'll run into naming conflicts for certain resources. You can work around this by either using a suffix in your resource names or using distinct Regions, but the instructions do not provide details on the changes required to make this work.
 
