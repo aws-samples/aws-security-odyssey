@@ -22,23 +22,7 @@ By the end of this module, you will be able to:
 
 ### Prerequisites
 
-This module assumes the following:
-
-* You have a general knowledge of AWS services including the use of the AWS Console, AWS CloudFormation, AWS IAM, Amazon EC2, and Amazon VPC.
-
-* You have an AWS account and an IAM user with full administrative privileges. If you do not have full administrative privileges, you will need to have at a minimum the ability to:
-
-  * Create and manage AWS CloudFormation stacks
-
-  * Create and manage Amazon VPC and related components
-
-  * Create and manage Amazon EC2 t2 instances and associate Elastic IP addresses
-
-  * Create and manage IAM groups and roles
-
-  * Fully manage AWS IoT
-
-* Only one person will be doing this module in a specific AWS account in a given region. If more than one person is using the same AWS account for this module at the same time, each must use a different AWS IoT region or make adjustments to the templates.
+This module assumes you have a general knowledge of AWS services and that you have an AWS account with an IAM user that has full administrative privileges. Additionally, only one person should do this module in a specific AWS account in a given region. If more than one person is using the same AWS account for this module at the same time, each must use a different AWS IoT region.
 
 ### AWS IoT
 
@@ -46,15 +30,9 @@ AWS IoT is a managed cloud platform that lets connected devices easily and secur
 
 ### 1. Select a Region and Launch CloudFormation Stack
 
-AWS IoT is located in many [regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#iot_region) across the world. We will provide shortcuts for the us-east-1, us-east-2, and us-west-2 regions in this document and ask that you choose one of these three regions for the module. As noted above, if more than one person is doing the module in the same AWS account, each person should use a different region.
+AWS IoT is located in many [regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#iot_region) across the world. We will provide shortcuts for the regions we want you to use later in this lab. As noted above, if more than one person is doing the module in the same AWS account, each person should use a different region.  Please use the same region throughout the lab.
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
-
-Make a note of the AWS *region name*, for example, *US West (Oregon),*
-
-For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
-
-**Note** If needed, create a new key pair: [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
 
 ### 2. Build the Node-RED Environment
 
@@ -67,9 +45,6 @@ ___Hold the "Control" key while clicking and open the launch link in a new tab__
 
 Region| Launch
 ------|-----
-N. Virginia (us-east-1) | [![Launch Module in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
-Ohio (us-east-2) | [![Launch Module in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
-Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 Singapore (ap-southeast-1) | [![Launch Module in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 Sydney (ap-southeast-2) | [![Launch Module in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
@@ -193,7 +168,9 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
     On the Connection tab, configure the following:
 
     **Server**: Endpoint value that you copied earlier
-    **Port**: 8883
+
+    **Port**: 8883 (Make sure you use this value otherwise your messages will not go through!)
+
     **Client ID**: device1
 
     Now check the box named Enable Secure SSL/TLS communication. The window should like similar to that shown below.
