@@ -10,9 +10,6 @@ This repository contains a collection of interactive content designed to demonst
 
 - [**re:Invent 2017 - SID-402 - Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communications Platforms**](SID402Workshop) - This workshop gives you the opportunity to take a security journey across various AWS services and implement security controls along the way. Learn how to apply AWS security controls to services such as Amazon EC2, Amazon S3, AWS Lambda and Amazon VPC — in short, how to use the cloud to protect the cloud. We consider how to adopt a workload-centric approach to security strategy, how to address security issues in a cost-effective manner, and how to automate security responses to promote maturity and auditability.
 
-# Bootcamps
--
-
 <br>
 
 ## License
