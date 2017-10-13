@@ -80,7 +80,7 @@ Notice that many resources appear in addition to **EC2 Security Group** even tho
 
 3.  Click **Create Security Group button**.
 
-4.	In the **Name tag** text box, enter Module3SG. The **Group name** text box should populate automatically.
+4.	In the **Name tag** text box, enter "SID402Module3SG". The **Group name** text box should populate automatically.
 
 5.	In the Description text box, enter Module 3 Security Group. Keep the default VPC in the **VPC** drop down list.
 
@@ -128,12 +128,12 @@ You have now set up the ingress configuration of the default security
 6.  Click the **Create AWS Lambda function** link. Click **Author From
     Scratch** button.
 
-7.  In the Name field enter awsconfig_lambda_security_group
+7.  In the Name field enter **awsconfig_lambda_security_group**.
 
 8.  In the **Role** field select **Create a custom role** and a new page
     window will appear.
 
-9.  In the **IAM Role** field, select **Create new IAM Role** and in the **Role Name** field enter awsconfig_lambda_ec2_security_group_role
+9.  In the **IAM Role** field, select **Create new IAM Role** and in the **Role Name** field enter **awsconfig_lambda_ec2_security_group_role**.
 
 10. Click on **View Policy Document** to open the policy window and then click on the **Edit** link. Click **Ok** if a warning message appears about reading the documentation.
 
@@ -170,13 +170,13 @@ You have now set up the ingress configuration of the default security
 
 13.  Click **Create function**
 
-14.  For Runtime select Python 2.7
+14.  For Runtime select **Python 2.7**.
 
 15.  For Code entry type select **Upload a file from Amazon S3**
 
 16.  Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
 
-17.  In the Handler field enter awsconfig_lambda_security_group.lambda_handler
+17.  In the Handler field enter **awsconfig_lambda_security_group.lambda_handler**.
 
 18.  Let the **Memory (MB)** field under Basic Settings field with the default value of 128.
 

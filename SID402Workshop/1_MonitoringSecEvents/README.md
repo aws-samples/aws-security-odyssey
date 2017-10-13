@@ -39,8 +39,6 @@ Make a note of the AWS *region name*, for example, *US West (Oregon),*
 
 For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
-**Note** If needed, create a new key pair: [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)
-
 ##### Launch the CloudFormation Stack in the preferred region:
 
 ___Hold the "Control" key while clicking and open the launch link in a new tab___
