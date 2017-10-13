@@ -87,11 +87,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image3.png "image")
 
-    Use the top three download links to download the certificate, public key, and private key to a folder on your system. Also download the root CA from the link above the Activate button by right-clicking and saving the file as **rootCA.pem**. Once done and verified you have the files locally save, click **Activate** and then scroll to the bottom of the window and click **Attach a policy**.
+    Use the top three download links to download the certificate, public key, and private key to a folder on your system. Also download the root CA from the link above the Activate button by right-clicking and saving the file as **rootCA.pem**. To clarify, you are downloading **four** separate items!  Once done and verified you have the files locally saved, click **Activate** and then scroll to the bottom of the window and click **Attach a policy**.
 
     You have thus far created a device and a certificate. You will now define what the holder of the certificate (which will eventually be Node-RED running on Amazon EC2) can do.
 
-6. Clock Create new policy.
+6. Click **Create new policy**.
 
 7. On the **Create a policy** page create the statement as follows:
 
@@ -101,7 +101,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **Action**: iot:*
 
-    **Resource**: ARN: *
+    **Resource ARN**: *
 
     **Effect**: Allow
 
