@@ -39,7 +39,102 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 ### 2. Complete Initial Environment Configuration
 
 <details>
-<summary><strong>1. Enable AWS Config (expand for details)
+<summary><strong>1. Create an IAM User and Role (expand for details)
+</strong></summary><p>
+<br/>
+<probably need more instruction here>
+1.  Login to the AWS Console. Create a new user (e.g. test4user) for this
+    module and attach an IAM inline policy [MonitoringSGwithAWSConfigStudentPolicy.json](https://github.com/awslabs/aws-security-odyssey/tree/master/SID402Workshop/3_AutoSecRemediation/templates/MonitoringSGwithAWSConfigStudentPolicy.json). You can copy the following text and paste it into the IAM console.
+
+````
+{
+    "Version": "2012-10-17",
+    "Statement": [
+    {
+        "Effect":"Allow",
+        "Action":[
+            "ec2:Describe*",
+            "ec2:Authorize*",
+            "elasticloadbalancing:*",
+            "autoscaling:*",
+            "cloudwatch:*",
+            "elasticbeanstalk:*",
+            "config:*",
+            "events:*",
+            "iam:*",
+            "iam:AddRoleToInstanceProfile",
+            "iam:CreateInstanceProfile",
+            "iam:Get*",
+            "iam:PassRole",
+            "iam:CreateRole",
+            "iam:PutRolePolicy",
+            "iam:List*",
+            "iam:CreatePolicyVersion",
+            "iam:DeletePolicyVersion",
+            "iam:CreatePolicy",
+            "kms:List*",
+            "kms:Get*",
+            "s3:*",
+            "sns:*",
+            "sqs:*",
+            "tag:Get*",
+            "logs:*",
+            "lambda:*",
+            "cloudformation:*",
+            "vpc:*"
+        ],
+        "Resource":"*"
+    },
+      {
+      "Sid": "LimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachUserPolicy",
+        "iam:DetachUserPolicy",
+        "iam:DetachRolePolicy",
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
+            ]
+        }
+      }
+    },
+      {
+      "Sid": "MoreLimitedAttachmentPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::*:policy/service-role/*AWSConfigDeliveryPermissions*"
+            ]
+        }
+      }
+    },
+    {
+        "Effect": "Deny",
+        "Action": [
+            "ec2:RunInstances"
+        ],
+        "Resource": "arn:aws:ec2:*:*:instance/*"
+    }
+    ]
+}
+````
+
+
+2.  Login to the AWS console using the new user and confirm the preferred region.
+</details>
+
+<details>
+<summary><strong>2. Enable AWS Config (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -70,7 +165,7 @@ Notice that many resources appear in addition to **EC2 Security Group** even tho
 </details>
 
 <details>
-<summary><strong>2. Create an EC2 Security Group (expand for details)
+<summary><strong>3. Modify the EC2 Security Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -78,39 +173,26 @@ Notice that many resources appear in addition to **EC2 Security Group** even tho
 
 2.  On the left hand side of the window click **Security Groups**.
 
-3.  Click **Create Security Group button**.
+3.  There should be one security group entry with the same **sg-** followed by some characters (Default VPC Security Group). Click on the check box. You will see the security group configuration appear below with four “folder tabs.”
 
-4.	In the **Name tag** text box, enter Module3SG. The **Group name** text box should populate automatically.
+4.  Click on the Inbound Rules tab and click the **Edit** button.
 
-5.	In the Description text box, enter Module 3 Security Group. Keep the default VPC in the **VPC** drop down list.
+5.  Click in the field under **Type** column and change the type to **HTTP (80)**. Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button. The default VPC Security Group has this rule added by default normally. If it is already there, skip to next step.
 
-6.	Click **Yes, Create** button.
+6.  Click in the field under **Type** column for the new row and change the type to **HTTPS (443)**. Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button.
 
-7.	Select the **SID402Module3SG** Security Group.
+7.  Click in the field under **Type** column for the new row and change the type to **SMTPS (465)**. Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button.
 
-8.	Click on the **Inbound Rules** tab and click the **Edit** button.
-
-9.	Click in the field under **Type** column and change the type to **HTTP (80)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button. The default VPC Security Group has this rule added by default normally. If it is already there, skip to next step.
-
-10.	Click in the field under **Type** column for the new row and change the type to **HTTPS (443)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button.
-
-11.	Click in the field under **Type** column for the new row and change the type to **SMTPS (465)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button.
-
-12.	Click in the field under **Type** column for the new row and change the type to **IMAPS (993)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and click the **Save** button.
+8.  Click in the field under **Type** column for the new row and change the type to **IMAPS (993)**. Under the **Source** column, click in the field and enter **0.0.0.0/0** and click the **Save** button.
 
 Your Inbound Rules should look like this:
-
-<p/>
-
 ![](./images/image4.png)
-
-<p/>
 
 You have now set up the ingress configuration of the default security
 </details>
 
 <details>
-<summary><strong>3. Create and Run the AWS Config Rule (expand for details)
+<summary><strong>4. Create and Run the AWS Config Rule (expand for details)
 </strong></summary><p>
 <br/>
 
