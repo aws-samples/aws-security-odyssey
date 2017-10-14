@@ -44,27 +44,27 @@ In this section, you will perform configuration in the console for CloudTrail lo
 ___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
 <details>
-<summary><strong>1. Create a CloudTrail with the Console (expand for details)
+<summary><strong>2.1. Create a CloudTrail with the Console (expand for details)
 </strong></summary><p>
 <br/>
 
-2.1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
+2.1.1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
-2.2. Click on **Trails** from the pane in left and click **Create trail** button.
+2.1.2. Click on **Trails** from the pane in left and click **Create trail** button.
 
-2.3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".
+2.1.3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".
 
-2.4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
+2.1.4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
 
-2.5. For **Read/Write events**, choose **All**.
+2.1.5. For **Read/Write events**, choose **All**.
 
-2.6. For **Data Events**, do not select any buckets.
+2.1.6. For **Data Events**, do not select any buckets.
 
-2.7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
+2.1.7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
 
-2.8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
+2.1.8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
 
-2.9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
+2.1.9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
 
 Next, enable a role that CloudTrail can assume and deliver events to the log streams.
 </details>
