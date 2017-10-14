@@ -181,11 +181,10 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **Name**: IoT Security Lab
     
-    If for some reason you forgot to download the **CA Certificate** earlier, you can find it here:
+    If for some reason you forgot to download the **rootCA.pem** file earlier, you can right click on the following link, open it in a new tab and save the value into a file named **rootCA.pem**:
     
-    [![rootCA.pem]](https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem)
+    [[rootCA.pem]](https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem)
     
-
 8. Then click **Add**, which will bring you back to the **Add mqtt-broker config node** window.
 
 9. From the mqtt-broker config node page, click **Add**. You will return to the **Edit mqtt out node** window.
