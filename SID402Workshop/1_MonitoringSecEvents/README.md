@@ -48,21 +48,21 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 </strong></summary><p>
 <br/>
 
-_2.1.1._ In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
+__2.1.1.__ In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
-_2.1.2._ Click on **Trails** from the pane in left and click **Create trail** button.
+__2.1.2.__ Click on **Trails** from the pane in left and click **Create trail** button.
 
-_2.1.3._ In the **Trail name** box, type a name for your trail such as "myCloudTrail".
+__2.1.3.__ In the **Trail name** box, type a name for your trail such as "myCloudTrail".
 
-_2.1.4._ For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
+__2.1.4.__ For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
 
-_2.1.5._ For **Read/Write events**, choose **All**.
+__2.1.5.__ For **Read/Write events**, choose **All**.
 
-_2.1.6._ For **Data Events**, do not select any buckets.
+__2.1.6.__ For **Data Events**, do not select any buckets.
 
-_2.1.7._ For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
+__2.1.7.__ For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
 
-_2.1.8._ In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
+__2.1.8.__ In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
 
 _2.1.9._ Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
 
