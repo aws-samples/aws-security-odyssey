@@ -72,23 +72,23 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 
 [comment]: # (This step requires updates)
 <details>
-<summary><strong>2. Create a Role (expand for details)
+<summary><strong>2.2. Create a Role (expand for details)
 </strong></summary><p>
 <br/>
 
 <b>Add a policy to a role using the IAM console:</b>
 
-1. In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**.
+- __2.2.1.__ In the AWS Management Console, under **Security, Identity & Compliance** select **IAM**.
 
-2.	Click on **Roles** from the pane in left.
+- __2.2.2.__	Click on **Roles** from the pane in left.
 
-3. Click on the role name that begins with name of your CloudFormation stack (SID402-AutomatingSecurityEvents) and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
+- __2.2.3.__ Click on the role name that begins with name of your CloudFormation stack (SID402-AutomatingSecurityEvents) and containing the string “LogsRole” (It should be the only one there).  This basic role has been created for you by the CloudFormation. We'll configure this role with permissions to deliver logs to the log group that we are going to create. With the **Permissions** tab open, click **Attach Policy**.
 
-4. On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**. Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
+- __2.2.4.__ On the **Attach Policy** page, search with the Filter box for **CloudWatchLogsFullAccess**, select its check box, and click **Attach Policy**. Repeat this step to select and attach the policy **AWSCloudTrailReadOnlyAccess** as well.
 </details>
 
 <details>
-<summary><strong>3. Create a Log Group (expand for details)
+<summary><strong>2.3. Create a Log Group (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -96,66 +96,66 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 <b>To specify a log group using the console:</b>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
+- __2.3.1.__ In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
-2.	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.
+- __2.3.2.__	Click on **Trails** from the pane in left. Choose the name of the trail that you have created "myCloudTrail". We'll configure this trail to deliver logs to the log group that we are going to create.
 
-3.	Expand **CloudWatch Logs** section and click **Configure**.
+- __2.3.3.__	Expand **CloudWatch Logs** section and click **Configure**.
 
-4.	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. 
+- __2.3.4.__	In the **New or existing log group** box, keep the DefaultLogGroup or type a log group name (For example myTestLogGroup) to organize CloudTrail events for you to review using CloudWatch Logs, and then choose **Continue**. 
 
-5. Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document**. The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.
+- __2.3.5.__ Expand **View Details** and look at the **Role Name** box. Expand **View Policy Document**. The default role policy contains the permissions required for creating a CloudWatch Logs log stream in a log group that you specify and for delivering CloudTrail events to that log stream.
 
-6.	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.
+- __2.3.6.__	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.
 </details>
 
 <details>
-<summary><strong>4. Create a Metric Filter (expand for details)
+<summary><strong>2.4. Create a Metric Filter (expand for details)
 </strong></summary><p>
 <br/>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudWatch**
+- __2.4.1.__ In the AWS Management Console, Under Management Tools, Select **CloudWatch**
 
-2.	In the navigation pane on left, click **Logs**.
+- __2.4.2.__	In the navigation pane on left, click **Logs**.
 
-3.	In the list of log groups, select the radio button next to the log group that you created for CloudTrail log events.
+- __2.4.3.__	In the list of log groups, select the radio button next to the log group that you created for CloudTrail log events.
 
-4.	Click **Create Metric Filter**.
+- __2.4.4.__	Click **Create Metric Filter**.
 
-5.	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:
+- __2.4.5.__	On the **Define Logs Metric Filter** screen, type the following in text box **Filter Pattern**:
 
 <code>{ ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }</code><p/>
 
 **Note:** Review this filter pattern and take a note of this. Notice that a number of S3 bucket specific events are captured. Revisit this filter pattern when you are ready to test Amazon S3 bucket activity in steps provided below in this module. Steps are provided for testing one such events but you may want to test additional filters.
 
-6. Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**
+- __2.4.6.__ Click **Assign Metric**, and then on the Create Metric Filter and Assign a Metric screen, in the Filter Name box, delete existing text and enter **S3BucketActivity**
 
-7.	Under Metric Details, in the **Metric Namespace** box, delete existing text and enter **CloudTrailMetrics**.
+- __2.4.7.__	Under Metric Details, in the **Metric Namespace** box, delete existing text and enter **CloudTrailMetrics**.
 
-8.	In the **Metric Name** field, enter **S3BucketActivityEventCount**.
+- __2.4.8.__	In the **Metric Name** field, enter **S3BucketActivityEventCount**.
 
-9.	Click **Metric Value**, and then type **1**. If Metric Value does not appear, click **Show advanced metric settings** first.
+- __2.4.9.__	Click **Metric Value**, and then type **1**. If Metric Value does not appear, click **Show advanced metric settings** first.
 
-10. Click **Create Filter**.
+- __2.4.10.__ Click **Create Filter**.
 </details>
 
 <details>
-<summary><strong>5. Create an Alarm (expand for details)
+<summary><strong>2.5. Create an Alarm (expand for details)
 </strong></summary><p>
 <br/>
 <b>These steps are a continuation of the previous steps for creating a metric filter.</b>
 
-1. You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.
+- __2.5.1.__ You will notice a summary of the filter that has been created with message similar to **Your filter S3BucketActivity has been created**. On the **Filters for Log_Group_Name** page, next to the **S3BucketActivity** filter name, click **Create Alarm**.
 
-2. On the **Create Alarm** page, provide the following values
+- __2.5.2.__ On the **Create Alarm** page, provide the following values
   Name: **S3 Bucket Activity**
   Whenever S3BucketActivityEventCount is **>=** 1 for **1** consecutive period(s).
 
-3. For the **Period** value, select **1 Minute**.
+- __2.5.3.__ For the **Period** value, select **1 Minute**.
 
-4. In the **Treat missing data as:** box, Click **good (not breaching threshold)**.
+- __2.5.4.__ In the **Treat missing data as:** box, Click **good (not breaching threshold)**.
 
-5. In the **Actions** box, Click **Select list**, **New list** for **Send notification to:**, provide a topic name such as **NotifyMe** and provide your email address. Refer to diagrams below.
+- __2.5.5.__ In the **Actions** box, Click **Select list**, **New list** for **Send notification to:**, provide a topic name such as **NotifyMe** and provide your email address. Refer to diagrams below.
 
 <p/>
 
@@ -167,11 +167,11 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 <p/>
 
-6. When you are done, click **Create Alarm**.
+- __2.5.6.__ When you are done, click **Create Alarm**.
 
-7. You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
+- __2.5.7.__ You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
 
-8. Click on **View Alarm**.
+- __2.5.8.__ Click on **View Alarm**.
 </details>
 
 ### 3. Create Security Alarms Using AWS CloudFormation
@@ -196,29 +196,29 @@ London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/A
 
 **Note:** Review the contents of the template to understand the metric filter and alarm creation via CloudFormation.
 
-1. On the Select Template screen, click **Next**.
+__3.1.__ On the Select Template screen, click **Next**.
 
-2. On the **Specify Details** page, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
+__3.2.__ On the **Specify Details** page, provide the email address where you want to receive notifications, and the enter name of the log group name that you used when you configured CloudTrail log file delivery to CloudWatch Logs.
 
-3. Click **Next**.
+__3.3.__ Click **Next**.
 
-4. On the **Options** page, you can create tags or configure other advanced options. These are not required for this module.
+__3.4.__ On the **Options** page, you can create tags or configure other advanced options. These are not required for this module.
 
-5. Click **Next**.
+__3.5.__ Click **Next**.
 
-6. Click **Create**. The stack will be created in a few minutes.
+__3.6.__ Click **Create**. The stack will be created in a few minutes.
 
-7. If not already selected, select your stack by clicking on the check box to the left of your stack.
+__3.7.__ If not already selected, select your stack by clicking on the check box to the left of your stack.
 
-8. Click on the **Events** tab and refresh periodically to monitor the creation of your stack.
+__3.8.__ Click on the **Events** tab and refresh periodically to monitor the creation of your stack.
 
-9. CloudFormation template also creates a SNS topic for you to get update on other email address provided by you in previous steps. You will receive an email from **AWS Notification**, Click on **Confirm subscription** link provided in the email.
+__3.9.__ CloudFormation template also creates a SNS topic for you to get update on other email address provided by you in previous steps. You will receive an email from **AWS Notification**, Click on **Confirm subscription** link provided in the email.
 
 When AWS CloudFormation is finished creating the stack, the status will show CREATE_COMPLETE. This CloudFormation stack has created a number of security metric filters and related alarms for you. We'll test these events in the subsequent steps.</p>
 
 ### 4. And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
-#### 1. Test Multiple Events with a CloudFormation Stack
+__4.1.__ Test Multiple Events with a CloudFormation Stack
 
 ___Launch the CloudFormation Stack in the same region you chose in step 3.___
 
@@ -233,85 +233,85 @@ Sydney (ap-southeast-2) | [![Launch Module in ap-southeast-2](http://docs.aws.am
 Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
 Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
 
-1. On the Select Template screen, click **Next**.
-2. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
-3. Click Next.
-4. On the Options page, you can create tags or configure other advanced options. These are not required for this module.
-5. Click **Next**.
-6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
-7. Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
-8. If not already selected, select your stack by clicking on the check box to the left of your stack.
-9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
+- __4.1.1__ On the Select Template screen, click **Next**.
+- __4.1.2__ On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
+- __4.1.3__ Click Next.
+- __4.1.4__ On the Options page, you can create tags or configure other advanced options. These are not required for this module.
+- __4.1.5__ Click **Next**.
+- __4.1.6__ On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
+- __4.1.7__ Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
+- __4.1.8__ If not already selected, select your stack by clicking on the check box to the left of your stack.
+- __4.1.9__ Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
 
 We'll create a number of security events in this section of the module. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The module covers a number of different events. We are providing a CloudFormation script that creates some resources like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
 Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the module.
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
-#### 2. Test Amazon S3 bucket Activity
-1. In the AWS Management Console, under **Storage**, select **S3**.
+#### 4.2. Test Amazon S3 bucket Activity
+- __4.2.1__ In the AWS Management Console, under **Storage**, select **S3**.
 
-2. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
+- __4.2.2__ Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
 
-3. Under **Public access**, click the radio button **Everyone** and in the pop up box, select few permissions like **List Objects** or **Read bucket permission**. Do **not** allow **Write** permissions for **Everyone**.
+- __4.2.3__ Under **Public access**, click the radio button **Everyone** and in the pop up box, select few permissions like **List Objects** or **Read bucket permission**. Do **not** allow **Write** permissions for **Everyone**.
 
-4. Click **Save**
+- __4.2.4__ Click **Save**
 
-5. You will receive an Alarm **S3 bucket Activity** via email.
+- __4.2.5__ You will receive an Alarm **S3 bucket Activity** via email.
 **Note:** - If you have not received email notification, navigate to AWS Console, Services, CloudWatch and click on **Alarms**. If this shows **Config Status** as **Pending confirmation**  then that means you have not yet confirmed SNS subscription yet. Refer to your email and subscribe to notifications from this module.
 
-6. You can also view the status of Alarm via AWS CloudWatch console.
+- __4.2.6__ You can also view the status of Alarm via AWS CloudWatch console.
 
-#### 3. Test Security Group Configuration changes
+#### 4.3. Test Security Group Configuration changes
 
-1. In the AWS Management Console, on the **Services** menu, click **EC2**.
+- __4.3.1__ In the AWS Management Console, on the **Services** menu, click **EC2**.
 
-2. Click on **Security Groups** under **NETWORK & SECURITY** section from the left pane.
+- __4.3.2__ Click on **Security Groups** under **NETWORK & SECURITY** section from the left pane.
 
-3. Select **SID402-AutomatingSecurityEvents-InstanceSecurityGroup** from the list and click on **Inbound** tab on the bottom pane.
+- __4.3.3__ Select **SID402-AutomatingSecurityEvents-InstanceSecurityGroup** from the list and click on **Inbound** tab on the bottom pane.
 
-4. click **Edit**.
+- __4.3.4__ click **Edit**.
 
-5. Click **Add Rule**. A new row is created.
+- __4.3.5__ Click **Add Rule**. A new row is created.
 
-6. Select **Type** of rule from the list, specify a port range (for example 8080 or 49152-50000) and a CIDR range for new inbound rule. Set Source to 0.0.0.0/0 if you are not sure.
+- __4.3.6__ Select **Type** of rule from the list, specify a port range (for example 8080 or 49152-50000) and a CIDR range for new inbound rule. Set Source to 0.0.0.0/0 if you are not sure.
 
-7. Click **save**
+- __4.3.7__ Click **save**
 
-8. You will receive an Alarm **CloudTrailSecurityGroupChanges** via email.
+- __4.3.8__ You will receive an Alarm **CloudTrailSecurityGroupChanges** via email.
 
-9. You can also view the status of Alarm via AWS CloudWatch console.
+- __4.3.9__ You can also view the status of Alarm via AWS CloudWatch console.
 
-#### 4. Test EC2 Instance Changes
+#### 4.4. Test EC2 Instance Changes
 
-1. In the AWS Management Console, on the **Services** menu, click **EC2**.
+- __4.4.1__ In the AWS Management Console, on the **Services** menu, click **EC2**.
 
-2. Select SecurityTest EC2 instance by clicking on **Instances** In the navigation pane and click on **Actions** button at the top
+- __4.4.2__ Select SecurityTest EC2 instance by clicking on **Instances** In the navigation pane and click on **Actions** button at the top
 
-3. Click on **Instance State** and then **Stop**. A Pop-up window for confirmation appears, click **Yes, Stop**.
+- __4.4.3__ Click on **Instance State** and then **Stop**. A Pop-up window for confirmation appears, click **Yes, Stop**.
 
-4. You will receive an Alarm **CloudTrailEC2InstanceChanges** via email.
+- __4.4.4__ You will receive an Alarm **CloudTrailEC2InstanceChanges** via email.
 
-5. You can also view the status of Alarm via AWS CloudWatch console.
+- __4.4.5__ You can also view the status of Alarm via AWS CloudWatch console.
 
-#### 5. Test IAM Policy Changes
+#### 4.5. Test IAM Policy Changes
 
-1. In the AWS Management Console, on the **Services** menu, click **IAM**.
+- __4.5.1__ In the AWS Management Console, on the **Services** menu, click **IAM**.
 
-2. Click on **Policies** on the left pane.
+- __4.5.2__ Click on **Policies** on the left pane.
 
-3. Click **Create Policy**.
+- __4.5.3__ Click **Create Policy**.
 
-4. Click **Select** next to Policy Generator.
+- __4.5.4__ Click **Select** next to Policy Generator.
 
-5. Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type * in **Amazon Resource Name (ARN)**.
+- __4.5.5__ Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type * in **Amazon Resource Name (ARN)**.
 
-6. Click **Add Statement** and than click **`Next` Step**
+- __4.5.6__ Click **Add Statement** and than click **`Next` Step**
 
-7. Click **Create Policy**
+- __4.5.7__ Click **Create Policy**
 
-8. You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
+- __4.5.8__ You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
 
-9. You can also view the status of Alarm via AWS CloudWatch console.
+- __4.5.9__ You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
 <summary><strong>Optional Test Scenarios (expand for details)
@@ -321,23 +321,23 @@ The following test events are optional and should only be completed after you ha
 
 ### 1. Test Network Access Control List (NACL) Changes
 
-1. In the AWS Management Console, on the **Services** menu, click **VPC**.
+__1.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
-2. Click on **Network ACLs** from the list of Amazon VPC resources. A list of Network ACLs appears.
+__1.2.__ Click on **Network ACLs** from the list of Amazon VPC resources. A list of Network ACLs appears.
 
-3. Select a NACL which is associated with a Subnet, click on **Inbound Rules** or **Outbound Rules** tab and Click **Edit** from the bottom pane.
+__1.3.__ Select a NACL which is associated with a Subnet, click on **Inbound Rules** or **Outbound Rules** tab and Click **Edit** from the bottom pane.
 
-4. Click on **Add another rule** button and enter the following values in the bottom row and click **Save**.
+__1.4.__ Click on **Add another rule** button and enter the following values in the bottom row and click **Save**.
 
     ![](./images/NACL_Addition.png)
 
-5. You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
+__1.5.__ You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
 
-6. You can also view the status of Alarm via AWS CloudWatch console.
+__1.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 
 ### 2. Test Network Gateway Changes
 
-1. In the AWS Management Console, on the **Services** menu, click **VPC**.
+__2.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
 
@@ -351,7 +351,7 @@ The following test events are optional and should only be completed after you ha
 
 ### 3. Test Amazon Virtual Private Cloud (VPC) Changes
 
-1. In the AWS Management Console, on the **Services** menu, click **VPC**.
+__3.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Your VPCs** from the list of Amazon VPC resources. A list of VPC appears.
 
@@ -365,7 +365,7 @@ The following test events are optional and should only be completed after you ha
 
 ### 4. Test Console Sign-In Failures
 
-1. Note down the AWS account number from the AWS Console. The number is displayed on the top right.
+__4.1.__ Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
   ![](./images/Account_Number.png)
 
@@ -392,7 +392,7 @@ Your authentication information is incorrect. Please try again
 
 ### 5. Test Authorization Failures
 
-1. In the AWS Management Console, under **Storage** menu, select **S3**.
+__5.1.__ In the AWS Management Console, under **Storage** menu, select **S3**.
 
 2. Select the bucket **securityautomationtestbucketxxxx** and upload a file into this bucket.
 
@@ -404,7 +404,7 @@ Your authentication information is incorrect. Please try again
 
 ### 6. Test CloudTrail Changes
 
-1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+__6.1.__ In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
 
 2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
 
