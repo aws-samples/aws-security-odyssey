@@ -314,44 +314,44 @@ Manual Steps for a limited number of events are also provided in this section. F
 - __4.5.9__ You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
-<summary><strong>Optional Test Scenarios (expand for details)
+<summary><strong>5. Optional Test Scenarios (expand for details)
 </strong></summary><p>
 <br/>
 The following test events are optional and should only be completed after you have completed all modules in this workshop.
 
-### 1. Test Network Access Control List (NACL) Changes
+### 5.1. Test Network Access Control List (NACL) Changes
 
-__1.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
+- __5.1.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
-__1.2.__ Click on **Network ACLs** from the list of Amazon VPC resources. A list of Network ACLs appears.
+- __5.1.2.__ Click on **Network ACLs** from the list of Amazon VPC resources. A list of Network ACLs appears.
 
-__1.3.__ Select a NACL which is associated with a Subnet, click on **Inbound Rules** or **Outbound Rules** tab and Click **Edit** from the bottom pane.
+- __5.1.3.__ Select a NACL which is associated with a Subnet, click on **Inbound Rules** or **Outbound Rules** tab and Click **Edit** from the bottom pane.
 
-__1.4.__ Click on **Add another rule** button and enter the following values in the bottom row and click **Save**.
+- __5.1.4.__ Click on **Add another rule** button and enter the following values in the bottom row and click **Save**.
 
     ![](./images/NACL_Addition.png)
 
-__1.5.__ You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
+- __5.1.5.__ You will receive an Alarm **CloudTrailNetworkAclChanges** via email.
 
-__1.6.__ You can also view the status of Alarm via AWS CloudWatch console.
+- __5.1.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 
 ### 2. Test Network Gateway Changes
 
-__2.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
+- __2.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
-2. Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
+- __2.2.__ Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
 
-3. Click on **Create Internet Gateway** button.
+- __2.3.__ Click on **Create Internet Gateway** button.
 
-4. Provide a **Name Tag** such as myInternetGateway and click **Yes, Create**.
+- __2.4.__ Provide a **Name Tag** such as myInternetGateway and click **Yes, Create**.
 
-5. You will receive an Alarm **CloudTrailGatewayChanges** via email.
+- __2.5.__ You will receive an Alarm **CloudTrailGatewayChanges** via email.
 
-6. You can also view the status of Alarm via AWS CloudWatch console.
+- __2.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 
 ### 3. Test Amazon Virtual Private Cloud (VPC) Changes
 
-__3.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
+- __3.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
 2. Click on **Your VPCs** from the list of Amazon VPC resources. A list of VPC appears.
 
