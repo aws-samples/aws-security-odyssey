@@ -30,13 +30,13 @@ To help deliver the project, you will use [Amazon EC2](https://aws.amazon.com/ec
 
 ### AWS Account
 
-In order to complete this workshop you'll need an AWS Account with admin access to services including Amazon EC2, Amazon VPC, AWS Identity and Access Management (IAM), Amazon Simple Storage Service (S3), AWS Lambda, and AWS IoT. 
+In order to complete this workshop you'll need an AWS Account with admin access to services including Amazon EC2, Amazon VPC, AWS Identity and Access Management (IAM), Amazon Simple Storage Service (S3), AWS Lambda, and AWS IoT.
 
 The code and instructions in this workshop assume only one student is using a given AWS account at a time. If you try sharing an account with another student, you'll run into naming conflicts for certain resources. You can work around this by either using a suffix in your resource names or using distinct Regions, but the instructions do not provide details on the changes required to make this work.
 
 ### Region
 
-Choose an AWS Region to execute the workshops which support the complete set of services covered in the material including AWS Lambda, Amazon Kinesis Streams, Amazon Kinesis Firehose, Amazon Kinesis Analytics, and Amazon Athena. Use the [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) to determine which services are available in a Region. Regions that support these services include **US East (N. Virginia)** and **US West (Oregon)**.
+Choose an AWS Region to execute the workshops which support the complete set of services covered in the material including Amazon EC2, Amazon VPC, Amazon S3, AWS Lambda, Amazon VPC, AWS IoT, AWS CloudWatch and AWS CloudTrail. Use the [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) to determine which services are available in a Region.
 
 ## Modules
 

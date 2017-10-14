@@ -31,39 +31,11 @@ This module is targeted for IT security focused individuals who are interested i
 
 To successfully complete this module, you should be familiar with AWS services including Amazon EC2, S3, VPC etc. and have a basic understanding of security groups, Network Access Control List (NACL), IAM Policies etc. You should be comfortable logging into and using the AWS Management Console and have familiarity with AWS Identity and Access Management (IAM).
 
-### 1. Select a Region and Launch CloudFormation Stack
+### 1. Choose a Region
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
-Make a note of the AWS *region name*, for example, *US West (Oregon),*
-
-For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
-
-##### Launch the CloudFormation Stack in the preferred region:
-
-___Hold the "Control" key while clicking and open the launch link in a new tab___
-
-Region| Launch
-------|-----
-N. Virginia (us-east-1) | [![Launch Module in us-east-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Ohio (us-east-2) | [![Launch Module in us-east-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Oregon (us-west-2) | [![Launch Module in us-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Singapore (ap-southeast-1) | [![Launch Module in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Sydney (ap-southeast-2) | [![Launch Module in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-Ireland (eu-west-1) | [![Launch Module in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
-
-1. On the Select Template screen, click **Next**.
-2. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
-3. Click Next.
-4. On the Options page, you can create tags or configure other advanced options. These are not required for this module.
-5. Click **Next**.
-6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
-7. Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
-8. If not already selected, select your stack by clicking on the check box to the left of your stack.
-9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
+Make a note of the AWS *region name*, for example, *Ireland (eu-west-1)*. For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
 ### 2. Complete Initial Environment Configuration
 
@@ -76,29 +48,30 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 </strong></summary><p>
 <br/>
 
-1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
+2.1. In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
-2. Click on **Trails** from the pane in left and click **Create trail** button.
+2.2. Click on **Trails** from the pane in left and click **Create trail** button.
 
-3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".
+2.3. In the **Trail name** box, type a name for your trail such as "myCloudTrail".
 
-4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
+2.4. For **Apply trail to all regions?**, choose **Yes** to receive log files from all regions.
 
-5. For **Read/Write events**, choose **All**.
+2.5. For **Read/Write events**, choose **All**.
 
-6. For **Data Events**, do not select any buckets.
+2.6. For **Data Events**, do not select any buckets.
 
-7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
+2.7. For **Create a new S3 bucket?**, choose **Yes** to create a new bucket.
 
-8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
+2.8. In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
 
-9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
+2.9. Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
 
 Next, enable a role that CloudTrail can assume and deliver events to the log streams.
 </details>
 
+[comment]: # (This step requires updates)
 <details>
-<summary><strong>2. Enable a Role (expand for details)
+<summary><strong>2. Create a Role (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -204,7 +177,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 In the previous steps you have learnt how to create a metric filter in CloudWatch and how to create an alarm for the metric via the AWS console. Creation of metric filters and corresponding alarms for the remaining security events described in the overview section has been automated for you using AWS CloudFormation template. Follow the steps below:
 
-##### Launch the CloudFormation Stack in the previously selected region:
+##### Launch the CloudFormation Stack in the preferred region:
 
 ___Hold the "Control" key while clicking and open the launch link in a new tab___
 
@@ -244,11 +217,36 @@ When AWS CloudFormation is finished creating the stack, the status will show CRE
 
 ### 4. And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
 
+#### 1. Test Multiple Events with a CloudFormation Stack
+
+___Launch the CloudFormation Stack in the same region you chose in step 3.___
+
+___Hold the "Control" key while clicking and open the launch link in a new tab.___
+
+Region| Launch
+------|-----
+Ireland (eu-west-1) | [![Launch Module in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Singapore (ap-southeast-1) | [![Launch Module in ap-southeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Sydney (ap-southeast-2) | [![Launch Module in ap-southeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
+
+1. On the Select Template screen, click **Next**.
+2. On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
+3. Click Next.
+4. On the Options page, you can create tags or configure other advanced options. These are not required for this module.
+5. Click **Next**.
+6. On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
+7. Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
+8. If not already selected, select your stack by clicking on the check box to the left of your stack.
+9. Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
+
 We'll create a number of security events in this section of the module. The resources such as a VPC, Subnets, Security Groups, EC2 Instance, IAM Policy etc. The module covers a number of different events. We are providing a CloudFormation script that creates some resources like networking components (VPC, Subnet, NACL,Security Group etc.), S3 bucket, IAM entities, EC2 instance etc.
 Manual Steps for a limited number of events are also provided in this section. Feel free to test remaining security events in the time left for the module.
 **Note:** - It may take up to 15 minutes to receive the alarm in the CloudWatch console and email. You are advised to continue going through the steps below while waiting for an alarm to appear.
 
-#### 1. Test Amazon S3 bucket Activity
+#### 2. Test Amazon S3 bucket Activity
 1. In the AWS Management Console, under **Storage**, select **S3**.
 
 2. Select the bucket **securityautomationtestbucketxxxx** and click on **Permissions** tab.
@@ -262,7 +260,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 6. You can also view the status of Alarm via AWS CloudWatch console.
 
-#### 2. Test Security Group Configuration changes
+#### 3. Test Security Group Configuration changes
 
 1. In the AWS Management Console, on the **Services** menu, click **EC2**.
 
@@ -282,7 +280,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 9. You can also view the status of Alarm via AWS CloudWatch console.
 
-#### 3. Test EC2 Instance Changes
+#### 4. Test EC2 Instance Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **EC2**.
 
@@ -294,7 +292,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 
 5. You can also view the status of Alarm via AWS CloudWatch console.
 
-#### 4. Test IAM Policy Changes
+#### 5. Test IAM Policy Changes
 
 1. In the AWS Management Console, on the **Services** menu, click **IAM**.
 
@@ -313,20 +311,6 @@ Manual Steps for a limited number of events are also provided in this section. F
 8. You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
 
 9. You can also view the status of Alarm via AWS CloudWatch console.
-
-#### 5. Test CloudTrail Changes
-
-1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
-
-2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
-
-3. Click on the pencil next to **Trail settings** to edit the behavior.
-
-4. For **Apply trail to all regions**, select radio button **No** and click **save**.
-
-5. You will receive an Alarm **CloudTrailChanges** via email.
-
-6. You can also view the status of Alarm via AWS CloudWatch console.
 
 <details>
 <summary><strong>Optional Test Scenarios (expand for details)
@@ -416,6 +400,20 @@ Your authentication information is incorrect. Please try again
 4. Try opening the URL from an Incognito browser (Private browser). You should receive an authorization ofailure. You will receive an Alarm **CloudTrailAuthorizationFailures** via email.
 
 4. You can also view the status of Alarm via AWS CloudWatch console.
+
+### 6. Test CloudTrail Changes
+
+1. In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+
+2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
+
+3. Click on the pencil next to **Trail settings** to edit the behavior.
+
+4. For **Apply trail to all regions**, select radio button **No** and click **save**.
+
+5. You will receive an Alarm **CloudTrailChanges** via email.
+
+6. You can also view the status of Alarm via AWS CloudWatch console.
 </details>
 
 ### Conclusion
