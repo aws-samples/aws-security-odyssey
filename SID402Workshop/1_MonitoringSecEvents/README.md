@@ -72,7 +72,7 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 
 [comment]: # (This step requires updates)
 <details>
-<summary><strong>2.2. Create a Role (expand for details)
+<summary><strong>2.2. Create a Role -NEEDS EDIT- (expand for details)
 </strong></summary><p>
 <br/>
 
@@ -319,7 +319,7 @@ Manual Steps for a limited number of events are also provided in this section. F
 <br/>
 The following test events are optional and should only be completed after you have completed all modules in this workshop.
 
-### 5.1. Test Network Access Control List (NACL) Changes
+#### 5.1. Test Network Access Control List (NACL) Changes
 
 - __5.1.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
@@ -335,86 +335,86 @@ The following test events are optional and should only be completed after you ha
 
 - __5.1.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 
-### 2. Test Network Gateway Changes
+#### 5.2. Test Network Gateway Changes
 
-- __2.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
+- __5.2.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
-- __2.2.__ Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
+- __5.2.2.__ Click on **Internet Gateways** from the list of Amazon VPC resources. A list of Internet Gateway appears.
 
-- __2.3.__ Click on **Create Internet Gateway** button.
+- __5.2.3.__ Click on **Create Internet Gateway** button.
 
-- __2.4.__ Provide a **Name Tag** such as myInternetGateway and click **Yes, Create**.
+- __5.2.4.__ Provide a **Name Tag** such as myInternetGateway and click **Yes, Create**.
 
-- __2.5.__ You will receive an Alarm **CloudTrailGatewayChanges** via email.
+- __5.2.5.__ You will receive an Alarm **CloudTrailGatewayChanges** via email.
 
-- __2.6.__ You can also view the status of Alarm via AWS CloudWatch console.
+- __5.2.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 
-### 3. Test Amazon Virtual Private Cloud (VPC) Changes
+#### 5.3. Test Amazon Virtual Private Cloud (VPC) Changes
 
-- __3.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
+- __5.3.1.__ In the AWS Management Console, on the **Services** menu, click **VPC**.
 
-2. Click on **Your VPCs** from the list of Amazon VPC resources. A list of VPC appears.
+- __5.3.2.__ Click on **Your VPCs** from the list of Amazon VPC resources. A list of VPC appears.
 
-3. Select a VPC and click **Actions** and than click **Edit DNS Resolution**.
+- __5.3.3.__ Select a VPC and click **Actions** and than click **Edit DNS Resolution**.
 
-4. On **Edit DNS Resolution** confirmation message box, select **No** and click **Save**.
+- __5.3.4.__ On **Edit DNS Resolution** confirmation message box, select **No** and click **Save**.
 
-5. You will receive an Alarm **CloudTrailVpcChanges** via email.
+- __5.3.5.__ You will receive an Alarm **CloudTrailVpcChanges** via email.
 
-6. You can also view the status of Alarm via AWS CloudWatch console.
+- __5.3.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 
-### 4. Test Console Sign-In Failures
+#### 5.4. Test Console Sign-In Failures
 
-__4.1.__ Note down the AWS account number from the AWS Console. The number is displayed on the top right.
+__5.4.1.__ Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
   ![](./images/Account_Number.png)
 
-2. Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
+__5.4.2.__ Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
 
-3. Type the following in address bar with **AWS-account-ID-or-alias** replaced by the AWS account number noted above.
+__5.4.3.__ Type the following in address bar with **AWS-account-ID-or-alias** replaced by the AWS account number noted above.
 
 ```
 https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 ```
 
-4. A new sign in page appears, Type a random **User Name** and **Password**.
+__5.4.4.__ A new sign in page appears, Type a random **User Name** and **Password**.
 
-5. Click **Sign in**. Repeat these steps for at least three times.
+__5.4.5.__ Click **Sign in**. Repeat these steps for at least three times.
 
-6. You will receive a sign in failure with the message:
+__5.4.6.__ You will receive a sign in failure with the message:
 ````
 Your authentication information is incorrect. Please try again
 ````
 
-7. You will receive an Alarm **CloudTrailConsoleSignInFailures** via email.
+__5.4.7.__ You will receive an Alarm **CloudTrailConsoleSignInFailures** via email.
 
-8. You can also view the status of Alarm via AWS CloudWatch console.
+__5.4.8.__ You can also view the status of Alarm via AWS CloudWatch console.
 
-### 5. Test Authorization Failures
+#### 5.5. Test Authorization Failures
 
-__5.1.__ In the AWS Management Console, under **Storage** menu, select **S3**.
+__5.5.1.__ In the AWS Management Console, under **Storage** menu, select **S3**.
 
-2. Select the bucket **securityautomationtestbucketxxxx** and upload a file into this bucket.
+__5.5.2.__ Select the bucket **securityautomationtestbucketxxxx** and upload a file into this bucket.
 
-3. Click on the file you just uploaded and grap the URL from the Link.
+__5.5.3.__ Click on the file you just uploaded and grap the URL from the Link.
 
-4. Try opening the URL from an Incognito browser (Private browser). You should receive an authorization ofailure. You will receive an Alarm **CloudTrailAuthorizationFailures** via email.
+__5.5.4.__ Try opening the URL from an Incognito browser (Private browser). You should receive an authorization ofailure. You will receive an Alarm **CloudTrailAuthorizationFailures** via email.
 
-4. You can also view the status of Alarm via AWS CloudWatch console.
+__5.5.5.__ You can also view the status of Alarm via AWS CloudWatch console.
 
-### 6. Test CloudTrail Changes
+#### 5.6. Test CloudTrail Changes
 
-__6.1.__ In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+__5.6.1.__ In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
 
-2. Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
+__5.6.2.__ Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
 
-3. Click on the pencil next to **Trail settings** to edit the behavior.
+__5.6.3.__ Click on the pencil next to **Trail settings** to edit the behavior.
 
-4. For **Apply trail to all regions**, select radio button **No** and click **save**.
+__5.6.4.__ For **Apply trail to all regions**, select radio button **No** and click **save**.
 
-5. You will receive an Alarm **CloudTrailChanges** via email.
+__5.6.5.__ You will receive an Alarm **CloudTrailChanges** via email.
 
-6. You can also view the status of Alarm via AWS CloudWatch console.
+__5.6.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 </details>
 
 ### Conclusion
