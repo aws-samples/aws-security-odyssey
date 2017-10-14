@@ -365,56 +365,56 @@ The following test events are optional and should only be completed after you ha
 
 #### 5.4. Test Console Sign-In Failures
 
-__5.4.1.__ Note down the AWS account number from the AWS Console. The number is displayed on the top right.
+- __5.4.1.__ Note down the AWS account number from the AWS Console. The number is displayed on the top right.
 
   ![](./images/Account_Number.png)
 
-__5.4.2.__ Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
+- __5.4.2.__ Open a new window in different browser or use a "New Incognito Window/New Private Window" feature of your browser.
 
-__5.4.3.__ Type the following in address bar with **AWS-account-ID-or-alias** replaced by the AWS account number noted above.
+- __5.4.3.__ Type the following in address bar with **AWS-account-ID-or-alias** replaced by the AWS account number noted above.
 
 ```
 https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 ```
 
-__5.4.4.__ A new sign in page appears, Type a random **User Name** and **Password**.
+- __5.4.4.__ A new sign in page appears, Type a random **User Name** and **Password**.
 
-__5.4.5.__ Click **Sign in**. Repeat these steps for at least three times.
+- __5.4.5.__ Click **Sign in**. Repeat these steps for at least three times.
 
-__5.4.6.__ You will receive a sign in failure with the message:
+- __5.4.6.__ You will receive a sign in failure with the message:
 ````
 Your authentication information is incorrect. Please try again
 ````
 
-__5.4.7.__ You will receive an Alarm **CloudTrailConsoleSignInFailures** via email.
+- __5.4.7.__ You will receive an Alarm **CloudTrailConsoleSignInFailures** via email.
 
-__5.4.8.__ You can also view the status of Alarm via AWS CloudWatch console.
+- __5.4.8.__ You can also view the status of Alarm via AWS CloudWatch console.
 
 #### 5.5. Test Authorization Failures
 
-__5.5.1.__ In the AWS Management Console, under **Storage** menu, select **S3**.
+- __5.5.1.__ In the AWS Management Console, under **Storage** menu, select **S3**.
 
-__5.5.2.__ Select the bucket **securityautomationtestbucketxxxx** and upload a file into this bucket.
+- __5.5.2.__ Select the bucket **securityautomationtestbucketxxxx** and upload a file into this bucket.
 
-__5.5.3.__ Click on the file you just uploaded and grap the URL from the Link.
+- __5.5.3.__ Click on the file you just uploaded and grap the URL from the Link.
 
-__5.5.4.__ Try opening the URL from an Incognito browser (Private browser). You should receive an authorization ofailure. You will receive an Alarm **CloudTrailAuthorizationFailures** via email.
+- __5.5.4.__ Try opening the URL from an Incognito browser (Private browser). You should receive an authorization ofailure. You will receive an Alarm **CloudTrailAuthorizationFailures** via email.
 
-__5.5.5.__ You can also view the status of Alarm via AWS CloudWatch console.
+- __5.5.5.__ You can also view the status of Alarm via AWS CloudWatch console.
 
 #### 5.6. Test CloudTrail Changes
 
-__5.6.1.__ In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
+- __5.6.1.__ In the AWS Management Console, on the **Services** menu, click **CloudTrail**.
 
-__5.6.2.__ Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
+- __5.6.2.__ Click **Trails** on the left pane and select the trail (myCloudTrail) that you have created in this module.
 
-__5.6.3.__ Click on the pencil next to **Trail settings** to edit the behavior.
+- __5.6.3.__ Click on the pencil next to **Trail settings** to edit the behavior.
 
-__5.6.4.__ For **Apply trail to all regions**, select radio button **No** and click **save**.
+- __5.6.4.__ For **Apply trail to all regions**, select radio button **No** and click **save**.
 
-__5.6.5.__ You will receive an Alarm **CloudTrailChanges** via email.
+- __5.6.5.__ You will receive an Alarm **CloudTrailChanges** via email.
 
-__5.6.6.__ You can also view the status of Alarm via AWS CloudWatch console.
+- __5.6.6.__ You can also view the status of Alarm via AWS CloudWatch console.
 </details>
 
 ### Conclusion
