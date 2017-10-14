@@ -24,7 +24,7 @@ By the end of this module, you will be able to:
 
 This module assumes you have a general knowledge of AWS services and that you have an AWS account with an IAM user that has full administrative privileges. Additionally, only one person should do this module in a specific AWS account in a given region. If more than one person is using the same AWS account for this module at the same time, each must use a different AWS IoT region.
 
-### 1. Select a Region and Launch CloudFormation Stack
+### 1. Choose a Region
 
 AWS IoT is located in many [regions](http://docs.aws.amazon.com/general/latest/gr/rande.html#iot_region) across the world. We will provide shortcuts for the regions we want you to use later in this lab. As noted above, if more than one person is doing the module in the same AWS account, each person should use a different region.  Please use the same region throughout the lab.
 
@@ -69,13 +69,13 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 2. Select the service **AWS IoT** from the AWS Console. If you see a **Get started** button, click that.
 
-3. From the menu on the left, select **Registry**, **Things** and the click the **Register a thing** button (if there are already things listed, click the **Create** button instead).
+3. From the menu on the left, select **Manage**, **Things** and the click the **Register a thing** button (if there are already things listed, click the **Create** button instead).
 
 4. Enter the name `device1` and click **Create thing**. You should see a new entry as shown below.
 
     ![](images/image2.png "image")
 
-5. On the left select **Security Certificates**, then click **Create a certificate** and then Click **Create certificate.** You will then be presented with a page telling you the certificate has been created and given the opportunity to download four items as shown below. Continue below this picture for download instructions.
+5. On the left select **Secure**, then **Certificates**, then click **Create a certificate** and then Click **Create certificate.** You will then be presented with a page telling you the certificate has been created and given the opportunity to download four items as shown below. Continue below this picture for download instructions.
 
     ![](images/image3.png "image")
 
@@ -180,6 +180,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
     **Verify server certificate**: selected
 
     **Name**: IoT Security Lab
+    
+    If for some reason you forgot to download the **CA Certificate** earlier, you can find it here:
+    
+    [![rootCA.pem]](https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem)
+    
 
 8. Then click **Add**, which will bring you back to the **Add mqtt-broker config node** window.
 
