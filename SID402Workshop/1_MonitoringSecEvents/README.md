@@ -43,6 +43,7 @@ In this section, you will perform configuration in the console for CloudTrail lo
 
 ___Complete all the steps below unless they are marked "optional". Use arrow to expand sections marked with "(expand for details)".___
 
+
 <details>
 <summary><strong>2.1. Create a CloudTrail with the Console (expand for details)
 </strong></summary><p>
