@@ -48,15 +48,7 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 Ireland (eu-west-1) | [![Launch Module in eu-west-1](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 London (eu-west-2) | [![Launch Module in eu-west-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/new?stackName=SID402-IoTSecurityLab&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/scripts/IoT_Security_Lab_VPC.yaml)
 
-3. A new browser tab or page will appear with the CloudFormation template selected. Click on **Next** to start populating the fields listed below.
-
-    **Stack Name**: The name for the CloudFormation stack. The default name is IoTSecurityLab,
-
-    **Allowed IP Range**: The IP address range that can browse to the Amazon EC2 instance running Node-RED. The default is 0.0.0.0/0 which is any IPv4 address on the Internet. For this short duration module, this is fine. For something running longer term, you would want to restrict this to a safe IP range.
-
-    **Instance Type**: The size of Amazon EC2 instance to deploy for Node-RED. The default is t2.micro and is fine for this module.
-
-    Click on **Next**.
+3. A new browser tab or page will appear with the CloudFormation template selected. Click on **Next** to be taken to the list of parameters.  Click on **Next** to accept the default values.
 
 4. On the next page, you can create tags to be applied to resources, then click **Next**.
 
