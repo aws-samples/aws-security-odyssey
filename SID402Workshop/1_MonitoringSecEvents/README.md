@@ -10,7 +10,7 @@ In this module, your task is to set up automatic notifications for a number of s
 
 The module walks you through the process of creating alerts for one such event using AWS Console. Steps for the rest of the events have been automated in a CloudFormation template, which is provided to you. The module makes use of a number of AWS services namely AWS Identity and Access Management (IAM), AWS CloudTrail, AWS CloudWatch Alarms,  AWS CloudFormation and others.
 
-#### Architecture Overview
+### Architecture Overview
 
 ![](./images/diagramm1.png)
 

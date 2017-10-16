@@ -8,7 +8,7 @@ The security enhancement project at IthaCorp is in full gear and your are contin
 
 In this module, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a thing) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
 
-#### Architecture Overview
+### Architecture Overview
 
 ![](./images/diagramm2.png)
 
