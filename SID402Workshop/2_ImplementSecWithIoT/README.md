@@ -8,6 +8,10 @@ The security enhancement project at IthaCorp is in full gear and your are contin
 
 In this module, you will set up an environment using the AWS IoT (Internet of Things) service. You will create a simulated device (a thing) and connect it to the AWS IoT service and watch traffic flow between the device and AWS IoT. You will then enhance the security of the communication between the device and AWS IoT and, in so doing, learn more about the various security features offered by the service.
 
+#### Architecture
+
+![](./images/diagramm2.png)
+
 *Note: Going forward, we will use the terms device and thing interchangeably.*
 
 ### Topics covered
@@ -180,11 +184,11 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
     **Verify server certificate**: selected
 
     **Name**: IoT Security Lab
-    
+
     If for some reason you forgot to download the **rootCA.pem** file earlier, you can right click on the following link, open it in a new tab and save the value into a file named **rootCA.pem**:
-    
+
     [[rootCA.pem]](https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem)
-    
+
 8. Then click **Add**, which will bring you back to the **Add mqtt-broker config node** window.
 
 9. From the mqtt-broker config node page, click **Add**. You will return to the **Edit mqtt out node** window.

@@ -1,7 +1,7 @@
-# ___AWS Security Odyssey___
+# ___An AWS Security Odyssey___
 
 ## re:Invent 2017 - SID402 - Workshop
-### Implementing Security Controls in the World of Internet, Big Data, IoT, E-Commerce, and Open Communications Platforms
+### Implementing Security Controls in the World of Internet, Big Data, IoT and E-Commerce Platforms
 
 <br>
 

@@ -12,9 +12,9 @@ This repository contains a collection of interactive content designed to demonst
 
 We will talk about how to:
 
-Adopt a workload-centric approach to your security strategy,
-Address security issues in an cost-effective manner
-Automate your security responses to promote maturity and auditability.
+- Adopt a workload-centric approach to your security strategy.
+- Address security issues in an cost-effective manner.
+- Automate your security responses to promote maturity and auditability.
 
 <br>
 

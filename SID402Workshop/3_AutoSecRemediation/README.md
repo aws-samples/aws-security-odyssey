@@ -10,6 +10,10 @@ The Security Enhancement Project at IthaCorp is continuing to progress and you d
 
 In this lab you will learn how to use AWS Config Rules with an AWS Lambda function to monitor the ingress ports associated with an EC2 security group.   The Lambda function will be triggered whenever the security group is modified.  If the ingress rule configuration differs from that which is coded in the function, the Lambda function will revert the ingress rules back to the appropriate configuration.  The activity from the Lambda function can then be viewed through Amazon CloudWatch Logs.  In an accompanying lab, Monitoring Security Groups with Amazon CloudWatch Events, you will use a different set of services to monitor security groups.  These two labs demonstrate techniques that can be used to provide additional layers of protection to infrastructure assets.
 
+#### Architecture
+
+![](./images/diagramm3.png)
+
 ### Topics covered
 
 By the end of this module, you will be able to:
