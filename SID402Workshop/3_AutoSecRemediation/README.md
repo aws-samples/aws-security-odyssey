@@ -94,7 +94,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 - __2.2.8.__	Click on the **Inbound Rules** tab and click the **Edit** button.
 
-- __2.2.9.__	Your Inbound Rules should look like this:
+- __2.2.9.__	Add the Inbound Rules. Your Inbound Rules should look like this:
 
 <p/>
 
