@@ -68,9 +68,9 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 ![](./images/image3.png)
 
-- __2.1.10.__  Under **AWS Config on the left panel**, click the **Resources** button. A scrollable window will appear with a list of check boxes. Select (check) all of them (be sure to scroll the entire window down as some may be hidden). Make sure you select (check) **SecurityGroup.** Click **Look Up**. You will see a message telling you that resources are being loaded.
+- __2.1.10.__  Under **AWS Config on the left panel**, click the **Resources** button. A scrollable window will appear with a list of check boxes. Select (check) **EC2-SecurityGroup.** Click **Look Up**. You will see a message telling you that resources are being loaded.
 
-Notice that many resources appear in addition to **EC2 Security Group** even though we told AWS Config in step 9 to record the resource type **EC2 Security Group**. The reason for this is that AWS Config also tracks resources *related to* the resource we are primarily interested in because those related resources can affect the behavior of the primary resources, in this case EC2 security groups, which are being tracked. Many of these related resources are part of the environment in which you are working. We are now going to configure the settings of the default security group that has already been installed for you.
+
 </details>
 
 <details>
@@ -94,15 +94,7 @@ Notice that many resources appear in addition to **EC2 Security Group** even tho
 
 - __2.2.8.__	Click on the **Inbound Rules** tab and click the **Edit** button.
 
-- __2.2.9.__	Click in the field under **Type** column and change the type to **HTTP (80)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button. The default VPC Security Group has this rule added by default normally. If it is already there, skip to next step.
-
-- __2.2.10.__	Click in the field under **Type** column for the new row and change the type to **HTTPS (443)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button.
-
-- __2.2.11.__	Click in the field under **Type** column for the new row and change the type to **SMTPS (465)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and then click the **Add another rule** button.
-
-- __2.2.12.__	Click in the field under **Type** column for the new row and change the type to **IMAPS (993)**.  Under the **Source** column, click in the field and enter **0.0.0.0/0** and click the **Save** button.
-
-Your Inbound Rules should look like this:
+- __2.2.9.__	Your Inbound Rules should look like this:
 
 <p/>
 
