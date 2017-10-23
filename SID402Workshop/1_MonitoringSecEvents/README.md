@@ -198,6 +198,8 @@ __3.8.__ Click on the **Events** tab and refresh periodically to monitor the cre
 
 __3.9.__ The CloudFormation template also creates a SNS topic for you to get update on other email address provided by you in previous steps. You will receive an email from **AWS Notification**, Click on **Confirm subscription** link provided in the email.
 
+**_Note:_** _Before proceeding, make sure that you receive the SNS **AWS Notification** email confirmation and follow the **Confirm subscription** link provided in the email._
+
 When AWS CloudFormation is finished creating the stack, the status will show CREATE_COMPLETE. This CloudFormation stack has created a number of security metric filters and related alarms for you. We'll test these events in the subsequent steps.</p>
 
 ### 4. And that's it. We are all set and now the fun part!! Let's generate some events and see what happens
