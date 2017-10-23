@@ -129,7 +129,7 @@ You have now set up the ingress configuration of the default security
 - __2.3.8.__ In the **Role** field select **Create a custom role** and a new page
     window will appear.
 
-- __2.3.9.__ In the **IAM Role** field, select **Create new IAM Role** and in the **Role Name** field enter **awsconfig_lambda_ec2_security_group_role**.
+- __2.3.9.__ In the **IAM Role** field, select **Create new IAM Role** from the list and in the **Role Name** text box enter **awsconfig_lambda_ec2_security_group_role**.
 
 - __2.3.10.__ Click on **View Policy Document** to open the policy window and then click on the **Edit** link. Click **Ok** if a warning message appears about reading the documentation.
 
