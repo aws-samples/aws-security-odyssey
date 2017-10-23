@@ -42,7 +42,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 ### 2. Complete Initial Environment Configuration
 
-<details>
+<details open>
 <summary><strong>2.1. Enable AWS Config (expand for details)
 </strong></summary><p>
 <br/>
@@ -73,7 +73,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 </details>
 
-<details>
+<details open>
 <summary><strong>2.2. Create an EC2 Security Group (expand for details)
 </strong></summary><p>
 <br/>
@@ -105,7 +105,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 You have now set up the ingress configuration of the default security
 </details>
 
-<details>
+<details open>
 <summary><strong>2.3. Create and Run the AWS Config Rule (expand for details)
 </strong></summary><p>
 <br/>
@@ -224,7 +224,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 ### 3. Verify Expected Behavior
 
-<details>
+<details open>
 <summary><strong>3.1. Revisiting the VPC Security Group (expand for details)
 </strong></summary><p>
 <br/>
@@ -241,7 +241,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
  compliance evaluation would be triggered which would again invoke the Lambda function and the changes would be reverted.
 </details>
 
-<details>
+<details open>
 <summary><strong>3.2. Using Amazon CloudWatch Logs for Verification (expand for details)
 </strong></summary><p>
 <br/>

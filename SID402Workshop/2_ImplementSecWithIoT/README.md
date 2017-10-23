@@ -62,7 +62,7 @@ ___Complete all the steps below. Use arrow to expand sections marked with "(expa
 
 ### 3. Complete Initial Environment Configuration
 
-<details>
+<details open>
 <summary><strong>3.1. Define Device (expand for details)
 </strong></summary><p>
 <br/>
@@ -114,7 +114,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 - __3.1.12.__ On this AWS IoT console home page, near the bottom left click Settings. Copy the value in the **Endpoint** field and save it in a text file. You will need this value later in the module when you configure Node-RED.
 </details>
 
-<details>
+<details open>
 <summary><strong>3.2. Configure Node-RED (expand for details)
 </strong></summary><p>
 <br/>
@@ -240,7 +240,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 ### 4. Restricting Access to AWS IoT
 
-<details>
+<details open>
 <summary><strong>4.1. Create Permissions for Device Specific Topics (expand for details)
 </strong></summary><p>
 <br/>

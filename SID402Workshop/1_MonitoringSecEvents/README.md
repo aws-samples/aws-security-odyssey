@@ -74,7 +74,7 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 - __2.1.9.__ Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
 </details>
 
-<details>
+<details open>
 <summary><strong>2.2. Create a Log Group (expand for details)
 </strong></summary><p>
 <br/>
@@ -96,7 +96,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 - __2.2.6.__	Choose **Allow**. When you are finished with these steps in the console, the CloudTrail trail will be set up to use the log group and role you specified to send events to CloudWatch Logs. If the trail you configured to use CloudWatch Logs receives log files across regions, events from all regions will be sent to the CloudWatch Logs log group that you specified.
 </details>
 
-<details>
+<details open>
 <summary><strong>2.3. Create a Metric Filter (Let's do it manually - expand for details)
 </strong></summary><p>
 <br/>
@@ -126,7 +126,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 - __2.3.10.__ Click **Create Filter**.
 </details>
 
-<details>
+<details open>
 <summary><strong>2.4. Create an Alarm for the Metric Filter we just created (Let's do it manually - expand for details)
 </strong></summary><p>
 <br/>
@@ -295,7 +295,7 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 
 - __4.5.9__ You can also view the status of Alarm via AWS CloudWatch console.
 
-<details>
+<details open>
 <summary><strong>5. Optional Test Scenarios (expand for details)
 </strong></summary><p>
 <br/>
