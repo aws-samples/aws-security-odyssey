@@ -168,7 +168,7 @@ You have now set up the ingress configuration of the default security
 
 - __2.3.14.__ For Runtime select **Python 2.7**.
 
-- __2.3.15.__ For Code entry type select **Upload a file from Amazon S3**
+- __2.3.15.__ For Code entry type select **Upload a .ZIP file from Amazon S3**
 
 - __2.3.16.__ Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
 
