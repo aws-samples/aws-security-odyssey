@@ -69,6 +69,7 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 - __2.1.8.__ In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
 
 - __2.1.9.__ Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
+-</details>
 
 <details>
 <summary><strong>2.2. Create a Log Group (expand for details)
