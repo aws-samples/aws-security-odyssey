@@ -69,7 +69,7 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 - __2.1.8.__ In the **S3 bucket** field, type a name for the bucket you want to designate for log file storage such as **"myxxxxcloudtrailbucket"** substituting something unique for **xxxx**.
 
 - __2.1.9.__ Click **Create**. The new trail will appear on the **Trails** page, which shows your trails from all regions.
--</details>
+</details>
 
 <details>
 <summary><strong>2.2. Create a Log Group (expand for details)
@@ -240,7 +240,7 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 - __4.2.5__ You will receive an Alarm **S3 bucket Activity** via email.
 **Note:** - If you have not received email notification, navigate to AWS Console, Services, CloudWatch and click on **Alarms**. If this shows **Config Status** as **Pending confirmation**  then that means you have not yet confirmed SNS subscription yet. Refer to your email and subscribe to notifications from this module.
 
-- __4.2.6__ You can also view the status of Alarm via AWS CloudWatch console. Navigate to AWS Console, Services, Cloudwatch and click on **Alarms**. You can also see the history of an alarm from the **History** tab in the bottom pane. 
+- __4.2.6__ You can also view the status of Alarm via AWS CloudWatch console. Navigate to AWS Console, Services, Cloudwatch and click on **Alarms**. You can also see the history of an alarm from the **History** tab in the bottom pane.
 
 #### 4.3. Test Security Group Configuration changes
 
