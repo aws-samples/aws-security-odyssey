@@ -38,6 +38,9 @@ To successfully complete this module, you should be familiar with AWS services i
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
+##### ___Choose one of the following AWS Regions before moving to Step 2: Ireland (eu-west-1), London (eu-west-2), Singapore (ap-southeast-1), Sydney (ap-southeast-2), Tokyo (ap-northeast-1), Seoul (ap-northeast-2)___
+
+
 Make a note of the AWS *region name*, for example, *Ireland (eu-west-1)*. For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
 ### 2. Complete Initial Environment Configuration
@@ -218,14 +221,12 @@ Tokyo (ap-northeast-1) | [![Launch Module in ap-northeast-1](http://docs.aws.ama
 Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/cloudformation-launch-stack-button.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=SID402-AutomatingSecurityEvents&templateURL=https://s3-us-west-2.amazonaws.com/sid402-artifacts/templates/AutomatingSecurityEvents.json)
 
 - __4.1.1__ On the Select Template screen, click **Next**.
-- __4.1.2__ On the Specify Details page, provide the key pair that you plan to use and your public IP range from which you will initiate SSH connections.
-- __4.1.3__ Click Next.
-- __4.1.4__ On the Options page, you can create tags or configure other advanced options. These are not required for this module.
-- __4.1.5__ Click **Next**.
-- __4.1.6__ On the Review page, verify that the template, key pair, SSH CIDR range, and other options, if any, are correct.
-- __4.1.7__ Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
-- __4.1.8__ If not already selected, select your stack by clicking on the check box to the left of your stack.
-- __4.1.9__ Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
+- __4.1.2__ Click Next.
+- __4.1.3__ On the Options page, you can create tags or configure other advanced options. These are not required for this module.
+- __4.1.4__ Click **Next**.
+- __4.1.5__ Select **I acknowledge that AWS CloudFormation might create IAM resources.** and click **Create**. The stack will be created in a few minutes.
+- __4.1.6__ If not already selected, select your stack by clicking on the check box to the left of your stack.
+- __4.1.7__ Click on the Events tab and refresh periodically to monitor the creation of your stack.</p>
 
 
 #### 4.2. Test Amazon S3 bucket Activity
@@ -430,7 +431,7 @@ ___Complete clean up at the end of the Workshop___
 11. Open the trail that you created in this module
 12. In top right, next to Logging, click on "On/Off" switch
 13. Click Continue in the popup window
-14. Click on the "trashcan" icon to delete the trail
+14. Click on the "trash can" icon to delete the trail
 15. Click Delete in the popup window
 
 ### Additional Resources
