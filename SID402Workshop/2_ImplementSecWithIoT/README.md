@@ -125,7 +125,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **NodeREDURL**: The URL of the EC2 instance
 
-- __3.2.2.__ Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking places.   In that case, just wait a minute or two and try again.
+- __3.2.2.__ Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking places.   In that case, just wait a minute or two and try again.  Firefox users may have difficulty viewing Node-RED.  If so, please try Chrome, IE, or Safari.
 
     ![](images/image5.png "image")
 
@@ -207,7 +207,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 - __3.2.11.__ Click **Done** to go back to the main GUI.
 
-- __3.2.12.__ Finally, notice that the **Deploy** icon in the upper right of the GUI is red. This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
+- __3.2.12.__ Finally, notice that the **Deploy** icon in the upper right of the GUI is red. If you do not do this, your changes will not be enabled!  This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
 
 - __3.2.13.__ Bring up the AWS Console in a new browser window or tab and navigate to the AWS IoT console and select **Test**. Then select Subscribe to a topic link, enter **topic1** as the topic, and finally click the Subscribe to topic button per the figure below.
 
@@ -292,7 +292,7 @@ Earlier in this module you created a policy for your AWS IoT certificate that wa
 
 - __4.1.4.__ Click **Create**.
 
-- __4.1.5.__ Navigate to **Security-&gtCertificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
+- __4.1.5.__ Navigate to **Secure-&gt;Certificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
 
 - __4.1.6.__ Go to the IoT console and select **Test**. Subscribe to **topic1**.
 
