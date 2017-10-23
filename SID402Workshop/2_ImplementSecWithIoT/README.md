@@ -292,7 +292,7 @@ Earlier in this module you created a policy for your AWS IoT certificate that wa
 
 - __4.1.4.__ Click **Create**.
 
-- __4.1.5.__ Navigate to **Secure-&gt;Certificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
+- __4.1.5.__ Navigate to **Secure**, **Certificates** and select your certificate then click on **Policies**. Now select **Attach policy** under Actions and select **device1_allow_publish**. Then detach the **device1_full_access** policy from the certificate.
 
 - __4.1.6.__ Go to the IoT console and select **Test**. Subscribe to **topic1**.
 
