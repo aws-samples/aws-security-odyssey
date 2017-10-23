@@ -68,7 +68,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 ![](./images/image3.png)
 
-- __2.1.10.__  Under **AWS Config on the left panel**, click the **Resources** button. A scrollable window will appear with a list of check boxes. Select (check) **EC2-SecurityGroup.** Click **Look Up**. You will see a message telling you that resources are being loaded.
+
 
 
 </details>
