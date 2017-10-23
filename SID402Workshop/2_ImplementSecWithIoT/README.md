@@ -247,7 +247,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 Earlier in this module you created a policy for your AWS IoT certificate that was very open and allowed the holder of that certificate to publish to any IoT topic. We are now going to show you how to restrict that policy so it only allows publishing to the topic we have already created.
 
-- __4.1.1.__ Go to the main IoT console and choose **Security Policies**. You should see a policy named device1_full_acccess. Click directly on the policy name.
+- __4.1.1.__ Go to the main IoT console and choose **Secure**, **Policies**. You should see a policy named device1_full_acccess. Click directly on the policy name.
 
     On the top of the window you will see the policy ARN (Amazon Resource Name). It will look something like:
 
@@ -255,7 +255,7 @@ Earlier in this module you created a policy for your AWS IoT certificate that wa
 
     Copy the region name (`us-west-2` in the above example) and the account number (`123456789012` in the above example) to a scratch file for future use.
 
-- __4.1.2.__ Go back to the main IoT console and choose **Security &gt Policies**. Click **Create**.
+- __4.1.2.__ Go back to the main IoT console and choose **Secure**, **Policies**. Click **Create**.
 
     Enter `device1_allow_publish` and click **Advanced mode.**
 
