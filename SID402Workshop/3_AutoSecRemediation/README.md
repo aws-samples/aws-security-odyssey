@@ -252,9 +252,10 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 - __3.2.3.__ Click on the link that contains **awsconfig_lambda_security_group**.
 
-- __3.2.4.__ Under **Log Streams**, beginning with the top link, click each link until you see an entry that contains the words **revoking for** and expand the entry. You should see something similar to this. The security group values have been blacked out. This shows that the two entries for ports 993 and 465 have been removed.
+- __3.2.4.__ Under **Log Streams**, click the Log Search Group button, and type the word **revoking for** and you will see something like the screenshot below.
+The security group values have been blacked out. This screenshot shows that the two entries for ports 993 and 465 have been removed.
 
-![](./images/image10.png)
+![](./images/image12.png)
 
 - __3.2.5.__ (Optional) If have another 15 minutes remaining, modify the ingress ports of the security group as described in steps 17-24. That will trigger another evaluation of the security group configuration. After 8-13 minutes, the ingress port configuration will revert to include only HTTP (TCP port 80) and HTTPS (TCP port 443). You will be able to verify this by revisiting the security group settings.
 </details>
