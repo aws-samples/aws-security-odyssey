@@ -49,7 +49,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 - __2.1.1.__  On the **Services** menu, click **Config**.
 
-- __2.1.2.__  Click **Get Started** if you see a button with that text, else click
+- __2.1.2.__  Click **Get Started** if you see a button with that text. If you do not see this button, click
     **Settings**.
 
 - __2.1.3.__  Under Resource types to record, *uncheck* the box **Record all resources supported in this region**.
@@ -129,7 +129,7 @@ You have now set up the ingress configuration of the default security
 - __2.3.8.__ In the **Role** field select **Create a custom role** and a new page
     window will appear.
 
-- __2.3.9.__ In the **IAM Role** field, select **Create new IAM Role** from the list and in the **Role Name** text box enter **awsconfig_lambda_ec2_security_group_role**.
+- __2.3.9.__ In the **IAM Role** field, select **Create new IAM Role** from the Drop Down list and in the **Role Name** text box enter **awsconfig_lambda_ec2_security_group_role**.
 
 - __2.3.10.__ Click on **View Policy Document** to open the policy window and then click on the **Edit** link. Click **Ok** if a warning message appears about reading the documentation.
 
@@ -168,7 +168,7 @@ You have now set up the ingress configuration of the default security
 
 - __2.3.14.__ For Runtime select **Python 2.7**.
 
-- __2.3.15.__ For Code entry type select **Upload a .ZIP file from Amazon S3**
+- __2.3.15.__ For Code entry type select **Upload a .ZIP file** from the drop down list.
 
 - __2.3.16.__ Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
 
@@ -206,7 +206,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 - __2.3.25.__ For Trigger type select **Configuration changes**.
 
-- __2.3.26.__ For **Scope of changes** select the radio box for **Resources**. Click in the **Resources** text box scroll box will appear.
+- __2.3.26.__ For **Scope of changes** select the radio box for **Resources**. Click on **Resources** and a drop down list will appear.
 
 - __2.3.27.__ Pick **EC2: SecurityGroup**. Leave **Resource identifier** empty since we only have one security group in this module.
 
@@ -252,9 +252,10 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 - __3.2.3.__ Click on the link that contains **awsconfig_lambda_security_group**.
 
-- __3.2.4.__ Under **Log Streams**, beginning with the top link, click each link until you see an entry that contains the words **revoking for** and expand the entry. You should see something similar to this. The security group values have been blacked out. This shows that the two entries for ports 993 and 465 have been removed.
+- __3.2.4.__ Under **Log Streams**, click the Log Search Group button, and type the word **revoking for** and you will see something like the screenshot below.
+The security group values have been blacked out. This screenshot shows that the two entries for ports 993 and 465 have been removed.
 
-![](./images/image10.png)
+![](./images/image12.png)
 
 - __3.2.5.__ (Optional) If have another 15 minutes remaining, modify the ingress ports of the security group as described in steps 17-24. That will trigger another evaluation of the security group configuration. After 8-13 minutes, the ingress port configuration will revert to include only HTTP (TCP port 80) and HTTPS (TCP port 443). You will be able to verify this by revisiting the security group settings.
 </details>
