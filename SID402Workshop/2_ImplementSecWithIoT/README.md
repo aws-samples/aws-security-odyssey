@@ -324,9 +324,3 @@ Congratulations! You have now successfully:
 
 ### Clean Up
 ___Complete clean up at the end of the Workshop___
-
-To clean up the environment, follow the remaining steps.
-
-1.  Delete the AWS CloudFormation stack you previously launched.
-
-2.  Remove all IOT configuration items (things, certificates, policies).
