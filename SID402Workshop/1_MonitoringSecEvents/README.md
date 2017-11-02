@@ -297,7 +297,7 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 
 - __4.5.9__ You can also view the status of Alarm via AWS CloudWatch console.
 
-<details open>
+<details>
 <summary><strong>5. Optional Test Scenarios (expand for details)
 </strong></summary><p>
 <br/>
