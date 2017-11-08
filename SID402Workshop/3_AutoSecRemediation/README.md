@@ -168,7 +168,7 @@ You have now set up the ingress configuration of the default security
 
 - __2.3.14.__ For Runtime select **Python 2.7**.
 
-- __2.3.15.__ For Code entry type select **Upload a .ZIP file from Amazon S3**
+- __2.3.15.__ For Code entry type select **Upload a .ZIP file**
 
 - __2.3.16.__ Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
 
@@ -312,13 +312,19 @@ ___Complete clean up at the end of the Workshop___
 
 #### 3. Module 3 Clean Up
 
-1.  Delete the IAM user.
+1.  Delete the IAM role "awsconfig_lambda_ec2_security_group_role".
 
 2.  Delete the AWS Config Rule "EC2SecurityGroup".
 
 3. If AWS Config was not enabled, turn off AWS Config in Config Settings.
 
-3. Delete the Lambda function "awsconfig_lambda_security_group".
+4. Delete the Lambda function "awsconfig_lambda_security_group".
+
+5. Delete s3 bucket for config if created during lab: config-bucket-<account>
+
+6. Delete config role if created "config-role-<region>"
+
+7. Delete cloudwatch logs group "/aws/lambda/awsconfig_lambda_security_group"
 
 ### Additional Resources
 
