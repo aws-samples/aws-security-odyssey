@@ -5,7 +5,7 @@
       "LogGroupName" : {
           "Type" : "String",
           "Default" : "CloudTrail/DefaultLogGroup",
-          "Description" : "Enter CloudWatch Logs log group name. Default is CloudTrail/DefaultLogGroup"
+          "Description" : "Enter CloudWatch Logs log group name which is in the region where the stack is being launched. Default is CloudTrail/DefaultLogGroup"
       },
       "Email" : {
           "Type" : "String",
