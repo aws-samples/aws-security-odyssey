@@ -288,7 +288,7 @@ ___Complete clean up at the end of the Workshop___
 
 <details>
 <summary><strong>1. Module 1 Clean Up (expand for details)
-</strong></summary></details><p>
+</strong></summary><p>
 <br/>
 
 1. In the AWS Management Console, on the Services menu, click CloudFormation
@@ -306,19 +306,21 @@ ___Complete clean up at the end of the Workshop___
 13. Click Continue in the popup window
 14. Click on the "trash can" icon to delete the trail
 15. Click Delete in the popup window
+</details>
 
 <details>
 <summary><strong>2. Module 2 Clean Up (expand for details)
-</strong></summary></details><p>
+</strong></summary><p>
 <br/>
 
 1.  Delete the AWS CloudFormation stack you previously launched.
 
 2.  Remove all IOT configuration items (things, certificates, policies).
+</details>
 
 <details>
 <summary><strong>3. Module 3 Clean Up (expand for details)
-</strong></summary></details><p>
+</strong></summary><p>
 <br/>
 
 1.  Delete the IAM role "awsconfig_lambda_ec2_security_group_role".
@@ -334,6 +336,7 @@ ___Complete clean up at the end of the Workshop___
 6. Delete config role if created "config-role-<region>"
 
 7. Delete cloudwatch logs group "/aws/lambda/awsconfig_lambda_security_group"
+</details>
 
 ### Additional Resources
 
