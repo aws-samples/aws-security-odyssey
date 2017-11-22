@@ -288,7 +288,7 @@ ___Complete clean up at the end of the Workshop___
 
 <details>
 <summary><strong>1. Module 1 Clean Up (expand for details)
-</strong></summary><p>
+</strong></summary></details><p>
 <br/>
 
 1. In the AWS Management Console, on the Services menu, click CloudFormation
@@ -309,7 +309,7 @@ ___Complete clean up at the end of the Workshop___
 
 <details>
 <summary><strong>2. Module 2 Clean Up (expand for details)
-</strong></summary><p>
+</strong></summary></details><p>
 <br/>
 
 1.  Delete the AWS CloudFormation stack you previously launched.
@@ -318,7 +318,7 @@ ___Complete clean up at the end of the Workshop___
 
 <details>
 <summary><strong>3. Module 3 Clean Up (expand for details)
-</strong></summary><p>
+</strong></summary></details><p>
 <br/>
 
 1.  Delete the IAM role "awsconfig_lambda_ec2_security_group_role".
