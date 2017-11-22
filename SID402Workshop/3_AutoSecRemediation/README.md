@@ -32,7 +32,7 @@ To successfully complete this module, you should be familiar with EC2 security g
 
 ### 1. Select a Region
 
-Login to the AWS Console. Make sure that the user has "Admin" rights to the AWS services. Not using an Admin user will create permission issues during the module. Make a note of the AWS *region name*, for example, *US West (Oregon),*
+Login to the AWS Console. Make sure that the user has "Admin" rights to the AWS services. Not using an Admin user will create permission issues during the module. Make a note of the AWS *region name*, for example, *EU (Ireland),*
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
@@ -52,7 +52,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 - __2.1.2.__  Click **Get Started** if you see a button with that text, else click
     **Settings**.
 
-- __2.1.3.__  Under Resource types to record, *uncheck* the box **Record all resources supported in this region**.
+- __2.1.3.__  Under Resource types to record, ***uncheck*** the box **Record all resources supported in this region**.
 
 - __2.1.4.__  Click inside of the **Specific types** box. A scroll box field will appear. Scroll down to the EC2 section and click **SecurityGroup**. You should see **EC2: Security Group** appear in the **Specific types** box. Click outside of the box to close the scroll box field.
 
@@ -86,7 +86,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 - __2.2.4.__ In the **Name tag** text box, enter "SID402Module3SG". The **Group name** text box should populate automatically.
 
-- __2.2.5.__ In the Description text box, enter Module 3 Security Group. Keep the default VPC in the **VPC** drop down list.
+- __2.2.5.__ In the Description text box, enter "Module 3 Security Group". Keep the default VPC in the **VPC** drop down list.
 
 - __2.2.6.__	Click **Yes, Create** button.
 
@@ -174,7 +174,7 @@ You have now set up the ingress configuration of the default security
 
 - __2.3.17.__ In the Handler field enter **awsconfig_lambda_security_group.lambda_handler**.
 
-- __2.3.18.__ Let the **Memory (MB)** field under Basic Settings field with the default value of 128.
+- __2.3.18.__ Leave the **Memory (MB)** field under Basic Settings field with the default value of 128.
 
 - __2.3.19.__ In the **Timeout** fields, set **min** to 1 and **sec** to 0. Lambda functions can run for a maximum of five minutes. This is particular function typically takes less than five seconds to run so allowing one minute should be more than adequate.
 
@@ -286,7 +286,10 @@ Congratulations! You have now successfully:
 
 ___Complete clean up at the end of the Workshop___
 
-#### 1. Module 1 Clean Up
+<details>
+<summary><strong>1. Module 1 Clean Up (expand for details)
+</strong></summary><p>
+<br/>
 
 1. In the AWS Management Console, on the Services menu, click CloudFormation
 2. select SID402-AutomatingSecurityEvents
@@ -304,13 +307,19 @@ ___Complete clean up at the end of the Workshop___
 14. Click on the "trash can" icon to delete the trail
 15. Click Delete in the popup window
 
-#### 2. Module 2 Clean Up
+<details>
+<summary><strong>2. Module 2 Clean Up (expand for details)
+</strong></summary><p>
+<br/>
 
 1.  Delete the AWS CloudFormation stack you previously launched.
 
 2.  Remove all IOT configuration items (things, certificates, policies).
 
-#### 3. Module 3 Clean Up
+<details>
+<summary><strong>3. Module 3 Clean Up (expand for details)
+</strong></summary><p>
+<br/>
 
 1.  Delete the IAM role "awsconfig_lambda_ec2_security_group_role".
 
