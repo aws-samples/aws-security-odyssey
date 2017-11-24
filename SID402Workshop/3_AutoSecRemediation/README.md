@@ -180,7 +180,7 @@ You have now set up the ingress configuration of the default security
 
 - __2.3.20.__ For **VPC** under Network tab, accept the default value of **No VPC**.
 
-- __2.3.21.__ Click “Save” button.
+- __2.3.21.__ Click the “Save” button at the top of the page.
 
 - __2.3.22.__ You should see Python code that looks similar to what appears below. If you don’t see code, revisit the work you did in steps 14 and 15. The part of the handler name to the left of the period must match the file name.
 
