@@ -285,13 +285,13 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 
 - __4.5.3__ Click **Create Policy**.
 
-- __4.5.4__ Click **Select** next to Policy Generator.
+- __4.5.4__ **In the Service section**, click “Choose a Service” under the tab **Visual Editor** and select **EC2**.
 
-- __4.5.5__ Select **Allow** radio button for **Effect**, **Amazon EC2** from **AWS Service** drop down, **All Actions Selected** in **Actions** and Type * in **Amazon Resource Name (ARN)**.
+- __4.5.5__ In the **Actions** section, click **Select actions** and check **All EC2 actions (ec2:\*)** and collapse the section by clicking **close**.
 
-- __4.5.6__ Click **Add Statement** and than click **`Next` Step**
+- __4.5.6__ In the **Resources section**, click to expand the section, click radio button **All resources** and click **close** to collapse the section.
 
-- __4.5.7__ Click **Create Policy**
+- __4.5.7__ Click **Review Policy** and provide your policy a name such as **Allow_all_ec2** and click **Create Policy** button below.
 
 - __4.5.8__ You will receive an Alarm **CloudTrailIAMPolicyChanges** via email.
 
