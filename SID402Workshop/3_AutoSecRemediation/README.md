@@ -90,7 +90,7 @@ ___Complete all the steps below unless they are marked "optional". Use left arro
 
 - __2.2.6.__	Click **Yes, Create** button.
 
-- __2.2.7.__	Select the **SID402Module3SG** Security Group.
+- __2.2.7.__	Select the **SID402Module3SG** Security Group.  Copy the group identifier which will be in the form of sg-######## to a scratch file as you will need it later.
 
 - __2.2.8.__	Click on the **Inbound Rules** tab and click the **Edit** button.
 
@@ -208,7 +208,7 @@ permissions as appropriate. Therefore, we should expect that the SMTPS (TCP port
 
 - __2.3.26.__ For **Scope of changes** select the radio box for **Resources**. Click in the **Resources** text box scroll box will appear.
 
-- __2.3.27.__ Pick **EC2: SecurityGroup**. Leave **Resource identifier** empty since we only have one security group in this module.
+- __2.3.27.__ Pick **EC2: SecurityGroup**. Enter the security group identifier you copied earlier (in the form of sg-########) into the  **Resource identifier** field.
 
 - __2.3.28.__ In **Rule parameters**, in the **Key** field enter **debug** and in the **Value** field enter **true** to generate additional data you can look at later if you choose.
 
