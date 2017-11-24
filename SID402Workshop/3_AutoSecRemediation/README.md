@@ -170,7 +170,7 @@ You have now set up the ingress configuration of the default security
 
 - __2.3.15.__ For Code entry type select **Upload a .ZIP file**
 
-- __2.3.16.__ Click the Upload button under Function Package and upload the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file.
+- __2.3.16.__ Download this file the [awsconfig_lambda_security_group.zip](https://s3-us-west-2.amazonaws.com/sid402-artifacts/lambda/awsconfig_lambda_security_group.py.zip) file and save it on your laptop.  Click the Upload button under Function Package and upload the file you just downloaded.
 
 - __2.3.17.__ In the Handler field enter **awsconfig_lambda_security_group.lambda_handler**.
 
