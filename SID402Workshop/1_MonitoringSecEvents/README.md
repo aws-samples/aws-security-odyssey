@@ -287,7 +287,7 @@ Seoul (ap-northeast-2) | [![Launch Module in ap-northeast-2](http://docs.aws.ama
 
 - __4.5.4__ **In the Service section**, click “Choose a Service” under the tab **Visual Editor** and select **EC2**.
 
-- __4.5.5__ In the **Actions** section, click **Select actions** and check **All EC2 actions (ec2:\*)** and collapse the section by clicking **close**.
+- __4.5.5__ In the **Actions** section, click **Select actions**, check **All EC2 actions (ec2:\*)** and collapse the section by clicking **close**.
 
 - __4.5.6__ In the **Resources section**, click to expand the section, click radio button **All resources** and click **close** to collapse the section.
 
