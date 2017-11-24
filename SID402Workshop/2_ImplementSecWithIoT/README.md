@@ -125,7 +125,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     **NodeREDURL**: The URL of the EC2 instance
 
-- __3.2.2.__ Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking places.   In that case, just wait a minute or two and try again.  Firefox users may have difficulty viewing Node-RED.  If so, please try Chrome, IE, or Safari.
+- __3.2.2.__ Browse to the URL and you should see Node-RED appear.  If you receive a timeout message or your browser pauses, the initial set up of the instance may still be taking place.   In that case, just wait a minute or two and try again.  Firefox users may have difficulty viewing Node-RED.  If so, please try Chrome, IE, or Safari.
 
     ![](images/image5-rev2.png "image")
 
