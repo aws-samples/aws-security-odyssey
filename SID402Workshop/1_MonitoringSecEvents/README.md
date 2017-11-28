@@ -38,8 +38,7 @@ To successfully complete this module, you should be familiar with AWS services i
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
-##### ___Choose one of the following AWS Regions before moving to Step 2: Ireland (eu-west-1), London (eu-west-2), Singapore (ap-southeast-1), Sydney (ap-southeast-2), Tokyo (ap-northeast-1), Seoul (ap-northeast-2)___
-
+<p><h4><b><span style="color:red">IMPORTANT NOTE: Choose one of the following AWS Regions before moving to Step 2: Ireland (eu-west-1), London (eu-west-2), Singapore (ap-southeast-1), Sydney (ap-southeast-2), Tokyo (ap-northeast-1), Seoul (ap-northeast-2).</em></span></b></h1></p>
 
 Make a note of the AWS *region name*, for example, *Ireland (eu-west-1)*. For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
@@ -55,7 +54,7 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 </strong></summary><p>
 <br/>
 
-- __2.1.0.__ **IMPORTANT NOTE:  YOU MAY BE TEMPTED TO USE A UNITED STATES REGION, PLEASE USE ONE OF THE REGIONS WE LIST ABOVE IN STEP 1!**
+- __2.1.0.__ *** ___IMPORTANT NOTE:  YOU MAY BE TEMPTED TO USE A UNITED STATES REGION, PLEASE USE ONE OF THE REGIONS WE LIST ABOVE IN STEP 1!___ ***
 
 - __2.1.1.__ In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
