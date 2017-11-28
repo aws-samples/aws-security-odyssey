@@ -55,7 +55,7 @@ ___Complete all the steps below unless they are marked "optional". Use arrow to 
 </strong></summary><p>
 <br/>
 
-- __2.1.0.__ **IMPORTANT NOTE:  YOU MAY BE TEMPTED TO USE A US REGION, PLEASE USE ONE OF THE REGIONS WE LIST ABOVE IN STEP 1!**
+- __2.1.0.__ **IMPORTANT NOTE:  YOU MAY BE TEMPTED TO USE A UNITED STATES REGION, PLEASE USE ONE OF THE REGIONS WE LIST ABOVE IN STEP 1!**
 
 - __2.1.1.__ In the AWS Management Console, Under Management Tools, Select **CloudTrail**.
 
