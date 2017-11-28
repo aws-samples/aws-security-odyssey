@@ -38,7 +38,7 @@ To successfully complete this module, you should be familiar with AWS services i
 
 **Tip** The AWS region name is always listed in the upper-right corner of the AWS Management Console, in the navigation bar.
 
-<p><h4><b><span style="color:red"><em>IMPORTANT NOTE: Choose one of the following AWS Regions before moving to Step 2: Ireland (eu-west-1), London (eu-west-2), Singapore (ap-southeast-1), Sydney (ap-southeast-2), Tokyo (ap-northeast-1), Seoul (ap-northeast-2).</em></span></b></h4></p>
+![](./images/RegionNote.png)
 
 Make a note of the AWS *region name*, for example, *Ireland (eu-west-1)*. For more information about regions, see: [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
