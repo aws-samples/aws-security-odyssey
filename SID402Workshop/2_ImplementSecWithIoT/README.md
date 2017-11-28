@@ -79,7 +79,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image2.png "image")
 
-- __3.1.5.__. On the left select **Secure**, then **Certificates**, then click **Create a certificate** and then Click **Create certificate.** You will then be presented with a page telling you the certificate has been created and given the opportunity to download four items as shown below. Continue below this picture for download instructions.
+- __3.1.5.__. On the left select **Secure**, then **Certificates**, then click **Create a certificate** and then Click **Create certificate.** You will then be presented with a page telling you the certificate has been created and given the opportunity to download four items as shown below. Continue below this picture for download instructions.  **NOTE:  You will not use the public key but please download it nonetheless.**
 
     ![](images/image3.png "image")
 
@@ -175,9 +175,9 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 - __3.2.7.__ On the Add new-tls-config screen, make sure the **Use key and certificates from local files** is deselected (which would cause Node-RED to use files on the Node-RED instance itself), and instead select the Upload button for each and navigate to the directory where the files are saved. The files will have names similar to the following:
 
-    **Certificate**: c1234567-certificate.pem
+    **Certificate**: c1234567-**certificate**.pem.crt
 
-    **Private Key**: c1234567-private.pem.key
+    **Private Key**: c1234567-**private**.pem.key  (**NOTE:  You must use the private key file!  Do not select the public key file! You will not be uploading the public key in this lab! **)
 
     **CA Certificate**: rootCA.pem
 
@@ -207,7 +207,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
 - __3.2.11.__ Click **Done** to go back to the main GUI.
 
-- __3.2.12.__ Finally, notice that the **Deploy** icon in the upper right of the GUI is red. If you do not do this, your changes will not be enabled!  This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.
+- __3.2.12.__ Finally, notice that the **Deploy** icon in the upper right of the GUI is red. If you do not do this, your changes will not be enabled!  This means changes have been made and need to be deployed. Click on this button and the flow will be saved, validated, and ready for use. If validation succeeds, the AWS IoT node (the Node-RED Amazon EC2 instance) will connect to the AWS IoT platform. You should see a green icon with connected under the AWS IoT node, Node-RED was able to successfully connect to the AWS IoT platform.  (**NOTE: If you are not seeing the connection icon showing in green, return to step 3.2.5 to reconfigure the IOT paramaters.)
 
 - __3.2.13.__ Bring up the AWS Console in a new browser window or tab and navigate to the AWS IoT console and select **Test**. Then select Subscribe to a topic link, enter **topic1** as the topic, and finally click the Subscribe to topic button per the figure below.
 
@@ -217,7 +217,7 @@ You will now define an IoT device. A device is recognized by AWS IoT through a c
 
     ![](images/image12.png "image")
 
-- __3.2.14.__ Return to the Node-RED window. Clean out the debug window by clicking the trash can icon. Click the button to the left of the Generate Timestamp node for the Single click message to AWS IoT flow. You will see the friendly date and time posted in the debug window, but you will also see the message published in the MQTT client in the AWS Console. Notice also that the AWS IoT node continues to show that it is connected which means that the policy attached to the certificate does allow the desired communication.
+- __3.2.14.__ Return to the Node-RED window. Clean out the debug window by clicking the trash can icon. Click the button to the left of the Generate Timestamp node for the Single click message to AWS IoT flow. You will see the friendly date and time posted in the debug window, but you will also see the message published in the MQTT client in the AWS Console. Notice also that the AWS IoT node continues to show that it is connected which means that the policy attached to the certificate does allow the desired communication. 
 
     ![](images/image13.png "image")
 
