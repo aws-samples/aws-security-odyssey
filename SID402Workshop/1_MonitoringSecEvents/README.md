@@ -144,7 +144,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 - __2.4.4.__ In the **Treat missing data as:** box, Click **good (not breaching threshold)**.
 
-- __2.4.5.__ In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **NotifyMe** and provide your email address. Refer to diagrams below.
+- __2.4.5.__ In the **Actions** box, Click **New list** for **Send notification to:**, provide a topic name such as **NotifyMe** and provide your email address. Refer to diagrams below.   **NOTE:  Some companies filter subscription confirmation messages.  We suggest you use a personal e-mail address.**
 
 <p/>
 
@@ -158,7 +158,7 @@ CloudTrail uses a CloudWatch Logs log group as a delivery endpoint for log event
 
 - __2.4.6.__ When you are done, click **Create Alarm**.
 
-- __2.4.7.__ You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.
+- __2.4.7.__ You will receive an email from **AWS Notification** at the email address provided in the **Email list**. Click on **Confirm subscription** link provided in the email.  **NOTE: You must click on Confirm Subscription before you proceed further!**
 
 - __2.4.8.__ Click on **View Alarm**.
 </details>
