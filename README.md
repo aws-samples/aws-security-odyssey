@@ -19,4 +19,4 @@ We will talk about how to:
 <br>
 
 ## License
-[https://aws.amazon.com/asl/](https://aws.amazon.com/asl/)
+Licensed under the MIT-0 License. 
